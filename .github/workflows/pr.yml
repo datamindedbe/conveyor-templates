@@ -1,0 +1,35 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  test-templates:
+    runs-on: ubuntu-latest
+      timeout-minutes: 15
+      steps:
+        - name: checkout
+          uses: actions/checkout@v2
+        - name: Set up python
+          uses: actions/setup-python@v1
+          with:
+            python-version: 3.7
+            architecture: x64
+        - name: Cache python dependencies
+          uses: actions/cache@v2
+          with:
+            path: ~/.cache/pip
+            key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+            restore-keys: |
+              ${{ runner.os }}-pip-
+        - name: install dependencies
+          run: pip install -r requirements.txt
+        - name: flake8 and black
+          run: |
+            flake8 tests
+            black --check tests
+        - name: run tests
+          run: pytest tests

@@ -1,0 +1,6 @@
+{
+    "resource_path": "resources",
+    "resource_name": "spark_iam_role_glue",
+    "database_name": "default",
+    "bucket_name": "default"
+}

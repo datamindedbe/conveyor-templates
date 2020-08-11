@@ -1,0 +1,19 @@
+features:
+  - name: pipenv
+    enabled: {{cookiecutter.python_package_management == "pipenv"}}
+    resources:
+      - Pipfile
+      - Pipfile.lock
+
+  - name: pip-tools
+    enabled: {{cookiecutter.python_package_management == "pip-tools"}}
+    resources:
+      - dev-requirements.in
+      - dev-requirements.txt
+      - requirements.in
+      - requirements.txt
+
+  - name: project-resources
+    enabled: {{cookiecutter.role_creation != "none"}}
+    resources:
+      - resources

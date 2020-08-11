@@ -1,0 +1,16 @@
+{
+  "project_name": "python",
+  "module_name": "python",
+  "workflow_start_date": "2020-01-01",
+  "workflow_schedule": "@daily",
+  "python_package_management": [
+    "pip-tools",
+    "pipenv"
+  ],
+  "role_creation": [
+    "project",
+    "external",
+    "none"
+  ],
+  "role_arn": ""
+}

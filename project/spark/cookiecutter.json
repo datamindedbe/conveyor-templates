@@ -1,0 +1,10 @@
+{
+    "project_name": "spark",
+    "module_name": "spark",
+    "group_id": "cloud.datafy",
+    "scala_version": [ "2.11", "2.12" ],
+    "spark_version": [ "2.4", "3.0" ],
+    "workflow_start_date": "2020-01-01",
+    "workflow_schedule": "@daily",
+    "build_tool": [ "gradle"]
+}

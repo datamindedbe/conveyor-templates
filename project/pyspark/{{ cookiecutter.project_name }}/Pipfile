@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+{{ cookiecutter.module_name }} = {editable = true,path = "."}
+
+[dev-packages]
+{% if cookiecutter.spark_version == "2.4" -%}
+pyspark = "==2.4.3"
+{%- elif cookiecutter.spark_version == "3.0" -%}
+pyspark = "==3.0.0"
+{%- endif %}
+flake8 = "~=3.7"
+pandas = "~=0.25"
+pytest = "~=5.2"
+pytest-cov = "~=2.7"
+black = "==19.3b0"
+
+[requires]
+python_version = "3.6"

@@ -1,0 +1,10 @@
+features:
+  - name: gradle
+    enabled: {{cookiecutter.build_tool == "gradle"}}
+    resources:
+      - gradlew
+      - gradlew.bat
+      - settings.gradle
+      - gradle.properties
+      - build.gradle
+      - gradle
