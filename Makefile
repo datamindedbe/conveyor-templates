@@ -1,4 +1,4 @@
-test:
+test: flake8 black
 	pytest tests
 
 flake8:

@@ -17,3 +17,7 @@ believe in.
 
 Resources provide templates on how to give IAM access for the jobs you are running on Datafy. For now we focused on the
 two operators we are supporting.
+
+## Development
+
+If you want to contribute you should have a look at [the development documentation](./DEVELOPMENT.md).
