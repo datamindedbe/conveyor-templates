@@ -1,5 +1,7 @@
 <!--
 Thanks for sending a pull request!
+
+Don't forget to add your changes to the changelog.md when starting a PR.
 -->
 
 ## What changes were proposed in this pull request?
