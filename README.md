@@ -1,6 +1,7 @@
 # Datafy templates
 
-These are the template used by datafy to create new projects.
+These are the template used by [Datafy](https://get.datafy.cloud/) to create new projects. If you are interested in
+Datafy you can go to our [website](https://get.datafy.cloud/).
 
 They are split into two categories:
 
