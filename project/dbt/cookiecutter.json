@@ -1,0 +1,6 @@
+{
+  "project_name": "dbt",
+  "module_name": "dbt",
+  "workflow_start_date": "2020-01-01",
+  "workflow_schedule": "@daily"
+}
