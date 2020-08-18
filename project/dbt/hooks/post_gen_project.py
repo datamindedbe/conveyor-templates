@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import os
-import dbt.task.init as init_task
 from dataclasses import dataclass
 
 project_name = "{{ cookiecutter.project_name }}"
@@ -23,6 +22,7 @@ def initialize_dbt():
     os.mkdir('dbt')
     os.chdir('dbt')
     os.environ["DBT_PROFILES_DIR"] = os.getcwd()
+    import dbt.task.init as init_task  # late import so the environment variable is take into account
     task = init_task.InitTask(args=InitArguments(project_name), config=None)
     task.run()
     fix_dbt_project()
