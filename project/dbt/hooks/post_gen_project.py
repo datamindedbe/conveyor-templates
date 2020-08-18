@@ -12,7 +12,6 @@ class InitArguments:
 
 
 def fix_dbt_project():
-    data = None
     with open(f'./{project_name}/dbt_project.yml', "rt") as f:
         data = f.read()
         data = data.replace('my_new_project', project_name)
