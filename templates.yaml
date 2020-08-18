@@ -2,6 +2,7 @@ project:
   - pyspark
   - python
   - spark
+  - dbt
 resource:
   - aws/container-iam-role-s3
   - aws/spark-iam-role-glue
