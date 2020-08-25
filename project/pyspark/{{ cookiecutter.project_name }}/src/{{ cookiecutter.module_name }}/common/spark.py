@@ -51,7 +51,6 @@ class ClosableSparkSession:
         spark_config: dict = {},
     ):
         self._app_name = app_name
-        self._enable_glue = enable_glue
         self._master = master
         self._spark_config = spark_config
         self._spark_session = None
