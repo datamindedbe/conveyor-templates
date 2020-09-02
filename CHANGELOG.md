@@ -1,6 +1,10 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### features:
+
+- A project template for [dbt](https://www.getdbt.com/) projects (@pascal-knapen).
+
 ### bugfixes:
 - In the spark template there was a lingering enable_glue setting that was unused. It is now removed (@stijndehaes)
 
