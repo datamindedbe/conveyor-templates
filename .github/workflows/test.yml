@@ -27,6 +27,8 @@ jobs:
             ${{ runner.os }}-pip-
       - name: install dependencies
         run: pip install -r requirements.txt
+      - name: install dev dependencies
+        run: pip install -r dev-requirements.txt
       - name: flake8 and black
         run: |
           flake8 tests
