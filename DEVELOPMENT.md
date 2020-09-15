@@ -11,6 +11,14 @@ Then you can install the the required packages in that environment:
 
 ```bash
 pip install -r requirements.txt
+pip install -r dev-requirements.txt
+```
+
+If you ever need to update the dependencies or test dependencies you should update the `requirements.in` file or the
+`dev-requirements.in` file and run the command:
+```
+pip-compile requirements.in
+pip-compile dev-requirements.in
 ```
 
 To run the tests, flake8 and black you can use the makefile:
