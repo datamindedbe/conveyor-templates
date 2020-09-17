@@ -1,6 +1,8 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+## [0.2.1 - 2020-09-17]
+
 ### docs:
 - updated the Development documentations
 
@@ -19,5 +21,6 @@
 
 First release of the templates
 
-[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.2.0...HEAD
+[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.2.1...HEAD
+[0.2.1 - 2020-09-17]: https://github.com/datamindedbe/datafy-templates/compare/0.2.0...0.2.1
 [0.2.0 - 2020-09-09]: https://github.com/datamindedbe/datafy-templates/compare/0.1.0...0.2.0
