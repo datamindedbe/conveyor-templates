@@ -4,6 +4,9 @@
 ### docs:
 - updated the Development documentations
 
+### features:
+- Allow this image to be ran under a non-root user in /app directory. (@stijndehaes)
+
 ## [0.2.0 - 2020-09-09]
 
 ### features:
