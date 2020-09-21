@@ -1,3 +1,2 @@
 cookiecutter==1.7.0 # to be compatible with dbt
-pyyaml
 dbt

@@ -5,23 +5,35 @@ import yaml
 
 MANIFEST = "manifest.yml"
 
+pip_env_files = [
+    "Pipfile",
+    "Pipfile.lock",
+]
 
-def delete_resources_for_disabled_features():
-    with open(MANIFEST) as manifest_file:
-        manifest = yaml.safe_load(manifest_file)
-        for feature in manifest["features"]:
-            if not feature["enabled"]:
-                for resource in feature["resources"]:
-                    delete_resource(resource)
-    delete_resource(MANIFEST)
+pip_tools_files = [
+    "dev-requirements.in",
+    "dev-requirements.txt",
+    "requirements.in",
+    "requirements.txt",
+]
+
+python_mgt = "{{ cookiecutter.python_package_management }}"
+role_creation = "{{ cookiecutter.role_creation }}"
 
 
-def delete_resource(resource):
-    if os.path.isfile(resource):
-        os.remove(resource)
-    elif os.path.isdir(resource):
-        shutil.rmtree(resource)
+def delete_files(files):
+    for file in files:
+        os.remove(file)
+
+
+def delete_folder(folder):
+    shutil.rmtree(folder)
 
 
 if __name__ == "__main__":
-    delete_resources_for_disabled_features()
+    if python_mgt == "pipenv":
+        delete_files(pip_tools_files)
+    elif python_mgt == "pip-tools":
+        delete_files(pip_env_files)
+    if role_creation == "none":
+        delete_folder("resources")
