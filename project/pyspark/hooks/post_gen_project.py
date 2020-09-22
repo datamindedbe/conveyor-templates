@@ -12,9 +12,18 @@ def delete_resources_for_disabled_features():
         delete_resource("Pipfile")
         delete_resource("Pipfile-3.0.lock")
         delete_resource("Pipfile-2.4.lock")
+        if spark_version == "2.4":
+            os.rename("dev-requirements-2.txt", "dev-requirements.txt")
+            delete_resource("dev-requirements-3.txt")
+        elif spark_version == "3.0":
+            os.rename("dev-requirements-3.txt", "dev-requirements.txt")
+            delete_resource("dev-requirements-2.txt")
+        else:
+            raise Exception("Unknown spark version: " + spark_version)
     elif python_mgt == "pipenv":
         delete_resource("dev-requirements.in")
-        delete_resource("dev-requirements.txt")
+        delete_resource("dev-requirements-2.txt")
+        delete_resource("dev-requirements-3.txt")
         delete_resource("requirements.in")
         delete_resource("requirements.txt")
         if spark_version == "2.4":

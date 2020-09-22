@@ -42,12 +42,23 @@ def test_pyspark_template_spark_2_4(cookies):
     assert_project_can_be_build(result)
 
 
-def test_pyspark_template_spark_pipenv(cookies):
+def test_pyspark_template_spark_pipenv_2_4(cookies):
     """
     This test makes sure that when a project with pipenv support is being rendered the docker image can be build
     """
     result = cookies.bake(
         template="project/pyspark",
         extra_context={"python_package_management": "pipenv"},
+    )
+    assert_project_can_be_build(result)
+
+
+def test_pyspark_template_spark_pipenv_3(cookies):
+    """
+    This test makes sure that when a project with pipenv support is being rendered the docker image can be build
+    """
+    result = cookies.bake(
+        template="project/pyspark",
+        extra_context={"python_package_management": "pipenv", "spark_version": "3.0"},
     )
     assert_project_can_be_build(result)
