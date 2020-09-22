@@ -4,6 +4,7 @@
 ### bugfixes:
 - Fix spark 2.4 support for the pyspark template. Pip3 binary did not exist so created a symlink to the pip3.6 binary to fix this (@stijndehaes)
 - Remove resource in python template when role_creation is none (@stijndehaes)
+- Upgrade spark 3 support to 3.0.1 and hadoop to 3.3.0 (@stijndehaes)
 
 ## [0.2.1 - 2020-09-17]
 

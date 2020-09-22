@@ -16,7 +16,7 @@
         ]
     },
     "default": {
-        "test": {
+        "{{ cookiecutter.module_name }}": {
             "editable": true,
             "path": "."
         }

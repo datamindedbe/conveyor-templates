@@ -13,8 +13,7 @@ def test_python_template(cookies):
 
 def test_python_template_pipenv(cookies):
     result = cookies.bake(
-        template="project/python",
-        extra_context={"python_package_management": "pipenv"},
+        template="project/python", extra_context={"python_package_management": "pipenv"}
     )
     assert 0 == result.exit_code
     assert result.exception is None

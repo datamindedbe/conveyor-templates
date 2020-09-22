@@ -34,8 +34,8 @@ dependencies {
     shadow group: 'org.apache.spark', name: 'spark-sql_{{ cookiecutter.scala_version }}', version: '2.4.3'
     shadow group: 'org.apache.spark', name: 'spark-hive_{{ cookiecutter.scala_version }}', version: '2.4.3'
     {%- elif cookiecutter.spark_version == "3.0" -%}
-    shadow group: 'org.apache.spark', name: 'spark-sql_2.12', version: '3.0.0'
-    shadow group: 'org.apache.spark', name: 'spark-hive_2.12', version: '3.0.0'
+    shadow group: 'org.apache.spark', name: 'spark-sql_2.12', version: '3.0.1'
+    shadow group: 'org.apache.spark', name: 'spark-hive_2.12', version: '3.0.1'
     {%- endif %}
     implementation group: 'org.reflections', name: 'reflections', version: '0.9.12'
     implementation group: 'com.typesafe.scala-logging', name: 'scala-logging_{{ cookiecutter.scala_version }}', version: '3.9.0'
@@ -49,8 +49,8 @@ dependencies {
     testImplementation group: 'org.apache.spark', name: 'spark-sql_{{ cookiecutter.scala_version }}', version: '2.4.3'
     testImplementation group: 'org.apache.spark', name: 'spark-hive_{{ cookiecutter.scala_version }}', version: '2.4.3'
     {%- elif cookiecutter.spark_version == "3.0" -%}
-    testImplementation group: 'org.apache.spark', name: 'spark-sql_2.12', version: '3.0.0'
-    testImplementation group: 'org.apache.spark', name: 'spark-hive_2.12', version: '3.0.0'
+    testImplementation group: 'org.apache.spark', name: 'spark-sql_2.12', version: '3.0.1'
+    testImplementation group: 'org.apache.spark', name: 'spark-hive_2.12', version: '3.0.1'
     {%- endif %}
     testRuntimeOnly group: 'org.pegdown', name: 'pegdown', version: '1.6.0'
     testRuntimeOnly group: 'org.ow2.asm', name: 'asm', version: '5.0.3'
