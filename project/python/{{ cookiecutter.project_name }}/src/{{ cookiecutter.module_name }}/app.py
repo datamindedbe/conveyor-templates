@@ -1,5 +1,6 @@
 import argparse
 import logging
+import sys
 
 from {{ cookiecutter.module_name }}.jobs import entrypoint
 
@@ -8,6 +9,7 @@ from {{ cookiecutter.module_name }}.jobs import entrypoint
 from {{ cookiecutter.module_name }}.jobs import sample
 
 def main():
+    logging.basicConfig(stream=sys.stdout, level=logging.INFO)
     parser = argparse.ArgumentParser(description="{{ cookiecutter.project_name }}")
     parser.add_argument(
         "-d", "--date", dest="date", help="date in format YYYY-mm-dd", required=True
@@ -24,6 +26,7 @@ def main():
         required=True,
     )
     args = parser.parse_args()
+    logging.info(f"Using args: {args}")
 
     for job_name in args.jobs:
         logging.info(f"Executing job {job_name}")
