@@ -5,6 +5,9 @@
 
 - In python template configure the logging framework. This adds an example on how to change the logging level (@stijndehaes)
 
+### bugfixes:
+- Remove resource in dbt template when role_creation is none (@pascal-knapen)
+
 ## [0.2.2 - 2020-09-24]
 
 ### bugfixes:

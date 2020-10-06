@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 import os
+import shutil
+
 from dataclasses import dataclass
 
 project_name = "{{ cookiecutter.project_name }}"
+role_creation = "{{ cookiecutter.role_creation }}"
 
 
 @dataclass
@@ -20,13 +23,24 @@ def fix_dbt_project():
 
 def initialize_dbt():
     os.mkdir('dbt')
+    previous_dir = os.getcwd()
     os.chdir('dbt')
-    os.environ["DBT_PROFILES_DIR"] = os.getcwd()
-    import dbt.task.init as init_task  # late import so the environment variable is take into account
-    task = init_task.InitTask(args=InitArguments(project_name), config=None)
-    task.run()
-    fix_dbt_project()
+    try:
+        os.environ["DBT_PROFILES_DIR"] = os.getcwd()
+        import dbt.task.init as init_task  # late import so the environment variable is take into account
+        task = init_task.InitTask(args=InitArguments(project_name), config=None)
+        task.run()
+        fix_dbt_project()
+    finally:
+        os.chdir(previous_dir)
+
+
+def cleanup_resources():
+    if role_creation == "none":
+        shutil.rmtree("resources")
 
 
 if __name__ == "__main__":
     initialize_dbt()
+    cleanup_resources()
+
