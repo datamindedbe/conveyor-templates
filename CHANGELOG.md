@@ -1,6 +1,8 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+## [0.3.0 - 2020-10-09]
+
 ### features:
 
 - In python template configure the logging framework. This adds an example on how to change the logging level (@stijndehaes)
@@ -35,7 +37,8 @@
 
 First release of the templates
 
-[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.2.2...HEAD
+[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.3.0...HEAD
+[0.3.0 - 2020-10-09]: https://github.com/datamindedbe/datafy-templates/compare/0.2.2...0.3.0
 [0.2.2 - 2020-09-24]: https://github.com/datamindedbe/datafy-templates/compare/0.2.1...0.2.2
 [0.2.1 - 2020-09-17]: https://github.com/datamindedbe/datafy-templates/compare/0.2.0...0.2.1
 [0.2.0 - 2020-09-09]: https://github.com/datamindedbe/datafy-templates/compare/0.1.0...0.2.0
