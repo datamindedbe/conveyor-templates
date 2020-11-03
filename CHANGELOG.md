@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### bugfixes:
+- Docker image pin python version to 3.9 (@stijndehaes) 
+
 ## [0.3.0 - 2020-10-09]
 
 ### features:
