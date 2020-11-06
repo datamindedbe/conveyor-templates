@@ -1,6 +1,8 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+## [0.3.1 - 2020-11-06]
+
 ### bugfixes:
 - Docker image pin python version to 3.9 (@stijndehaes) 
 
@@ -40,7 +42,8 @@
 
 First release of the templates
 
-[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.3.0...HEAD
+[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.3.1...HEAD
+[0.3.1 - 2020-11-06]: https://github.com/datamindedbe/datafy-templates/compare/0.3.0...0.3.1
 [0.3.0 - 2020-10-09]: https://github.com/datamindedbe/datafy-templates/compare/0.2.2...0.3.0
 [0.2.2 - 2020-09-24]: https://github.com/datamindedbe/datafy-templates/compare/0.2.1...0.2.2
 [0.2.1 - 2020-09-17]: https://github.com/datamindedbe/datafy-templates/compare/0.2.0...0.2.1
