@@ -1,5 +1,5 @@
 {% if cookiecutter.spark_version == "2.4" -%}
-FROM datamindedbe/spark-k8s-glue:2.4.3-2.12-hadoop-2.9.2-v2
+FROM datamindedbe/spark-k8s-glue:2.4.3-2.11-hadoop-2.9.2-v3
 RUN rm -rf /usr/bin/pip && ln -s /usr/bin/pip3.6 /usr/bin/pip && ln -s /usr/bin/pip3.6 /usr/bin/pip3
 {%- elif cookiecutter.spark_version == "3.0" -%}
 FROM datamindedbe/spark-k8s-glue:v3.0.1-hadoop-3.3.0
