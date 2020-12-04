@@ -1,5 +1,5 @@
 locals {
-  {{ cookiecutter.resource_name }}_service_account_name = "{{ cookiecutter.resource_name|replace('_', '-') }}-${var.env_name}"
+  {{ cookiecutter.resource_name }}_service_account_name = "{{ cookiecutter.resource_name|replace('_', '-') }}"
 }
 
 resource "kubernetes_service_account" "{{ cookiecutter.resource_name }}" {
