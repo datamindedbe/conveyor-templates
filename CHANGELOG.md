@@ -4,6 +4,9 @@
 ### features:
 - Upgrade the spark 2.4.3 images to the latest version. This version only includes one version of the aws sdk.
 
+### bugfixes:
+- Make sure the generated service account are kubernetes compliant
+
 ## [0.3.1 - 2020-11-06]
 
 ### bugfixes:
