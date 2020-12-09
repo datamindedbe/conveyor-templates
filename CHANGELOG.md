@@ -1,6 +1,8 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+## [0.3.2 - 2020-12-09]
+
 ### features:
 - Upgrade the spark 2.4.3 images to the latest version. This version only includes one version of the aws sdk.
 
@@ -48,7 +50,8 @@
 
 First release of the templates
 
-[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.3.1...HEAD
+[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.3.2R...HEAD
+[0.3.2 - 2020-12-09]: https://github.com/datamindedbe/datafy-templates/compare/0.3.1...0.3.2
 [0.3.1 - 2020-11-06]: https://github.com/datamindedbe/datafy-templates/compare/0.3.0...0.3.1
 [0.3.0 - 2020-10-09]: https://github.com/datamindedbe/datafy-templates/compare/0.2.2...0.3.0
 [0.2.2 - 2020-09-24]: https://github.com/datamindedbe/datafy-templates/compare/0.2.1...0.2.2
