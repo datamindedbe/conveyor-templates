@@ -1,13 +1,16 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### features:
+- Change from docker hub images to public ECR images: https://gallery.ecr.aws/dataminded/spark-k8s-glue (@stijndehaes)
+
 ## [0.3.2 - 2020-12-09]
 
 ### features:
-- Upgrade the spark 2.4.3 images to the latest version. This version only includes one version of the aws sdk.
+- Upgrade the spark 2.4.3 images to the latest version. This version only includes one version of the aws sdk. (@stijndehaes)
 
 ### bugfixes:
-- Make sure the generated service account are kubernetes compliant
+- Make sure the generated service account are kubernetes compliant (@stijndehaes)
 
 ## [0.3.1 - 2020-11-06]
 
