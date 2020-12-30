@@ -1,6 +1,8 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+## [0.3.3 - 2020-12-30]
+
 ### features:
 - Change from docker hub images to public ECR images: https://gallery.ecr.aws/dataminded/spark-k8s-glue (@stijndehaes)
 
@@ -53,7 +55,8 @@
 
 First release of the templates
 
-[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.3.2R...HEAD
+[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.3.3...HEAD
+[0.3.3 - 2020-12-30]: https://github.com/datamindedbe/datafy-templates/compare/0.3.2...0.3.3
 [0.3.2 - 2020-12-09]: https://github.com/datamindedbe/datafy-templates/compare/0.3.1...0.3.2
 [0.3.1 - 2020-11-06]: https://github.com/datamindedbe/datafy-templates/compare/0.3.0...0.3.1
 [0.3.0 - 2020-10-09]: https://github.com/datamindedbe/datafy-templates/compare/0.2.2...0.3.0
