@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### features:
+- Update python and pyspark readme to include a section explaining the usage of piptools
+
 ## [0.3.3 - 2020-12-30]
 
 ### features:
