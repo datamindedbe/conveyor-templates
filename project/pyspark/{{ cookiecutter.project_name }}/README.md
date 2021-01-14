@@ -38,6 +38,19 @@ The main Python module contains the ETL job `app.py`. By default `app.py` accept
 In building your Python application and its dependencies for production, you want to make sure that your builds are predictable and deterministic.
  Therefore, always pin your dependencies. You can read more in the article: [Better package management](https://nvie.com/posts/better-package-management/)
 
+{%- if cookiecutter.python_package_management == "pip-tools" %}
+When using pip-tools to manage dependencies, you define your dependencies in the `requirements.in` file.
+This file can then be compiled into the `requirements.txt` file by running the command `pip-compile requirements.in` from your shell.
+
+This compilation step makes sure every dependency gets pinned in the `requirements.txt` file,
+ensuring that project won't break because of transitive dependencies being silently updated.
+When a dependency does need to be updated, you can update the `requirements.in` file and re-compile it.
+With this method, package updates always happen as a conscious decision by the developer.
+
+The `pip-compile` command should be run from the same virtual environment as your project so conditional dependencies that require a specific Python version,
+or other environment markers, resolve relative to your project's environment.
+{%- endif %}
+
 ### Separate job breakdown from scheduling
 Jobs can be found in the `jobs/` directory. A job function needs to be annotated with `@entrypoint("name")` and
 the module needs to be imported in `app.py`. This approach is based on the article [Scaling a Mature Data Pipeline](https://medium.com/airbnb-engineering/scaling-a-mature-data-pipeline-managing-overhead-f34835cbc866)
