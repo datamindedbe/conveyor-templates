@@ -2,7 +2,8 @@
 ## [Unreleased]
 
 ### features:
-- Update python and pyspark readme to include a section explaining the usage of piptools
+- Update python and pyspark readme to include a section explaining the usage of piptools (@vlieven)
+- Update to the new way of importing operators ahead of the airflow 2.0 upgrade (@stijndehaes)
 
 ## [0.3.3 - 2020-12-30]
 
