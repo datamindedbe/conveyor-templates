@@ -35,6 +35,7 @@ DatafyContainerOperator(
         "--profiles-dir",
         "./.."
     ],
+    instance_type="mx_micro",
 {%- if cookiecutter.role_creation != "none" %}
     service_account_name="{{ cookiecutter.project_name }}"
 {%- endif %}
