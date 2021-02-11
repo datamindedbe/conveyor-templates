@@ -23,13 +23,12 @@ dag = DAG(
     "{{ cookiecutter.project_name }}", default_args=default_args, schedule_interval="{{ cookiecutter.workflow_schedule }}", max_active_runs=1
 )
 
-executor_memory = "1G"
 sample_task = DatafySparkSubmitOperator(
     dag=dag,
     task_id="sample",
     num_executors="1",
-    executor_memory=executor_memory,
-    driver_memory="512M",
+    driver_instance_type="mx_small",
+    executor_instance_type="mx_small",
     env_vars={"AWS_REGION": "eu-west-1"},
     conf={
         "spark.kubernetes.container.image": image,

@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### features:
+- Added support for datafy instance types (@stijndehaes)
+
 ## [0.4.0 - 2020-01-15]
 
 ### features:
