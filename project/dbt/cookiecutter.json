@@ -2,6 +2,12 @@
   "project_name": "dbt",
   "workflow_start_date": "2020-01-01",
   "workflow_schedule": "@daily",
+  "database_type": [
+    "postgres",
+    "redshift",
+    "snowflake",
+    "bigquery"
+  ],
   "role_creation": [
     "project",
     "external",

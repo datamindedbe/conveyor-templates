@@ -6,11 +6,13 @@ from dataclasses import dataclass
 
 project_name = "{{ cookiecutter.project_name }}"
 role_creation = "{{ cookiecutter.role_creation }}"
+database_type = "{{ cookiecutter.database_type }}"
 
 
 @dataclass
 class InitArguments:
     project_name: str
+    adapter: str
 
 
 def fix_dbt_project():
@@ -22,17 +24,21 @@ def fix_dbt_project():
 
 
 def initialize_dbt():
-    os.mkdir('dbt')
-    previous_dir = os.getcwd()
-    os.chdir('dbt')
+    initialize_dbt_in_dir(os.getcwd(), database_type)
+
+
+def initialize_dbt_in_dir(dir: str, db_type: str):
+    dbt_dir = os.path.join(dir, 'dbt')
+    os.mkdir(dbt_dir)
+    os.chdir(dbt_dir)
     try:
         os.environ["DBT_PROFILES_DIR"] = os.getcwd()
         import dbt.task.init as init_task  # late import so the environment variable is take into account
-        task = init_task.InitTask(args=InitArguments(project_name), config=None)
+        task = init_task.InitTask(args=InitArguments(project_name, db_type), config=None)
         task.run()
         fix_dbt_project()
     finally:
-        os.chdir(previous_dir)
+        os.chdir(dir)
 
 
 def cleanup_resources():
