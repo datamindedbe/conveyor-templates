@@ -1,8 +1,12 @@
+import os
 import subprocess
 
 
 def test_pyspark_template(cookies):
-    result = cookies.bake(template="project/pyspark", extra_context={})
+    result = cookies.bake(
+        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",
+        extra_context={},
+    )
     assert 0 == result.exit_code
     assert result.exception is None
     assert result.project.isdir()
@@ -29,7 +33,8 @@ def test_pyspark_template_spark_3(cookies):
     This test makes sure that when a project with spark 3 support is being rendered the docker image can be build
     """
     result = cookies.bake(
-        template="project/pyspark", extra_context={"spark_version": "3.0"}
+        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",
+        extra_context={"spark_version": "3.0"},
     )
     assert_project_can_be_build(result)
 
@@ -38,7 +43,10 @@ def test_pyspark_template_spark_2_4(cookies):
     """
     This test makes sure that when a project with spark 2.4 support is being rendered the docker image can be build
     """
-    result = cookies.bake(template="project/pyspark", extra_context={})
+    result = cookies.bake(
+        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",
+        extra_context={},
+    )
     assert_project_can_be_build(result)
 
 
@@ -47,7 +55,7 @@ def test_pyspark_template_spark_pipenv_2_4(cookies):
     This test makes sure that when a project with pipenv support is being rendered the docker image can be build
     """
     result = cookies.bake(
-        template="project/pyspark",
+        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",
         extra_context={"python_package_management": "pipenv"},
     )
     assert_project_can_be_build(result)
@@ -58,7 +66,7 @@ def test_pyspark_template_spark_pipenv_3(cookies):
     This test makes sure that when a project with pipenv support is being rendered the docker image can be build
     """
     result = cookies.bake(
-        template="project/pyspark",
+        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",
         extra_context={"python_package_management": "pipenv", "spark_version": "3.0"},
     )
     assert_project_can_be_build(result)

@@ -29,6 +29,7 @@ DatafyContainerOperator(
     image=image,
     cmds=["dbt"],
     arguments=[
+        "--no-use-colors",
         "run",
         "--target",
         "{% raw %}{{ macros.env() }}{% endraw %}",

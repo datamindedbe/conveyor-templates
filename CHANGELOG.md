@@ -3,6 +3,7 @@
 
 ### features:
 - Added support for datafy instance types (@stijndehaes)
+- Upgrade dbt to 0.19.0 (@stijndehaes)
 
 ## [0.4.0 - 2020-01-15]
 

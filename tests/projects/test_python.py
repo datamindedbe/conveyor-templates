@@ -1,5 +1,11 @@
+import os
+
+
 def test_python_template(cookies):
-    result = cookies.bake(template="project/python", extra_context={})
+    result = cookies.bake(
+        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/python",
+        extra_context={},
+    )
     assert 0 == result.exit_code
     assert result.exception is None
     assert result.project.isdir()
@@ -13,7 +19,8 @@ def test_python_template(cookies):
 
 def test_python_template_pipenv(cookies):
     result = cookies.bake(
-        template="project/python", extra_context={"python_package_management": "pipenv"}
+        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/python",
+        extra_context={"python_package_management": "pipenv"},
     )
     assert 0 == result.exit_code
     assert result.exception is None
@@ -28,7 +35,8 @@ def test_python_template_pipenv(cookies):
 
 def test_python_template_no_role(cookies):
     result = cookies.bake(
-        template="project/python", extra_context={"role_creation": "none"}
+        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/python",
+        extra_context={"role_creation": "none"},
     )
     assert 0 == result.exit_code
     assert result.exception is None
