@@ -36,4 +36,10 @@ Setup virtual environment:
 Tasks:
 - `pip-compile requirements.in` to regenerate the requirements.txt
 
+For some of the most used Dbt commands a makefile has been added to the project that passes the correct flags to dbt:
+- `make run` executes dbt run
+- `make test` executes dbt test
+- `make debug` executes dbt debug, is useful to debug your connection to the database
+- `make docs` executes dbt docs
+
 Consult the [dbt documentation](https://docs.getdbt.com/docs/introduction) for additional commands.
