@@ -1,6 +1,8 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+## [0.5.0 - 2020-02-15]
+
 ### features:
 - Added support for datafy instance types (@stijndehaes)
 - Upgrade dbt to 0.19.0 (@stijndehaes)
@@ -66,7 +68,8 @@
 
 First release of the templates
 
-[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.4.0...HEAD
+[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.5.0...HEAD
+[0.5.0 - 2020-02-15]: https://github.com/datamindedbe/datafy-templates/compare/0.4.0...0.5.0
 [0.4.0 - 2020-01-15]: https://github.com/datamindedbe/datafy-templates/compare/0.3.3...0.4.0
 [0.3.3 - 2020-12-30]: https://github.com/datamindedbe/datafy-templates/compare/0.3.2...0.3.3
 [0.3.2 - 2020-12-09]: https://github.com/datamindedbe/datafy-templates/compare/0.3.1...0.3.2
