@@ -16,7 +16,6 @@ default_args = {
 }
 
 
-image = "{% raw %}{{ macros.image('{% endraw %}{{ cookiecutter.project_name }}{% raw %}') }}{% endraw %}"
 role = "{% raw %}datafy-dp-{{ macros.env() }}/eks-job-role-samples-{{ macros.env() }}{% endraw %}"
 
 dag = DAG(
@@ -31,7 +30,6 @@ sample_task = DatafySparkSubmitOperator(
     executor_instance_type="mx_small",
     env_vars={"AWS_REGION": "eu-west-1"},
     conf={
-        "spark.kubernetes.container.image": image,
         "spark.kubernetes.driver.annotation.iam.amazonaws.com/role": role,
         "spark.kubernetes.executor.annotation.iam.amazonaws.com/role": role,
     },
