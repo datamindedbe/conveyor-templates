@@ -81,4 +81,6 @@ Tasks:
 - `python -m pytest --cov=src tests` runs all the tests and check coverage
 - `python -m black dags src tests --check` checks PEP8 compliance issues
 - `python -m black dags src tests` fixes PEP8 compliance issues
+- `pip-compile requirements.in` if you add new requirements this regenerates a new requirements.txt
+- `pip-compile dev-requirements.in` if you add new requirements this regenerates a new dev-requirements.txt, you should also do this when have updated your requirements.in
 {%- endif %}
