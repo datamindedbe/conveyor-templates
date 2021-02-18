@@ -15,7 +15,6 @@ resource "kubernetes_service_account" "{{ cookiecutter.resource_name }}" {
 
 resource "aws_iam_role" "{{ cookiecutter.resource_name }}" {
   name               = "{{ cookiecutter.resource_name|replace('_', '-') }}-${var.env_name}"
-  path               = "/datafy-dp-${var.env_name}/"
   assume_role_policy = data.aws_iam_policy_document.{{ cookiecutter.resource_name }}_assume_role.json
 }
 

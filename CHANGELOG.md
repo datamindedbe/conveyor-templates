@@ -3,6 +3,7 @@
 
 ### features:
 - From datafy version 0.39.0 the image field will not be required anymore (@stijndehaes)
+- From datafy version 0.39.0 the path field in the role is not required anymore (@stijndehaes)
 
 ## [0.5.0 - 2020-02-15]
 
