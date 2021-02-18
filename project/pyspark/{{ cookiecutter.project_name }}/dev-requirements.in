@@ -1,3 +1,4 @@
+-c requirements.txt
 {% if cookiecutter.spark_version == "2.4" -%}
 pyspark==2.4.3
 {%- elif cookiecutter.spark_version == "3.0" -%}
