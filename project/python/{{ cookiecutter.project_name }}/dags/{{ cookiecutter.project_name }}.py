@@ -15,9 +15,6 @@ default_args = {
     "retry_delay": timedelta(minutes=5),
 }
 
-
-image = "{% raw %}{{ macros.image('{% endraw %}{{ cookiecutter.project_name }}{% raw %}') }}{% endraw %}"
-
 dag = DAG(
     "{{ cookiecutter.project_name }}", default_args=default_args, schedule_interval="{{ cookiecutter.workflow_schedule }}", max_active_runs=1
 )
@@ -26,7 +23,6 @@ DatafyContainerOperator(
     dag=dag,
     task_id="sample",
     name="sample",
-    image=image,
     arguments=["{% raw %}--date", "{{ ds }}", "--jobs", "sample", "--env", "{{ macros.env() }}{% endraw %}"],
     instance_type="mx_micro",
 {%- if cookiecutter.role_creation != "none" %}
