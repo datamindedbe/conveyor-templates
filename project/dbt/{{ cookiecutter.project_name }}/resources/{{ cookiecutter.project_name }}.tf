@@ -16,7 +16,6 @@ resource "kubernetes_service_account" "default" {
 {%- if cookiecutter.role_creation == "project" %}
 resource "aws_iam_role" "default" {
   name               = "{{ cookiecutter.project_name }}-${var.env_name}"
-  path               = "/datafy-dp-${var.env_name}/"
   assume_role_policy = data.aws_iam_policy_document.default.json
 }
 

@@ -16,7 +16,7 @@ default_args = {
 }
 
 
-role = "{% raw %}datafy-dp-{{ macros.env() }}/eks-job-role-samples-{{ macros.env() }}{% endraw %}"
+role = "{% raw %}eks-job-role-samples-{{ macros.env() }}{% endraw %}"
 
 dag = DAG(
     "{{ cookiecutter.project_name }}", default_args=default_args, schedule_interval="{{ cookiecutter.workflow_schedule }}", max_active_runs=1
