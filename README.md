@@ -22,3 +22,4 @@ two operators we are supporting.
 ## Development
 
 If you want to contribute you should have a look at [the development documentation](./DEVELOPMENT.md).
+
