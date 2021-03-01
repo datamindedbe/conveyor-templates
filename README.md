@@ -1,3 +1,5 @@
+Test github actions
+
 # Datafy templates
 
 These are the template used by [Datafy](https://get.datafy.cloud/) to create new projects. If you are interested in
