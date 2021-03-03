@@ -10,7 +10,6 @@ resource "kubernetes_service_account" "{{ cookiecutter.resource_name }}" {
       "eks.amazonaws.com/role-arn" : aws_iam_role.{{ cookiecutter.resource_name }}.arn
     }
   }
-  automount_service_account_token = true
 }
 
 resource "aws_iam_role" "{{ cookiecutter.resource_name }}" {

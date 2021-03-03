@@ -1,6 +1,10 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### features:
+
+- remove automount_service_account_token which is default true in kubernetes terraform provider version 2 (@stijndehaes)
+
 ## [0.6.0 - 2020-03-01]
 
 ### features:

@@ -10,7 +10,6 @@ resource "kubernetes_service_account" "default" {
       "eks.amazonaws.com/role-arn" : {{ '"{}"'.format(cookiecutter.role_arn) if cookiecutter.role_creation == 'external' else 'aws_iam_role.default.arn' }}
     }
   }
-  automount_service_account_token = true
 }
 
 {%- if cookiecutter.role_creation == "project" %}
