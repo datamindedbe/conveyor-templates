@@ -1,6 +1,8 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+## [0.7.0 - 2020-03-12]
+
 ### features:
 
 - Remove automount_service_account_token which is default true in kubernetes terraform provider version 2 (@stijndehaes)
@@ -81,7 +83,8 @@
 
 First release of the templates
 
-[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.6.0...HEAD
+[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.7.0...HEAD
+[0.7.0 - 2020-03-12]: https://github.com/datamindedbe/datafy-templates/compare/0.6.0...0.7.0
 [0.6.0 - 2020-03-01]: https://github.com/datamindedbe/datafy-templates/compare/0.5.0...0.6.0
 [0.5.0 - 2020-02-15]: https://github.com/datamindedbe/datafy-templates/compare/0.4.0...0.5.0
 [0.4.0 - 2020-01-15]: https://github.com/datamindedbe/datafy-templates/compare/0.3.3...0.4.0
