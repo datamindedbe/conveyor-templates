@@ -3,7 +3,8 @@
 
 ### features:
 
-- remove automount_service_account_token which is default true in kubernetes terraform provider version 2 (@stijndehaes)
+- Remove automount_service_account_token which is default true in kubernetes terraform provider version 2 (@stijndehaes)
+- Upgrade templates to spark 3.1.1 (@stijndehaes)
 
 ## [0.6.0 - 2020-03-01]
 

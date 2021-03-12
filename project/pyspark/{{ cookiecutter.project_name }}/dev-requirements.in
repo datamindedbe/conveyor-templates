@@ -2,7 +2,7 @@
 {% if cookiecutter.spark_version == "2.4" -%}
 pyspark==2.4.3
 {%- elif cookiecutter.spark_version == "3.0" -%}
-pyspark==3.0.2
+pyspark==3.1.1
 {%- endif %}
 pandas==0.25
 pytest
