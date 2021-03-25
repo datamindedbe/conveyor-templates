@@ -1,7 +1,5 @@
 {
-    "project_name": "New Kedro Project",
-    "repo_name": "{{ cookiecutter.project_name.replace(' ', '-').lower().strip('-') }}",
-    "python_package": "{{ cookiecutter.project_name.replace(' ', '_').lower().strip('-') }}",
+    "project_name": "pyspark",
     "kedro_version": "0.17.2",
     "spark_version": [ "2.4", "3.0" ],
     "workflow_start_date": "2020-01-01",

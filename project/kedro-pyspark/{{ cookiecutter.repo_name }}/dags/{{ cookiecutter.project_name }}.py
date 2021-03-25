@@ -39,9 +39,9 @@ sample_task = DatafySparkSubmitOperator(
     spark_main_version=3,
     {%- endif %}
     {% if cookiecutter.spark_version == "2.4" -%}
-    application="/opt/spark/work-dir/src/{{ cookiecutter.python_package }}/run.py",
+    application="/opt/spark/work-dir/src/{{ cookiecutter.project_name }}/run.py",
     {%- elif cookiecutter.spark_version == "3.0" -%}
-    application="local:///opt/spark/work-dir/src/{{ cookiecutter.python_package}}/run.py",
+    application="local:///opt/spark/work-dir/src/{{ cookiecutter.project_name}}/run.py",
     {%- endif %}
     application_args=["{% raw %}--date", "{{ ds }}", "--jobs", "sample", "--env", "{{ macros.env() }}{% endraw %}"],
 )

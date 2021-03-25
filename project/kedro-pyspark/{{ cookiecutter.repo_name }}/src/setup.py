@@ -29,7 +29,7 @@
 from setuptools import find_packages, setup
 
 entry_point = (
-    "{{ cookiecutter.repo_name }} = {{ cookiecutter.python_package }}.__main__:main"
+    "{{ cookiecutter.project_name }} = {{ cookiecutter.project_name }}.__main__:main"
 )
 
 
@@ -45,7 +45,7 @@ with open("requirements.txt", "r", encoding="utf-8") as f:
             requires.append(req)
 
 setup(
-    name="{{ cookiecutter.python_package }}",
+    name="{{ cookiecutter.project_name }}",
     version="0.1",
     packages=find_packages(exclude=["tests"]),
     entry_points={"console_scripts": [entry_point]},

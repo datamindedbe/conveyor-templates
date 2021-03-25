@@ -31,8 +31,8 @@ from typing import Dict
 
 from kedro.pipeline import Pipeline
 
-from {{cookiecutter.python_package}}.pipelines import data_engineering as de
-from {{cookiecutter.python_package}}.pipelines import data_science as ds
+from {{cookiecutter.project_name}}.pipelines import data_engineering as de
+from {{cookiecutter.project_name}}.pipelines import data_science as ds
 
 #-----------------------------------------------------------------------#
 # Here you can find an example pipeline, made of two modular pipelines. #

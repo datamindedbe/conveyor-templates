@@ -1,8 +1,8 @@
-.. {{ cookiecutter.python_package }} documentation master file, created by sphinx-quickstart.
+.. {{ cookiecutter.project_name }} documentation master file, created by sphinx-quickstart.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to project {{ cookiecutter.python_package }}'s API docs!
+Welcome to project {{ cookiecutter.project_name }}'s API docs!
 =============================================
 
 .. toctree::
