@@ -1,8 +1,8 @@
 {
-    "project_name": "pyspark",
+    "project_name": "pyspark_iris",
     "kedro_version": "0.17.2",
-    "spark_version": [ "2.4", "3.0" ],
-    "pyspark_version": [ "2.4.7", "3.0.2" ],
+    "spark_version": [ "3.0", "2.4" ],
+    "pyspark_version": [ "3.0.2", "2.4.7" ],
     "workflow_start_date": "2020-01-01",
     "workflow_schedule": "@daily"
 }
