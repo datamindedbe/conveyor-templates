@@ -26,7 +26,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 """{{ cookiecutter.project_name }} file for ensuring the package is executable
-as `{{ cookiecutter.repo_name }}` and `python -m {{ cookiecutter.project_name }}`
+as `{{ cookiecutter.project_name }}` and `python -m {{ cookiecutter.project_name }}`
 """
 from pathlib import Path
 
