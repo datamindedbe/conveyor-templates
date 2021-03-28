@@ -29,7 +29,7 @@ DatafyContainerOperator(
     arguments=["run", "--env", "{% raw %}{{ macros.env() }}{% endraw %}"],
     instance_type="mx_medium",
     #service_account_name="{{ cookiecutter.project_name }}-service-account"
-    service_account_name="{{ cookiecutter.project_name }}"
+    service_account_name="{{ cookiecutter.project_name }}",
     env_vars = [
         
     ]
