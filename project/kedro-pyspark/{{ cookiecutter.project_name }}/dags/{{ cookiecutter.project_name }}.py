@@ -16,32 +16,17 @@ default_args = {
 }
 
 
-role = "{% raw %}eks-job-role-samples-{{ macros.env() }}{% endraw %}"
+role = "{{ cookiecutter.project_name }}-{% raw %}{{ macros.env() }}{% endraw %}"
 
 dag = DAG(
     "{{ cookiecutter.project_name }}", default_args=default_args, schedule_interval="{{ cookiecutter.workflow_schedule }}", max_active_runs=1
 )
 
-sample_task = DatafySparkSubmitOperator(
+DatafyContainerOperator(
     dag=dag,
     task_id="sample",
-    num_executors="1",
-    driver_instance_type="mx_small",
-    executor_instance_type="mx_small",
-    env_vars={"AWS_REGION": "eu-west-1"},
-    conf={
-        "spark.kubernetes.driver.annotation.iam.amazonaws.com/role": role,
-        "spark.kubernetes.executor.annotation.iam.amazonaws.com/role": role,
-    },
-    {% if cookiecutter.spark_version == "2.4" -%}
-    spark_main_version=2,
-    {%- elif cookiecutter.spark_version == "3.0" -%}
-    spark_main_version=3,
-    {%- endif %}
-    {% if cookiecutter.spark_version == "2.4" -%}
-    application="/opt/spark/work-dir/src/{{ cookiecutter.project_name }}/run.py",
-    {%- elif cookiecutter.spark_version == "3.0" -%}
-    application="local:///opt/spark/work-dir/src/{{ cookiecutter.project_name}}/run.py",
-    {%- endif %}
-    application_args=["{% raw %}--date", "{{ ds }}", "--jobs", "sample", "--env", "{{ macros.env() }}{% endraw %}"],
+    name="sample",
+    arguments=["run", "--env", "{% raw %}{{ macros.env() }}{% endraw %}"],
+    instance_type="mx_medium",
+    service_account_name="{{ cookiecutter.project_name }}-service-account"
 )
