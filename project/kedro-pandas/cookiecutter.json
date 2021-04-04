@@ -1,0 +1,6 @@
+{
+    "project_name": "kedro_pandas",
+    "kedro_version": "0.17.2",
+    "workflow_start_date": "2021-04-01",
+    "workflow_schedule": "@daily"
+}
