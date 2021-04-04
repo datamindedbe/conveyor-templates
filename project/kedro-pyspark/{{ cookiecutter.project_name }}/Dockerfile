@@ -12,6 +12,7 @@ WORKDIR /opt/spark/work-dir
 USER 0
 {%- endif %}
 
+RUN apt update && apt install -y git && rm -rf /var/lib/apt/lists/*
 COPY src/requirements.txt src/requirements.txt
 RUN pip3 install -r src/requirements.txt
 RUN rm -rf /usr/bin/python && ln -s python3 /usr/bin/python && pip3 install --upgrade pip

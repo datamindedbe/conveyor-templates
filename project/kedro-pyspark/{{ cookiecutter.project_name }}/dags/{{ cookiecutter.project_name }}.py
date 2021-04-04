@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 
 
 {% set start_date = cookiecutter.workflow_start_date.split('-') -%}
+{% set project_name = cookiecutter.project_name -%}
 default_args = {
     "owner": "Datafy",
     "depends_on_past": False,
@@ -24,13 +25,41 @@ dag = DAG(
 
 DatafyContainerOperator(
     dag=dag,
-    task_id="sample",
-    name="sample",
+    task_id="kedro_run",
+    name="kedro_run",
+    cmds=["kedro"],
     arguments=["run", "--env", "{% raw %}{{ macros.env() }}{% endraw %}"],
     instance_type="mx_medium",
-    #service_account_name="{{ cookiecutter.project_name }}-service-account"
-    service_account_name="{{ cookiecutter.project_name }}",
-    env_vars = [
-        
-    ]
+    service_account_name="spark",
+    env_vars = {
+        "spark.master": "k8s://https://kubernetes.default:443",
+        "spark.driver.cores":  "200m",
+        "spark.eventLog.enabled":  "false",
+        "spark.executor.cores":  "4",
+        "spark.executor.instances":  "3",
+        "spark.executor.pyspark.memory": "1G",
+        "spark.executorEnv.SPARK_EXECUTOR_MEMORY": "1G",
+
+        "spark.hadoop.hive.imetastoreclient.factory.class":  "com.amazonaws.glue.catalog.metastore.AWSGlueDataCatalogHiveClientFactory",
+        "spark.hadoop.mapreduce.fileoutputcommitter.algorithm.version": "2",
+
+        "spark.kubernetes.authenticate.driver.serviceAccountName":  "spark",
+        "spark.kubernetes.container.image.pullPolicy":  "Always",
+        "spark.kubernetes.driver.limit.cores":  "1",
+        "spark.kubernetes.executor.limit.cores":  "1",
+        "spark.kubernetes.executor.request.cores":  "1",
+        "spark.kubernetes.memoryOverheadFactor":  "0.1",
+        "spark.kubernetes.pyspark.pythonVersion":  "3",
+
+
+        "spark.kubernetes.namespace":"{% raw %}{{ macros.env() }}{% endraw %}", 
+        "spark.kubernetes.container.image": "{% raw %}{{ {% endraw %} macros.image('{{ cookiecutter.project_name }}'){% raw %} }}{% endraw %}",
+        "spark.kubernetes.authenticate.caCertFile": "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt",
+        "spark.kubernetes.authenticate.oauthTokenFile": "/var/run/secrets/kubernetes.io/serviceaccount/token",
+        "spark.kubernetes.authenticate.driver.serviceAccountName": "spark",
+        #TODO figure out this
+        #"spark.driver.host","", # DRIVER_POD_HOSTNAME)
+        #"spark.driver.port","", # int(DRIVER_POD_PORT))
+
+    }
 )
