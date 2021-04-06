@@ -3,6 +3,7 @@
 
 ### features:
 - Change the operator import paths, from datafy 0.42.0 they are exported under `datafy.operator.*` (@stijndehaes)
+- For airflow 2.0 the plugin path has to be added to the macro, so added this path to macros to be Airflow 2.0 compliant, only works from datafy 0.42.0 (@stijndehaes)
 
 ## [0.7.0 - 2020-03-12]
 
