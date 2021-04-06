@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### features:
+- Change the operator import paths, from datafy 0.42.0 they are exported under `datafy.operator.*` (@stijndehaes)
+
 ## [0.7.0 - 2020-03-12]
 
 ### features:
