@@ -1,5 +1,5 @@
 from airflow import DAG
-from airflow.operators.datafy_container_plugin import DatafyContainerOperator
+from datafy.operators import DatafyContainerOperator
 from datetime import datetime, timedelta
 
 

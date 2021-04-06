@@ -1,5 +1,5 @@
 from airflow import DAG
-from datafy_airflow_plugins.datafy_spark_plugin.datafy_spark_submit_operator import DatafySparkSubmitOperator
+from datafy.operators import DatafySparkSubmitOperator
 from datetime import datetime, timedelta
 
 
