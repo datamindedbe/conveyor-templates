@@ -16,7 +16,7 @@ default_args = {
 }
 
 
-role = "{% raw %}eks-job-role-samples-{{ macros.env() }}{% endraw %}"
+role = "{% raw %}eks-job-role-samples-{{ macros.datafy.env() }}{% endraw %}"
 
 dag = DAG(
     "{{ cookiecutter.project_name }}", default_args=default_args, schedule_interval="{{ cookiecutter.workflow_schedule }}", max_active_runs=1
@@ -44,5 +44,5 @@ sample_task = DatafySparkSubmitOperator(
     application="local:///opt/spark/work-dir/app.jar",
     {%- endif %}
     java_class="{{ cookiecutter.group_id }}.{{ cookiecutter.module_name }}.RouterApp",
-    application_args=[{% raw %}"--date", "{{ ds }}", "--jobs", "sample", "--environment", "{{ macros.env() }}"{% endraw %}],
+    application_args=[{% raw %}"--date", "{{ ds }}", "--jobs", "sample", "--environment", "{{ macros.datafy.env() }}"{% endraw %}],
 )

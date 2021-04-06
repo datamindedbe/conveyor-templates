@@ -29,7 +29,7 @@ DatafyContainerOperator(
         "--no-use-colors",
         "run",
         "--target",
-        "{% raw %}{{ macros.env() }}{% endraw %}",
+        "{% raw %}{{ macros.datafy.env() }}{% endraw %}",
         "--profiles-dir",
         "./.."
     ],
