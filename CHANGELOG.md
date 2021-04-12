@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### features:
+- Remove the name parameter from the DatafyContainerOperator, from 0.44.0 this will not be required anymore. (@stijndehaes)
+
 ## [0.8.0 - 2020-04-12]
 
 ### features:
