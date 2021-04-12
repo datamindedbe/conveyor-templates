@@ -1,6 +1,8 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+## [0.8.0 - 2020-04-12]
+
 ### features:
 - Change the operator import paths, from datafy 0.42.0 they are exported under `datafy.operator.*` (@stijndehaes)
 - For airflow 2.0 the plugin path has to be added to the macro, so added this path to macros to be Airflow 2.0 compliant, only works from datafy 0.42.0 (@stijndehaes)
@@ -87,7 +89,8 @@
 
 First release of the templates
 
-[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.7.0...HEAD
+[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.8.0...HEAD
+[0.8.0 - 2020-04-12]: https://github.com/datamindedbe/datafy-templates/compare/0.7.0...0..80
 [0.7.0 - 2020-03-12]: https://github.com/datamindedbe/datafy-templates/compare/0.6.0...0.7.0
 [0.6.0 - 2020-03-01]: https://github.com/datamindedbe/datafy-templates/compare/0.5.0...0.6.0
 [0.5.0 - 2020-02-15]: https://github.com/datamindedbe/datafy-templates/compare/0.4.0...0.5.0
