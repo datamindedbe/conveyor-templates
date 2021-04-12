@@ -23,7 +23,6 @@ dag = DAG(
 DatafyContainerOperator(
     dag=dag,
     task_id="sample",
-    name="sample",
     cmds=["dbt"],
     arguments=[
         "--no-use-colors",

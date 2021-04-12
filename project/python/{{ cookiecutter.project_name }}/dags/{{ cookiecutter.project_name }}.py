@@ -22,7 +22,6 @@ dag = DAG(
 DatafyContainerOperator(
     dag=dag,
     task_id="sample",
-    name="sample",
     arguments=["{% raw %}--date", "{{ ds }}", "--jobs", "sample", "--env", "{{ macros.datafy.env() }}{% endraw %}"],
     instance_type="mx_micro",
 {%- if cookiecutter.role_creation != "none" %}
