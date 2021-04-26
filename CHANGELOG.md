@@ -1,6 +1,8 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+## [0.8.1 - 2020-04-26]
+
 ### features:
 - Remove the name parameter from the DatafyContainerOperator, from 0.44.0 this will not be required anymore. (@stijndehaes)
 
@@ -92,8 +94,9 @@
 
 First release of the templates
 
-[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.8.0...HEAD
-[0.8.0 - 2020-04-12]: https://github.com/datamindedbe/datafy-templates/compare/0.7.0...0..80
+[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.8.1...HEAD
+[0.8.1 - 2020-04-26]: https://github.com/datamindedbe/datafy-templates/compare/0.8.0...0.8.1
+[0.8.0 - 2020-04-12]: https://github.com/datamindedbe/datafy-templates/compare/0.7.0...0.8.0
 [0.7.0 - 2020-03-12]: https://github.com/datamindedbe/datafy-templates/compare/0.6.0...0.7.0
 [0.6.0 - 2020-03-01]: https://github.com/datamindedbe/datafy-templates/compare/0.5.0...0.6.0
 [0.5.0 - 2020-02-15]: https://github.com/datamindedbe/datafy-templates/compare/0.4.0...0.5.0
