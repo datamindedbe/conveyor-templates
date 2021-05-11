@@ -1,4 +1,5 @@
 {
+    "project_name": "project_name",
     "resource_path": "resources",
     "resource_name": "container_iam_role_s3",
     "bucket_name": "default"

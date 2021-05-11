@@ -1,5 +1,5 @@
 from airflow import DAG
-from datafy.operators import DatafySparkSubmitOperator
+from datafy.operators import DatafySparkSubmitOperatorV2
 from datetime import datetime, timedelta
 
 
@@ -16,23 +16,17 @@ default_args = {
 }
 
 
-role = "{% raw %}eks-job-role-samples-{{ macros.datafy.env() }}{% endraw %}"
-
 dag = DAG(
     "{{ cookiecutter.project_name }}", default_args=default_args, schedule_interval="{{ cookiecutter.workflow_schedule }}", max_active_runs=1
 )
 
-sample_task = DatafySparkSubmitOperator(
+sample_task = DatafySparkSubmitOperatorV2(
     dag=dag,
     task_id="sample",
     num_executors="1",
     driver_instance_type="mx_small",
     executor_instance_type="mx_small",
-    env_vars={"AWS_REGION": "eu-west-1"},
-    conf={
-        "spark.kubernetes.driver.annotation.iam.amazonaws.com/role": role,
-        "spark.kubernetes.executor.annotation.iam.amazonaws.com/role": role,
-    },
+    aws_role="{{ cookiecutter.project_name }}-{% raw %}{{ macros.datafy.env() }}{% endraw %}",
     {% if cookiecutter.spark_version == "2.4" -%}
     spark_main_version=2,
     {%- elif cookiecutter.spark_version == "3.0" -%}

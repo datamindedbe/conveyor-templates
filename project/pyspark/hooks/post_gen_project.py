@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 import os
 import shutil
-
+from distutils.util import strtobool
 
 python_mgt = "{{ cookiecutter.python_package_management }}"
 spark_version = "{{ cookiecutter.spark_version }}"
+datafy_managed_role = "{{ cookiecutter.datafy_managed_role }}"
 
 
 def delete_resources_for_disabled_features():
@@ -43,5 +44,12 @@ def delete_resource(resource):
         shutil.rmtree(resource)
 
 
+def cleanup_resources():
+    if not bool(strtobool(datafy_managed_role)):
+        shutil.rmtree("resources")
+
+
 if __name__ == "__main__":
     delete_resources_for_disabled_features()
+    cleanup_resources()
+

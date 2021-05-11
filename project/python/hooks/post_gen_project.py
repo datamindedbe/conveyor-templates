@@ -1,7 +1,7 @@
 #!/usr/bin/env python
+from distutils.util import strtobool
 import os
 import shutil
-import yaml
 
 MANIFEST = "manifest.yml"
 
@@ -18,7 +18,7 @@ pip_tools_files = [
 ]
 
 python_mgt = "{{ cookiecutter.python_package_management }}"
-role_creation = "{{ cookiecutter.role_creation }}"
+datafy_managed_role = "{{ cookiecutter.datafy_managed_role }}"
 
 
 def delete_files(files):
@@ -35,5 +35,5 @@ if __name__ == "__main__":
         delete_files(pip_tools_files)
     elif python_mgt == "pip-tools":
         delete_files(pip_env_files)
-    if role_creation == "none":
+    if not bool(strtobool(datafy_managed_role)):
         delete_folder("resources")

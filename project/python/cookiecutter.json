@@ -7,10 +7,5 @@
     "pip-tools",
     "pipenv"
   ],
-  "role_creation": [
-    "project",
-    "external",
-    "none"
-  ],
-  "role_arn": ""
+  "datafy_managed_role": true
 }
