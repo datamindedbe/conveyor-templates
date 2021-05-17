@@ -4,6 +4,10 @@
 ### features:
 - Upgrade to Datafy Operators V2 (@stijndehaes)
 
+### bugfixes:
+- Removing absolute `__init__.py` files
+- Adding `.python-version` files to match the requirement files
+
 ## [0.8.1 - 2020-04-26]
 
 ### features:
