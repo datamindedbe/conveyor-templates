@@ -28,7 +28,7 @@ Consult the following documentation regarding [best practices for project struct
 
 ## Commands
 Setup virtual environment:
-- `pyenv local 3.6.x` to use a correct python version
+- `pyenv local` to use a correct python version
 - `python -m venv venv` to create a virtual environment
 - `source ./venv/bin/activate` to activate the virtual environment
 - `pip install pip-tools` to install pip tools
