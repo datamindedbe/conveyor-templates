@@ -1,5 +1,5 @@
 from airflow import DAG
-from datafy.operators import DatafyContainerOperator
+from datafy.operators import DatafyContainerOperatorV2
 from datetime import datetime, timedelta
 
 
@@ -20,7 +20,7 @@ dag = DAG(
     "{{ cookiecutter.project_name }}", default_args=default_args, schedule_interval="{{ cookiecutter.workflow_schedule }}", max_active_runs=1
 )
 
-DatafyContainerOperator(
+DatafyContainerOperatorV2(
     dag=dag,
     task_id="sample",
     cmds=["dbt"],
@@ -33,7 +33,7 @@ DatafyContainerOperator(
         "./.."
     ],
     instance_type="mx_micro",
-{%- if cookiecutter.role_creation != "none" %}
-    service_account_name="{{ cookiecutter.project_name }}"
+{%- if cookiecutter.datafy_managed_role %}
+    aws_role="{{ cookiecutter.project_name }}-{% raw %}{{ macros.datafy.env() }}{% endraw %}",
 {%- endif %}
 )

@@ -1,17 +1,3 @@
-locals {
-  {{ cookiecutter.resource_name }}_service_account_name = "{{ cookiecutter.resource_name|replace('_', '-') }}"
-}
-
-resource "kubernetes_service_account" "{{ cookiecutter.resource_name }}" {
-  metadata {
-    name = local.{{ cookiecutter.resource_name }}_service_account_name
-    namespace = var.env_name
-    annotations = {
-      "eks.amazonaws.com/role-arn" : aws_iam_role.{{ cookiecutter.resource_name }}.arn
-    }
-  }
-}
-
 resource "aws_iam_role" "{{ cookiecutter.resource_name }}" {
   name               = "{{ cookiecutter.resource_name|replace('_', '-') }}-${var.env_name}"
   assume_role_policy = data.aws_iam_policy_document.{{ cookiecutter.resource_name }}_assume_role.json
@@ -25,7 +11,7 @@ data "aws_iam_policy_document" "{{ cookiecutter.resource_name }}_assume_role" {
     condition {
       test     = "StringEquals"
       variable = "${replace(var.aws_iam_openid_connect_provider_url, "https://", "")}:sub"
-      values   = ["system:serviceaccount:${var.env_name}:${local.{{ cookiecutter.resource_name }}_service_account_name}"]
+      values   = ["system:serviceaccount:${var.env_name}:{{ cookiecutter.project_name }}-*"]
     }
 
     principals {

@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### features:
+- Upgrade to Datafy Operators V2 (@stijndehaes)
+
 ## [0.8.1 - 2020-04-26]
 
 ### features:

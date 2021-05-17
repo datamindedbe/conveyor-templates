@@ -3,9 +3,10 @@ import os
 import shutil
 
 from dataclasses import dataclass
+from distutils.util import strtobool
 
 project_name = "{{ cookiecutter.project_name }}"
-role_creation = "{{ cookiecutter.role_creation }}"
+datafy_managed_role = "{{ cookiecutter.datafy_managed_role }}"
 database_type = "{{ cookiecutter.database_type }}"
 
 
@@ -42,7 +43,7 @@ def initialize_dbt_in_dir(dir: str, db_type: str):
 
 
 def cleanup_resources():
-    if role_creation == "none":
+    if not bool(strtobool(datafy_managed_role)):
         shutil.rmtree("resources")
 
 

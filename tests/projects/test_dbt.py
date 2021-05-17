@@ -17,7 +17,7 @@ def test_dbt_template(cookies):
 def test_dbt_template_no_role(cookies):
     result = cookies.bake(
         template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/dbt",
-        extra_context={"role_creation": "none"},
+        extra_context={"datafy_managed_role": False},
     )
     assert 0 == result.exit_code
     assert result.exception is None

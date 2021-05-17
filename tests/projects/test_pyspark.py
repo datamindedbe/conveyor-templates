@@ -7,9 +7,20 @@ def test_pyspark_template(cookies):
         template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",
         extra_context={},
     )
-    assert 0 == result.exit_code
+    assert 0 == result.exit_code, result.exception
     assert result.exception is None
     assert result.project.isdir()
+
+
+def test_pyspark_template_no_role(cookies):
+    result = cookies.bake(
+        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",
+        extra_context={"datafy_managed_role": False},
+    )
+    assert 0 == result.exit_code, result.exception
+    assert result.exception is None
+    assert result.project.isdir()
+    assert not (result.project + "/resources").isdir()
 
 
 def assert_project_can_be_build(result):

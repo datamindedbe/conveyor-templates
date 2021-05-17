@@ -7,5 +7,6 @@
   "python_package_management": [
     "pip-tools",
     "pipenv"
-  ]
+  ],
+  "datafy_managed_role": true
 }
