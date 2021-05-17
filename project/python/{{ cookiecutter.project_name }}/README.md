@@ -69,7 +69,7 @@ also prefix every pipenv command e.g. `PIPENV_IGNORE_VIRTUALENVS=1 pipenv instal
 {%- endif %}
 {%- if cookiecutter.python_package_management == "pip-tools" %}
 Setup virtual environment:
-- `pyenv local 3.6.x` to use a correct python version
+- `pyenv local` to use a correct python version
 - `python -m venv venv` to create a virtual environment
 - `source ./venv/bin/activate` to activate the virtual environment
 - `pip install pip-tools` to install pip tools
