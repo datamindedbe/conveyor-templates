@@ -3,7 +3,6 @@ __pycache__
 *.pyo
 *.pyd
 .Python
-env
 pip-log.txt
 pip-delete-this-directory.txt
 .tox
@@ -12,11 +11,16 @@ pip-delete-this-directory.txt
 .cache
 nosetests.xml
 coverage.xml
-*,cover
+*.cover
+*.py,cover
 *.log
 .git
 .datafy
+.env
+.venv
+env
 venv
 dags
 Dockerfile
 tests
+pytest.ini
