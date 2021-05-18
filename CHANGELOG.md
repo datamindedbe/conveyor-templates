@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### features:
+- Add a default `pytest.ini` file for python and pyspark projects
+
 ## [0.9.0 - 2020-05-18]
 
 ### features:
