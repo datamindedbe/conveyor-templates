@@ -1,6 +1,8 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+## [0.9.0 - 2020-05-18]
+
 ### features:
 - Upgrade to Datafy Operators V2 (@stijndehaes)
 
@@ -102,7 +104,8 @@
 
 First release of the templates
 
-[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.8.1...HEAD
+[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.9.0...HEAD
+[0.9.0 - 2020-05-18]: https://github.com/datamindedbe/datafy-templates/compare/0.8.1...0.9.0
 [0.8.1 - 2020-04-26]: https://github.com/datamindedbe/datafy-templates/compare/0.8.0...0.8.1
 [0.8.0 - 2020-04-12]: https://github.com/datamindedbe/datafy-templates/compare/0.7.0...0.8.0
 [0.7.0 - 2020-03-12]: https://github.com/datamindedbe/datafy-templates/compare/0.6.0...0.7.0
