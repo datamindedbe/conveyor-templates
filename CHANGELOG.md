@@ -2,6 +2,7 @@
 ## [Unreleased]
 
 ### features:
+- Project names with underscores will see their underscores replace with dots in Datafy 0.45.2 for the DatafyContainerOperatorV2 (@stijndehaes)
 - Add a default `pytest.ini` file for python and pyspark projects
 
 ## [0.9.0 - 2020-05-18]
