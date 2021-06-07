@@ -4,10 +4,14 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-bla = {editable = true,path = "."}
+{{ cookiecutter.module_name }} = {editable = true,path = "."}
 
 [dev-packages]
-pyspark = "==3.1.1"
+{% if cookiecutter.spark_version == "2.4" -%}
+pyspark = "==2.4.3"
+{%- elif cookiecutter.spark_version == "3.0" -%}
+pyspark = "==3.0.2"
+{%- endif %}
 flake8 = "~=3.7"
 pandas = "~=0.25"
 pytest = "~=5.2"
