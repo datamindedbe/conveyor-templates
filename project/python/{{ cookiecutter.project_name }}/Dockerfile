@@ -1,4 +1,4 @@
-FROM python:3.7-slim
+FROM python:3.8-slim
 
 WORKDIR /app
 
@@ -14,4 +14,3 @@ COPY . .
 RUN pip install -e .
 {%- endif %}
 
-ENTRYPOINT ["app"]
