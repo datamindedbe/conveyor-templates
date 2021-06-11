@@ -27,10 +27,9 @@ root/
  |   setup.py
 ```
 
-The main Python module contains the ETL job `app.py`. By default `app.py` accepts a number of arguments:
+The main Python module contains the ETL job `sample.py`. By default `sample.py` accepts a number of arguments:
 - `--date` the execution date
 - `--env` the environment we are executing in
-- `--jobs` one or more jobs that needs to be executed
 
 ## Concepts
 
@@ -51,10 +50,22 @@ The `pip-compile` command should be run from the same virtual environment as you
 or other environment markers, resolve relative to your project's environment.
 {%- endif %}
 
-### Separate job breakdown from scheduling
-Jobs can be found in the `jobs/` directory. A job function needs to be annotated with `@entrypoint("name")` and
-the module needs to be imported in `app.py`. This approach is based on the article [Scaling a Mature Data Pipeline](https://medium.com/airbnb-engineering/scaling-a-mature-data-pipeline-managing-overhead-f34835cbc866)
- and can be used to manage scheduling overhead.
+### Adding another job to the container
+
+If you want to run another job in your container create a file like sample. You should:
+
+- Use argparse (or something similar) to parse argument to pass to your job
+- Have a main function that can be called
+- Make sure you have `if __name__ == "__main__"` construct in your file like below
+- Use your job file in a dag
+
+The following python snippet makes sure that if you call this module from the command lind that the main() function will be
+executed:
+
+```python
+if __name__ == "__main__":
+    main()
+```
 
 ## Commands
 {%- if cookiecutter.python_package_management == "pipenv" %}

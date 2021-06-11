@@ -6,6 +6,7 @@
 ### features:
 - Project names with underscores will see their underscores replace with dots in Datafy 0.45.2 for the DatafyContainerOperatorV2 (@stijndehaes)
 - Upgrade spark version to 3.1.2 (@stijndehaes)
+- Simplify the python example (@stijndehaes)
 
 ## [0.9.0 - 2021-05-18]
 

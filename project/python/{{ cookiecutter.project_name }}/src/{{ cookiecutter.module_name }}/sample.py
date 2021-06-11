@@ -1,11 +1,26 @@
+import argparse
 import logging
+import sys
+
 import requests
 from typing import Optional
 
-from {{ cookiecutter.module_name }}.jobs import entrypoint
+
+def main():
+    logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+    parser = argparse.ArgumentParser(description="{{ cookiecutter.project_name }}")
+    parser.add_argument(
+        "-d", "--date", dest="date", help="date in format YYYY-mm-dd", required=True
+    )
+    parser.add_argument(
+        "-e", "--env", dest="env", help="environment we are executing in", required=True
+    )
+    args = parser.parse_args()
+    logging.info(f"Using args: {args}")
+
+    run(args.env, args.date)
 
 
-@entrypoint("sample")
 def run(env: str, date: str):
     """Main ETL script definition.
 
@@ -41,3 +56,7 @@ def load_data(data: str, env: str):
     # s3 = boto3.resource("s3")
     # s3_object = s3.Object("DEFAULT_S3", f"raw/weather/ds={config.date}/weather.json")
     # s3_object.put(Body=r.text)
+
+
+if __name__ == "__main__":
+    main()

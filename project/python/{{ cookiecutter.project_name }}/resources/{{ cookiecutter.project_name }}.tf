@@ -1,5 +1,5 @@
 locals {
-  project_name = {{ cookiecutter.project_name }}
+  project_name = "{{ cookiecutter.project_name }}"
 }
 
 resource "aws_iam_role" "default" {
