@@ -1,13 +1,13 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
-## [0.10.0 - 2020-06-11]
+## [0.10.0 - 2021-06-11]
 
 ### features:
 - Project names with underscores will see their underscores replace with dots in Datafy 0.45.2 for the DatafyContainerOperatorV2 (@stijndehaes)
 - Upgrade spark version to 3.1.2 (@stijndehaes)
 
-## [0.9.0 - 2020-05-18]
+## [0.9.0 - 2021-05-18]
 
 ### features:
 - Upgrade to Datafy Operators V2 (@stijndehaes)
@@ -16,18 +16,18 @@
 - Removing absolute `__init__.py` files
 - Adding `.python-version` files to match the requirement files
 
-## [0.8.1 - 2020-04-26]
+## [0.8.1 - 2021-04-26]
 
 ### features:
 - Remove the name parameter from the DatafyContainerOperator, from 0.44.0 this will not be required anymore. (@stijndehaes)
 
-## [0.8.0 - 2020-04-12]
+## [0.8.0 - 2021-04-12]
 
 ### features:
 - Change the operator import paths, from datafy 0.42.0 they are exported under `datafy.operator.*` (@stijndehaes)
 - For airflow 2.0 the plugin path has to be added to the macro, so added this path to macros to be Airflow 2.0 compliant, only works from datafy 0.42.0 (@stijndehaes)
 
-## [0.7.0 - 2020-03-12]
+## [0.7.0 - 2021-03-12]
 
 ### features:
 
@@ -35,7 +35,7 @@
 - Upgrade templates to spark 3.1.1 (@stijndehaes)
 - Upgrade spark template to gradle 0.7.2 (@stijndehaes)
 
-## [0.6.0 - 2020-03-01]
+## [0.6.0 - 2021-03-01]
 
 ### features:
 - From datafy version 0.39.0 the image field will not be required anymore (@stijndehaes)
@@ -43,14 +43,14 @@
 - Make pip-compile for dev-requirements use the requirements for production as a constraint, this reduces version conflicts (@stijndehaes)
 - Update templates to use spark 3.0.2 (@stijndehaes)
 
-## [0.5.0 - 2020-02-15]
+## [0.5.0 - 2021-02-15]
 
 ### features:
 - Added support for datafy instance types (@stijndehaes)
 - Upgrade dbt to 0.19.0 (@stijndehaes)
 - Dbt template added makefile with useful dbt commands (@stijndehaes)
 
-## [0.4.0 - 2020-01-15]
+## [0.4.0 - 2021-01-15]
 
 ### features:
 - Update python and pyspark readme to include a section explaining the usage of piptools (@vlieven)
@@ -111,14 +111,14 @@
 First release of the templates
 
 [Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.10.0...HEAD
-[0.10.0 - 2020-06-11]: https://github.com/datamindedbe/datafy-templates/compare/0.9.0...0.10.0
-[0.9.0 - 2020-05-18]: https://github.com/datamindedbe/datafy-templates/compare/0.8.1...0.9.0
-[0.8.1 - 2020-04-26]: https://github.com/datamindedbe/datafy-templates/compare/0.8.0...0.8.1
-[0.8.0 - 2020-04-12]: https://github.com/datamindedbe/datafy-templates/compare/0.7.0...0.8.0
-[0.7.0 - 2020-03-12]: https://github.com/datamindedbe/datafy-templates/compare/0.6.0...0.7.0
-[0.6.0 - 2020-03-01]: https://github.com/datamindedbe/datafy-templates/compare/0.5.0...0.6.0
-[0.5.0 - 2020-02-15]: https://github.com/datamindedbe/datafy-templates/compare/0.4.0...0.5.0
-[0.4.0 - 2020-01-15]: https://github.com/datamindedbe/datafy-templates/compare/0.3.3...0.4.0
+[0.10.0 - 2021-06-11]: https://github.com/datamindedbe/datafy-templates/compare/0.9.0...0.10.0
+[0.9.0 - 2021-05-18]: https://github.com/datamindedbe/datafy-templates/compare/0.8.1...0.9.0
+[0.8.1 - 2021-04-26]: https://github.com/datamindedbe/datafy-templates/compare/0.8.0...0.8.1
+[0.8.0 - 2021-04-12]: https://github.com/datamindedbe/datafy-templates/compare/0.7.0...0.8.0
+[0.7.0 - 2021-03-12]: https://github.com/datamindedbe/datafy-templates/compare/0.6.0...0.7.0
+[0.6.0 - 2021-03-01]: https://github.com/datamindedbe/datafy-templates/compare/0.5.0...0.6.0
+[0.5.0 - 2021-02-15]: https://github.com/datamindedbe/datafy-templates/compare/0.4.0...0.5.0
+[0.4.0 - 2021-01-15]: https://github.com/datamindedbe/datafy-templates/compare/0.3.3...0.4.0
 [0.3.3 - 2020-12-30]: https://github.com/datamindedbe/datafy-templates/compare/0.3.2...0.3.3
 [0.3.2 - 2020-12-09]: https://github.com/datamindedbe/datafy-templates/compare/0.3.1...0.3.2
 [0.3.1 - 2020-11-06]: https://github.com/datamindedbe/datafy-templates/compare/0.3.0...0.3.1
