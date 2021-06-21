@@ -10,15 +10,12 @@ setup(
     name="{{ cookiecutter.module_name }}",
     version="0.0.1",
     description="python sample template",
-    python_requires=">=3.7, <3.8",
+    python_requires=">=3.8, <3.9",
     packages=find_packages("src"),
     package_dir={"": "src"},
     py_modules=[splitext(basename(path))[0] for path in glob("src/*.py")],
     include_package_data=True,
     author="datafy",
-    entry_points={
-        "console_scripts": ["app = {{ cookiecutter.module_name }}.app:main",]
-    },
     zip_safe=False,
     keywords="data pipelines, data engineering",
     extras_require={},
