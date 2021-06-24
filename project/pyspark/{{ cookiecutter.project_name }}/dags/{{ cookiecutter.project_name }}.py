@@ -37,5 +37,5 @@ sample_task = DatafySparkSubmitOperatorV2(
     {%- elif cookiecutter.spark_version == "3.0" -%}
     application="local:///opt/spark/work-dir/src/{{ cookiecutter.module_name }}/app.py",
     {%- endif %}
-    application_args=["{% raw %}--date", "{{ ds }}", "--jobs", "sample", "--env", "{{ macros.datafy.env() }}{% endraw %}"],
+    application_args=["{% raw %}--date", "{{ ds }}", "--env", "{{ macros.datafy.env() }}{% endraw %}"],
 )

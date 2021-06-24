@@ -4,7 +4,8 @@
 ### features
 
 - Upgrade spark images to v2 (@stijndehaes)
-- Simplify the python example (@stijndehaes)
+- Simplify the python template (@stijndehaes)
+- Simplify the pyspark template (@stijndehaes)
 
 ## [0.10.0 - 2021-06-11]
 
