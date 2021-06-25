@@ -4,8 +4,12 @@
 ### features
 
 - Upgrade spark images to v2 (@stijndehaes)
+- Upgrade spark images to hadoop 3.3.1 (@stijndehaes)
 - Simplify the python template (@stijndehaes)
 - Simplify the pyspark template (@stijndehaes)
+
+### bugfixes
+- Fix the assume role policies (@stijndehaes)
 
 ## [0.10.0 - 2021-06-11]
 
