@@ -13,7 +13,7 @@ data "aws_iam_policy_document" "default" {
     effect  = "Allow"
 
     condition {
-      test     = "StringEquals"
+      test     = "StringLike"
       variable = "${replace(var.aws_iam_openid_connect_provider_url, "https://", "")}:sub"
       values   = ["system:serviceaccount:${var.env_name}:${replace(local.project_name, "_", ".")}-*"]
     }

@@ -9,14 +9,19 @@ resource "aws_iam_role" "default" {
 
 data "aws_iam_policy_document" "default_assume_role" {
   statement {
-    actions = [
-      "sts:AssumeRole"
-    ]
-    principals {
-      type        = "AWS"
-      identifiers = [var.env_worker_role]
+    actions = ["sts:AssumeRoleWithWebIdentity"]
+    effect  = "Allow"
+
+    condition {
+      test     = "StringLike"
+      variable = "${replace(var.aws_iam_openid_connect_provider_url, "https://", "")}:sub"
+      values   = ["system:serviceaccount:${var.env_name}:${replace(local.project_name, "_", ".")}-*"]
     }
-    effect = "Allow"
+
+    principals {
+      identifiers = [var.aws_iam_openid_connect_provider_arn]
+      type        = "Federated"
+    }
   }
 }
 
