@@ -34,7 +34,7 @@ def initialize_dbt_in_dir(dir: str, db_type: str):
     os.chdir(dbt_dir)
     try:
         os.environ["DBT_PROFILES_DIR"] = os.getcwd()
-        import dbt.task.init as init_task  # late import so the environment variable is take into account
+        import dbt.task.init as init_task  # late import so the environment variable is taken into account
         task = init_task.InitTask(args=InitArguments(project_name, db_type), config=None)
         task.run()
         fix_dbt_project()
