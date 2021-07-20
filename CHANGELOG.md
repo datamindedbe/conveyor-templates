@@ -4,6 +4,7 @@
 ### features
 
 - Add `.gitignore` file to dbt project template (@jvanbuel)
+- Upgrade to public.ecr.aws/dataminded/spark-k8s-glue:v3.1.2-hadoop-3.3.1-v2 image (@stijndehaes)
 
 ## [0.11.0 - 2021-07-07]
 
