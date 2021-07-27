@@ -1,6 +1,8 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+## [0.12.0 - 2021-07-27]
+
 ### features
 
 - Add `.gitignore` file to dbt project template (@jvanbuel)
