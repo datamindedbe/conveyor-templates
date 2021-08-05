@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### bugfixes
+- Fixed import issues in the pyspark template (@nclaeys)
+
 ## [0.12.0 - 2021-07-27]
 
 ### features
