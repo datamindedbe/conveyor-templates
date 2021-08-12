@@ -135,7 +135,7 @@
 First release of the templates
 
 [Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.12.1...HEAD
-[0.12.1 - 2021-07-12]: https://github.com/datamindedbe/datafy-templates/compare/0.12.0...0.12.1
+[0.12.1 - 2021-08-12]: https://github.com/datamindedbe/datafy-templates/compare/0.12.0...0.12.1
 [0.12.0 - 2021-07-27]: https://github.com/datamindedbe/datafy-templates/compare/0.11.0...0.12.0
 [0.11.0 - 2021-07-07]: https://github.com/datamindedbe/datafy-templates/compare/0.10.0...0.11.0
 [0.10.0 - 2021-06-11]: https://github.com/datamindedbe/datafy-templates/compare/0.9.0...0.10.0
