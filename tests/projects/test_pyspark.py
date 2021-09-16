@@ -2,14 +2,18 @@ import os
 import subprocess
 
 
+def assert_template_succeeds(result):
+    assert 0 == result.exit_code, result.exception
+    assert result.exception is None
+    assert result.project.isdir()
+
+
 def test_pyspark_template(cookies):
     result = cookies.bake(
         template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",
         extra_context={},
     )
-    assert 0 == result.exit_code, result.exception
-    assert result.exception is None
-    assert result.project.isdir()
+    assert_template_succeeds(result)
 
 
 def test_pyspark_template_no_role(cookies):
@@ -17,14 +21,12 @@ def test_pyspark_template_no_role(cookies):
         template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",
         extra_context={"datafy_managed_role": False},
     )
-    assert 0 == result.exit_code, result.exception
-    assert result.exception is None
-    assert result.project.isdir()
+    assert_template_succeeds(result)
     assert not (result.project + "/resources").isdir()
 
 
 def assert_project_can_be_build(result):
-    assert 0 == result.exit_code
+    assert_template_succeeds(result)
     process = subprocess.Popen(
         ["docker", "build", "."],
         cwd=result.project,
@@ -56,7 +58,7 @@ def test_pyspark_template_spark_2_4(cookies):
     """
     result = cookies.bake(
         template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",
-        extra_context={},
+        extra_context={"spark_version": "2.4"},
     )
     assert_project_can_be_build(result)
 
@@ -67,7 +69,7 @@ def test_pyspark_template_spark_pipenv_2_4(cookies):
     """
     result = cookies.bake(
         template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",
-        extra_context={"python_package_management": "pipenv"},
+        extra_context={"python_package_management": "pipenv", "spark_version": "2.4"},
     )
     assert_project_can_be_build(result)
 
@@ -81,3 +83,56 @@ def test_pyspark_template_spark_pipenv_3(cookies):
         extra_context={"python_package_management": "pipenv", "spark_version": "3.0"},
     )
     assert_project_can_be_build(result)
+
+
+def test_pyspark_template_streaming_spark_2(cookies):
+    result = cookies.bake(
+        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",
+        extra_context={"project_type": "streaming", "spark_version": "2.4"},
+    )
+    assert -1 == result.exit_code, result.exception
+    assert result.exception is not None
+
+
+def assert_streaming_files(result, exist: bool = True):
+    assert (result.project + "/streaming.yaml").isfile() == exist
+    assert (result.project + "/src/pyspark/streaming_app.py").isfile() == exist
+
+
+def assert_batch_files(result, exist: bool = True):
+    assert (result.project + "/dags").isdir() == exist
+    assert (result.project + "/src/pyspark/transformations").isdir() == exist
+    assert (result.project + "/src/pyspark/app.py").isfile() == exist
+
+
+def test_pyspark_template_only_batch(cookies):
+    """
+    This tests checks that if streaming is disabled the streaming resources are cleaned up
+    """
+    result = cookies.bake(
+        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",
+        extra_context={"project_type": "batch"},
+    )
+    assert_template_succeeds(result)
+    assert_streaming_files(result, exist=False)
+    assert_batch_files(result, exist=True)
+
+
+def test_pyspark_template_only_streaming(cookies):
+    result = cookies.bake(
+        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",
+        extra_context={"project_type": "streaming"},
+    )
+    assert_template_succeeds(result)
+    assert_streaming_files(result, exist=True)
+    assert_batch_files(result, exist=False)
+
+
+def test_pyspark_template_batch_and_streaming(cookies):
+    result = cookies.bake(
+        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",
+        extra_context={"project_type": "batch-and-streaming"},
+    )
+    assert_template_succeeds(result)
+    assert_streaming_files(result, exist=True)
+    assert_batch_files(result, exist=True)

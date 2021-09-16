@@ -1,13 +1,13 @@
 from airflow import DAG
 from datafy.operators import DatafySparkSubmitOperatorV2
-from datetime import datetime, timedelta
+from datetime import timedelta
+from airflow.utils import dates
 
 
-{% set start_date = cookiecutter.workflow_start_date.split('-') -%}
 default_args = {
     "owner": "Datafy",
     "depends_on_past": False,
-    "start_date": datetime(year={{ start_date[0] }}, month={{ start_date[1].lstrip("0") }}, day={{ start_date[2].lstrip("0") }}),
+    "start_date": dates.days_ago(2),
     "email": [],
     "email_on_failure": False,
     "email_on_retry": False,
@@ -17,7 +17,10 @@ default_args = {
 
 
 dag = DAG(
-    "{{ cookiecutter.project_name }}", default_args=default_args, schedule_interval="{{ cookiecutter.workflow_schedule }}", max_active_runs=1
+    "{{ cookiecutter.project_name }}",
+    default_args=default_args,
+    schedule_interval="@daily",
+    max_active_runs=1,
 )
 
 sample_task = DatafySparkSubmitOperatorV2(
