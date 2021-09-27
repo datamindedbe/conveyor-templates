@@ -1,6 +1,8 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+## [0.13.0 - 2021-09-27]
+
 ### features
 - Added streaming support to the pyspark project (@stijndehaes)
 
