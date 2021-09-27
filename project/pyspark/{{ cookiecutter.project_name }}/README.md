@@ -18,8 +18,13 @@ root/
  |   |-- |-- common/
  |   |-- |-- |-- spark.py
  |   |-- |-- jobs/
+ {%- if "batch" in cookiecutter.project_type %}
  |   |-- |-- transformations/
  |   |-- app.py
+{%- endif %}
+{%- if "streaming" in cookiecutter.project_type %}
+ |   |-- streaming_app.py
+{%- endif %}
  |-- tests/
  |   |-- common/
  |   |-- | -- spark.py
@@ -95,4 +100,18 @@ Tasks:
 - `python -m black dags src tests` fixes PEP8 compliance issues
 - `pip-compile requirements.in` if you add new requirements this regenerates a new requirements.txt
 - `pip-compile dev-requirements.in` if you add new requirements this regenerates a new dev-requirements.txt, you should also do this when have updated your requirements.in
+{%- endif %}
+
+{%- if "streaming" in cookiecutter.project_type %}
+
+## Streaming in production
+
+Streaming was enabled when rendering the template. To make your project run reliably in production there is
+one important thing you need to change. You should always enable a checkpoint location for every query
+you are running. The checkpoint location allows your application to recover in the event of a failure or
+intentional shutdown (For example when doing a deploy of a new version). To know more about checkpointing
+and its limitations check the spark document about it:
+[https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#recovering-from-failures-with-checkpointing](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#recovering-from-failures-with-checkpointing)
+
+
 {%- endif %}

@@ -6,6 +6,11 @@ from distutils.util import strtobool
 python_mgt = "{{ cookiecutter.python_package_management }}"
 spark_version = "{{ cookiecutter.spark_version }}"
 datafy_managed_role = "{{ cookiecutter.datafy_managed_role }}"
+project_type = "{{ cookiecutter.project_type }}"
+
+
+def datafy_managed_role_enabled():
+    return bool(strtobool(datafy_managed_role))
 
 
 def delete_resources_for_disabled_features():
@@ -45,11 +50,29 @@ def delete_resource(resource):
 
 
 def cleanup_resources():
-    if not bool(strtobool(datafy_managed_role)):
+    if not datafy_managed_role_enabled():
         shutil.rmtree("resources")
+
+
+def cleanup_streaming_resources():
+    if "streaming" in project_type:
+        return
+    delete_resource("streaming.yaml")
+    delete_resource("src/{{ cookiecutter.project_name }}/streaming_app.py")
+
+
+def cleanup_batch_resources():
+    if "batch" in project_type:
+        return
+    delete_resource("dags")
+    delete_resource("tests")
+    delete_resource("src/{{ cookiecutter.project_name }}/transformations")
+    delete_resource("src/{{ cookiecutter.project_name }}/app.py")
 
 
 if __name__ == "__main__":
     delete_resources_for_disabled_features()
     cleanup_resources()
+    cleanup_streaming_resources()
+    cleanup_batch_resources()
 

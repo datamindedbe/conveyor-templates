@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### features
+- Added streaming support to the pyspark project (@stijndehaes)
+
 ### bugfixes
 - Updating the python version when using pyenv in the python template (@pascal-knapen)
 

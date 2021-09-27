@@ -1,12 +1,15 @@
 {
   "project_name": "pyspark",
   "module_name": "pyspark",
-  "spark_version": [ "2.4", "3.0" ],
-  "workflow_start_date": "2020-01-01",
-  "workflow_schedule": "@daily",
+  "spark_version": [ "3.0", "2.4" ],
   "python_package_management": [
     "pip-tools",
     "pipenv"
   ],
-  "datafy_managed_role": true
+  "datafy_managed_role": true,
+  "project_type": [
+    "batch",
+    "streaming",
+    "batch-and-streaming"
+  ]
 }
