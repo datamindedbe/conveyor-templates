@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### bugfixes
+- Updating the python version when using pyenv in the python template (@pascal-knapen)
+
 ## [0.12.1 - 2021-08-12]
 
 ### bugfixes
