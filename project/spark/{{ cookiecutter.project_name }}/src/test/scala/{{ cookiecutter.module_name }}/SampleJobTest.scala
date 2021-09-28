@@ -1,4 +1,4 @@
-package {{ cookiecutter.group_id }}.{{ cookiecutter.module_name }}.jobs
+package {{ cookiecutter.group_id }}.{{ cookiecutter.module_name }}
 
 import java.sql.Date
 import java.time.LocalDate
