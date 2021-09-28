@@ -10,17 +10,7 @@ MANIFEST = "manifest.yml"
 GROUP_ID = "{{ cookiecutter.group_id }}"
 MODULE_NAME = "{{ cookiecutter.module_name }}"
 datafy_managed_role = "{{ cookiecutter.datafy_managed_role }}"
-
-
-def delete_resources_for_disabled_features():
-    logging.debug("Delete resources from disabled features")
-    with open(MANIFEST) as manifest_file:
-        manifest = yaml.safe_load(manifest_file)
-        for feature in manifest["features"]:
-            if not feature["enabled"]:
-                for resource in feature["resources"]:
-                    delete_resource(resource)
-    delete_resource(MANIFEST)
+project_type = "{{ cookiecutter.project_type }}"
 
 
 def delete_resource(resource):
@@ -28,6 +18,10 @@ def delete_resource(resource):
         os.remove(resource)
     elif os.path.isdir(resource):
         shutil.rmtree(resource)
+
+
+def source_directory():
+    return os.path.join("src", "main", "scala", *GROUP_ID.split("."), MODULE_NAME)
 
 
 def create_group_id_directory(source_path):
@@ -38,9 +32,8 @@ def create_group_id_directory(source_path):
 
 def create_group_id_directories():
     logging.debug("Creating group directories")
-    create_group_id_directory("src/main/scala")
-    create_group_id_directory("src/test/scala")
-
+    create_group_id_directory(os.path.join("src", "main", "scala"))
+    create_group_id_directory(os.path.join("src", "test", "scala"))
 
 
 def cleanup_resources():
@@ -48,7 +41,24 @@ def cleanup_resources():
         shutil.rmtree("resources")
 
 
+def cleanup_streaming_resources():
+    if "streaming" in project_type:
+        return
+    delete_resource("streaming.yaml")
+    delete_resource(os.path.join(source_directory(), "StreamingApp.scala"))
+
+
+def cleanup_batch_resources():
+    if "batch" in project_type:
+        return
+    delete_resource("dags")
+    delete_resource(os.path.join("src", "test"))
+    delete_resource(os.path.join(source_directory(), "transformations"))
+    delete_resource(os.path.join(source_directory(), "SampleJob.scala"))
+
+
 if __name__ == "__main__":
-    delete_resources_for_disabled_features()
     create_group_id_directories()
     cleanup_resources()
+    cleanup_streaming_resources()
+    cleanup_batch_resources()

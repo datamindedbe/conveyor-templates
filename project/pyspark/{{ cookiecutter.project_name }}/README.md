@@ -18,7 +18,7 @@ root/
  |   |-- |-- common/
  |   |-- |-- |-- spark.py
  |   |-- |-- jobs/
- {%- if "batch" in cookiecutter.project_type %}
+{%- if "batch" in cookiecutter.project_type %}
  |   |-- |-- transformations/
  |   |-- app.py
 {%- endif %}

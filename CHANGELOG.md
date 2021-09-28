@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### features
+- Added streaming support to the spark project (@stijndehaes)
+
 ## [0.13.0 - 2021-09-27]
 
 ### features
