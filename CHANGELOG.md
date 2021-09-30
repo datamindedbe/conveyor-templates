@@ -3,6 +3,7 @@
 
 ### features
 - Added streaming support to the spark project (@stijndehaes)
+- Extend docker ignore to ignore more of the common virtual env locations (@stijndehaes)
 
 ## [0.13.0 - 2021-09-27]
 
