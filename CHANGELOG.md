@@ -4,6 +4,9 @@
 ### features
 - Added streaming support to the spark project (@stijndehaes)
 
+### bugfix
+- Fixed an issue in the `streaming.yaml` file of the pyspark template where the project name instead of the module name was used.
+
 ## [0.13.0 - 2021-09-27]
 
 ### features
