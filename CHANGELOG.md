@@ -3,6 +3,7 @@
 
 ### features
 - Added streaming support to the spark project (@stijndehaes)
+- Extend docker ignore to ignore more of the common virtual env locations (@stijndehaes)
 
 ### bugfix
 - Fixed an issue in the `streaming.yaml` file of the pyspark template where the project name instead of the module name was used.
