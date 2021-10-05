@@ -4,6 +4,8 @@ Thanks for sending a pull request!
 Don't forget to add your changes to the changelog.md when starting a PR.
 -->
 
+- [ ] I have updated te CHANGELOG.md
+
 ## What changes were proposed in this pull request?
 <!--
 Please clarify what changes you are proposing. The purpose of this section is to outline the changes and how this PR fixes the issue.

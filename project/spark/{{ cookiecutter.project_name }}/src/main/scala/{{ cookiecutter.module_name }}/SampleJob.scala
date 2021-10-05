@@ -1,18 +1,19 @@
-package {{ cookiecutter.group_id }}.{{ cookiecutter.module_name }}.jobs
+package {{ cookiecutter.group_id }}.{{ cookiecutter.module_name }}
 
 import java.time.LocalDate
 
-import {{ cookiecutter.group_id }}.{{ cookiecutter.module_name }}.common.SparkSessions
+import {{ cookiecutter.group_id }}.{{ cookiecutter.module_name }}.common.SparkApplication
+import {{ cookiecutter.group_id }}.{{ cookiecutter.module_name }}.config.{ApplicationConfig, ConfigurationException}
 import {{ cookiecutter.group_id }}.{{ cookiecutter.module_name }}.transformations.SharedTransformations
-import org.apache.spark.sql.DataFrame
 
+import com.typesafe.scalalogging.LazyLogging
+import org.apache.spark.sql.{DataFrame, SparkSession}
 
-@EntryPoint(runnerType = "sample")
-object SampleJob extends Job with SparkSessions {
+class SampleJob(spark: SparkSession) extends LazyLogging {
 
   import spark.implicits._
 
-  override def run(environment: String, date: LocalDate): Unit = {
+  def run(environment: String, date: LocalDate): Unit = {
     // execute ETL pipeline
     val data = extract(environment)
     val transformed = transform(data, date)
@@ -51,3 +52,19 @@ object SampleJob extends Job with SparkSessions {
   }
 
 }
+
+object SampleJob extends SparkApplication {
+
+  try {
+    // parse command line params
+    val cliParams = ApplicationConfig.parse(args) match {
+      case Some(value) => value
+      case None => throw ConfigurationException("Arguments could not be parsed")
+    }
+    new SampleJob(spark).run(cliParams.environment, cliParams.date)
+  } finally {
+    spark.close()
+  }
+}
+
+

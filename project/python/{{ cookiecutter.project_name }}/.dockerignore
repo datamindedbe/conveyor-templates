@@ -11,16 +11,20 @@ pip-delete-this-directory.txt
 .cache
 nosetests.xml
 coverage.xml
-*.cover
-*.py,cover
+*,cover
 *.log
 .git
 .datafy
-.env
-.venv
-env
-venv
 dags
 Dockerfile
 tests
 pytest.ini
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
