@@ -5,7 +5,7 @@ pyspark==2.4.3
 pyspark==3.1.2
 {%- endif %}
 pandas==0.25
-pytest
+pytest>=6.0
 pytest-cov
 black
 flake8
