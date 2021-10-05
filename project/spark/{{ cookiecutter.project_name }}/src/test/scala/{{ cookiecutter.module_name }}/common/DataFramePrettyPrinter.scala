@@ -6,7 +6,13 @@ import org.apache.commons.lang3.StringUtils
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.catalyst.util.DateTimeUtils
 
+import java.sql.Date
+import java.text.SimpleDateFormat
+import java.util.{Locale, TimeZone}
+
 object DataFramePrettyPrinter {
+  val dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.US)
+  dateFormat.setTimeZone(TimeZone.getDefault)
 
   def prettyPrintDataFrame(df: DataFrame, number: Int, truncate: Int = 20): String = {
     val numRows = number.max(0)
@@ -24,8 +30,7 @@ object DataFramePrettyPrinter {
             case binary: Array[Byte] => binary.map("%02X".format(_)).mkString("[", " ", "]")
             case array: Array[_] => array.mkString("[", ", ", "]")
             case seq: Seq[_] => seq.mkString("[", ", ", "]")
-            case d: Date =>
-              DateTimeUtils.dateToString(DateTimeUtils.fromJavaDate(d))
+            case d: Date => dateFormat.format(d)
             case _ => cell.toString
           }
           if (truncate > 0 && str.length > truncate) {
