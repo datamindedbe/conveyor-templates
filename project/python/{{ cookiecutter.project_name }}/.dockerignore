@@ -13,11 +13,6 @@ nosetests.xml
 coverage.xml
 *,cover
 *.log
-.git
-.datafy
-dags
-Dockerfile
-tests
 
 # Environments
 .env
@@ -27,3 +22,10 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+
+.git
+.datafy
+dags
+Dockerfile
+tests
+pytest.ini
