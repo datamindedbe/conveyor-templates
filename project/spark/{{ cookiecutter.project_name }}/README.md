@@ -44,11 +44,6 @@ The main module contains the ETL job `RouterApp`. By default `RouterApp` accepts
 
 ## Concepts
 
-### Separate job breakdown from scheduling
-Jobs can be found in the `jobs/` directory. A job function needs to be annotated with `@EntryPoint(runnerType = "sample")`.
-This approach is based on the article [Scaling a Mature Data Pipeline](https://medium.com/airbnb-engineering/scaling-a-mature-data-pipeline-managing-overhead-f34835cbc866)
- and can be used to manage scheduling overhead.
-
 ## Commands
 - `./gradlew test` to run all the tests
 - `./gradlew clean shadowJar` to create the fat jar
