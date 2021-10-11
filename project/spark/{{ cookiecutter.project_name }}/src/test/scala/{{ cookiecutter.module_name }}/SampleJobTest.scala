@@ -16,7 +16,7 @@ class SampleJobTest extends FunSuite with SharedSparkSession with Matchers with 
     val input = Seq(("issue1", "high"), ("issue2", "low")).toDF("issue", "prio")
     val expected = Seq(("issue1", "high", sqlDate), ("issue2", "low", sqlDate)).toDF("issue", "prio", "ds")
 
-    val actual = SampleJob.transform(input, localDate)
+    val actual = new SampleJob(spark).transform(input, localDate)
     assertDatasetEquality(actual, expected)
   }
 
@@ -25,7 +25,7 @@ class SampleJobTest extends FunSuite with SharedSparkSession with Matchers with 
 
     val input = Seq(("issue1", "high"), ("issue1", "high")).toDF("issue", "prio")
 
-    val actual = SampleJob.transform(input, localDate)
+    val actual = new SampleJob(spark).transform(input, localDate)
     actual.count should equal(1)
   }
 }

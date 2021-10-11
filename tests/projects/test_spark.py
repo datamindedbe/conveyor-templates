@@ -1,4 +1,5 @@
 import os
+import subprocess
 
 
 def test_spark_template(cookies):
@@ -88,3 +89,42 @@ def assert_batch_files(result, exist: bool = True):
     assert (
         result.project + "/src/main/scala/cloud/datafy/spark/transformations"
     ).isdir() == exist
+
+
+def assert_tests_run_without_compilation_issues(result):
+    assert 0 == result.exit_code, result.exception
+    assert result.exception is None
+    process = subprocess.Popen(
+        ["./gradlew", "test"],
+        cwd=result.project,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+    (
+        stdout,
+        stderr,
+    ) = process.communicate()  # You can use stoud and sterr to find out what went wrong
+    return_code = process.poll()
+    assert return_code == 0, stderr
+
+
+def test_spark_template_spark_3(cookies):
+    """
+    This test makes sure that when a project with spark 3 support is being rendered the tests can be run
+    """
+    result = cookies.bake(
+        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/spark",
+        extra_context={"spark_version": "3.0"},
+    )
+    assert_tests_run_without_compilation_issues(result)
+
+
+def test_spark_template_spark_2(cookies):
+    """
+    This test makes sure that when a project with spark 3 support is being rendered the tests can be run
+    """
+    result = cookies.bake(
+        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/spark",
+        extra_context={"spark_version": "2.0"},
+    )
+    assert_tests_run_without_compilation_issues(result)
