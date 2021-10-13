@@ -1,6 +1,8 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+## [0.14.0 - 2021-10-13]
+
 ### features
 - Added streaming support to the spark project (@stijndehaes)
 - Extend docker ignore to ignore more of the common virtual env locations (@stijndehaes)
@@ -149,7 +151,8 @@
 
 First release of the templates
 
-[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.13.0...HEAD
+[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.14.0...HEAD
+[0.14.0 - 2021-10-13]: https://github.com/datamindedbe/datafy-templates/compare/0.13.0...0.14.0
 [0.13.0 - 2021-09-27]: https://github.com/datamindedbe/datafy-templates/compare/0.12.1...0.13.0
 [0.12.1 - 2021-08-12]: https://github.com/datamindedbe/datafy-templates/compare/0.12.0...0.12.1
 [0.12.0 - 2021-07-27]: https://github.com/datamindedbe/datafy-templates/compare/0.11.0...0.12.0
