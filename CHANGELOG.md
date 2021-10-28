@@ -4,6 +4,7 @@
 ### features
 - Upgrade spark to 3.2.0 (@stijndehaes)
 - Remove pipenv support from the pyspark template as it was hardly used and hard to maintain (@stijndehaes)
+- Upgrade dbt to 0.21.0 (@stijndehaes)
 
 ## [0.14.0 - 2021-10-13]
 
