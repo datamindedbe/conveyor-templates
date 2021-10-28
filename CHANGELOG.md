@@ -6,6 +6,7 @@
 - Remove pipenv support from the pyspark template as it was hardly used and hard to maintain (@stijndehaes)
 - Upgrade python project to python 3.9 (@nclaeys)
 - Remove pipenv support from the python template as it was hardly used and hard to maintain (@nclaeys)
+- Upgrade dbt to 0.21.0 (@stijndehaes)
 
 ## [0.14.0 - 2021-10-13]
 
