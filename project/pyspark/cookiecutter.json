@@ -2,10 +2,6 @@
   "project_name": "pyspark",
   "module_name": "pyspark",
   "spark_version": [ "3.0", "2.4" ],
-  "python_package_management": [
-    "pip-tools",
-    "pipenv"
-  ],
   "datafy_managed_role": true,
   "project_type": [
     "batch",

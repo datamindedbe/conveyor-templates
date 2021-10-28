@@ -38,7 +38,7 @@ def assert_project_can_be_build(result):
         stderr,
     ) = process.communicate()  # You can use stoud and sterr to find out what went wrong
     return_code = process.poll()
-    assert return_code == 0, stderr
+    assert return_code == 0, stdout + stderr
 
 
 def test_pyspark_template_spark_3(cookies):
