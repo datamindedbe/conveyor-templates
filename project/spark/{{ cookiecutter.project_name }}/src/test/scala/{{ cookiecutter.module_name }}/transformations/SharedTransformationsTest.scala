@@ -4,9 +4,10 @@ import java.sql.Date
 import java.time.LocalDate
 
 import {{ cookiecutter.group_id }}.{{ cookiecutter.module_name }}.common.{DatasetComparer, SharedSparkSession}
-import org.scalatest.{FunSuite, Matchers}
+import org.scalatest.matchers.must.Matchers
+import org.scalatest.funsuite.AnyFunSuite
 
-class SharedTransformationsTest extends FunSuite with SharedSparkSession with Matchers with DatasetComparer {
+class SharedTransformationsTest extends AnyFunSuite with SharedSparkSession with Matchers with DatasetComparer {
 
   import spark.implicits._
 

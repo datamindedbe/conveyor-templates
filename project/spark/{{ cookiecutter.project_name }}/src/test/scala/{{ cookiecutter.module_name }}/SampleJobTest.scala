@@ -4,9 +4,11 @@ import java.sql.Date
 import java.time.LocalDate
 
 import {{ cookiecutter.group_id }}.{{ cookiecutter.module_name }}.common.{DatasetComparer, SharedSparkSession}
-import org.scalatest.{FunSuite, Matchers}
+import org.scalatest.matchers.must.Matchers
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers.convertToAnyShouldWrapper
 
-class SampleJobTest extends FunSuite with SharedSparkSession with Matchers with DatasetComparer {
+class SampleJobTest extends AnyFunSuite with SharedSparkSession with Matchers with DatasetComparer {
   import spark.implicits._
 
   test("A datestamp is added to the dataframe") {

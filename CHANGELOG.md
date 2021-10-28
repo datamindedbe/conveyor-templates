@@ -1,6 +1,10 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### features
+- Upgrade spark to 3.2.0 (@stijndehaes)
+- Remove pipenv support from the pyspark template as it was hardly used and hard to maintain (@stijndehaes)
+
 ## [0.14.0 - 2021-10-13]
 
 ### features
