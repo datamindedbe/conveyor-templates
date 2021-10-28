@@ -2,9 +2,6 @@
 
 ## Prerequisites
 
-{%- if cookiecutter.python_package_management == "pipenv" %}
-- [pipenv](https://pipenv.kennethreitz.org/en/latest/)
-{%- endif %}
 - [pyenv](https://github.com/pyenv/pyenv) (recommended)
 
 ## Project Structure
@@ -43,7 +40,6 @@ The main Python module contains the ETL job `app.py`. By default `app.py` accept
 In building your Python application and its dependencies for production, you want to make sure that your builds are predictable and deterministic.
  Therefore, always pin your dependencies. You can read more in the article: [Better package management](https://nvie.com/posts/better-package-management/)
 
-{%- if cookiecutter.python_package_management == "pip-tools" %}
 When using pip-tools to manage dependencies, you define your dependencies in the `requirements.in` file.
 This file can then be compiled into the `requirements.txt` file by running the command `pip-compile requirements.in` from your shell.
 
@@ -54,7 +50,6 @@ With this method, package updates always happen as a conscious decision by the d
 
 The `pip-compile` command should be run from the same virtual environment as your project so conditional dependencies that require a specific Python version,
 or other environment markers, resolve relative to your project's environment.
-{%- endif %}
 
 ### Adding another job to the spark application
 
@@ -74,17 +69,6 @@ if __name__ == "__main__":
 ```
 
 ## Commands
-{%- if cookiecutter.python_package_management == "pipenv" %}
-If you are running the datafy cli in a virtual environment, make sure to set PIPENV_IGNORE_VIRTUALENVS=1. You can
-also prefix every pipenv command e.g. `PIPENV_IGNORE_VIRTUALENVS=1 pipenv install --dev`
-
-- `pipenv install --dev` to install the module and all dependencies in the virtual environment
-- `pipenv run python -m pytest --cov=src tests` runs all the tests and check coverage
-- `pipenv run black dags src tests --check` checks PEP8 compliance issues
-- `pipenv run black dags src tests` fixes PEP8 compliance issues
-- `pipenv check` Checks for security vulnerabilities and against PEP 508 markers
-{%- endif %}
-{%- if cookiecutter.python_package_management == "pip-tools" %}
 Setup virtual environment:
 - `pyenv local` to use a correct python version
 - `python -m venv venv` to create a virtual environment
@@ -100,7 +84,6 @@ Tasks:
 - `python -m black dags src tests` fixes PEP8 compliance issues
 - `pip-compile requirements.in` if you add new requirements this regenerates a new requirements.txt
 - `pip-compile dev-requirements.in` if you add new requirements this regenerates a new dev-requirements.txt, you should also do this when have updated your requirements.in
-{%- endif %}
 
 {%- if "streaming" in cookiecutter.project_type %}
 

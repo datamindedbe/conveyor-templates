@@ -32,15 +32,6 @@ def test_spark_streaming_2_4(cookies):
     assert result.exception is not None
 
 
-def test_spark_spark_3_0_scala_2_11(cookies):
-    result = cookies.bake(
-        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/spark",
-        extra_context={"scala_version": "2.11", "spark_version": "3.0"},
-    )
-    assert -1 == result.exit_code, result.exception
-    assert result.exception is not None
-
-
 def test_spark_project_type_batch(cookies):
     result = cookies.bake(
         template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/spark",
@@ -105,6 +96,9 @@ def assert_tests_run_without_compilation_issues(result):
         stderr,
     ) = process.communicate()  # You can use stoud and sterr to find out what went wrong
     return_code = process.poll()
+    if return_code != 0:
+        print(stdout)
+        print(stderr)
     assert return_code == 0, stderr
 
 
@@ -121,10 +115,10 @@ def test_spark_template_spark_3(cookies):
 
 def test_spark_template_spark_2(cookies):
     """
-    This test makes sure that when a project with spark 3 support is being rendered the tests can be run
+    This test makes sure that when a project with spark 2 support is being rendered the tests can be run
     """
     result = cookies.bake(
         template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/spark",
-        extra_context={"spark_version": "2.0"},
+        extra_context={"spark_version": "2.4"},
     )
     assert_tests_run_without_compilation_issues(result)
