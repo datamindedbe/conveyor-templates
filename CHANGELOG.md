@@ -4,6 +4,8 @@
 ### features
 - Upgrade spark to 3.2.0 (@stijndehaes)
 - Remove pipenv support from the pyspark template as it was hardly used and hard to maintain (@stijndehaes)
+- Upgrade python project to python 3.9 (@nclaeys)
+- Remove pipenv support from the python template as it was hardly used and hard to maintain (@nclaeys)
 
 ## [0.14.0 - 2021-10-13]
 
