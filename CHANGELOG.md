@@ -1,6 +1,8 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+## [0.15.0 - 2021-10-28]
+
 ### features
 - Upgrade spark to 3.2.0 (@stijndehaes)
 - Remove pipenv support from the pyspark template as it was hardly used and hard to maintain (@stijndehaes)
@@ -158,7 +160,8 @@
 
 First release of the templates
 
-[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.14.0...HEAD
+[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.15.0...HEAD
+[0.15.0 - 2021-10-28]: https://github.com/datamindedbe/datafy-templates/compare/0.14.0...0.15.0
 [0.14.0 - 2021-10-13]: https://github.com/datamindedbe/datafy-templates/compare/0.13.0...0.14.0
 [0.13.0 - 2021-09-27]: https://github.com/datamindedbe/datafy-templates/compare/0.12.1...0.13.0
 [0.12.1 - 2021-08-12]: https://github.com/datamindedbe/datafy-templates/compare/0.12.0...0.12.1
