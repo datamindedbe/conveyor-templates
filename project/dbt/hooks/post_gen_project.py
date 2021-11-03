@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 import os
 import shutil
-
-from dataclasses import dataclass
 from distutils.util import strtobool
 
-project_name = "{{ cookiecutter.project_name }}"
+from dataclasses import dataclass
+
+project_name = "{{ cookiecutter.project_name }}".replace("-", "_")  # dbt does not like projects with -
 datafy_managed_role = "{{ cookiecutter.datafy_managed_role }}"
 database_type = "{{ cookiecutter.database_type }}"
 
@@ -50,4 +50,3 @@ def cleanup_resources():
 if __name__ == "__main__":
     initialize_dbt()
     cleanup_resources()
-
