@@ -21,8 +21,8 @@ dag = DAG(
 )
 
 factory = DatafyDbtTaskFactory(
-{ % - if cookiecutter.datafy_managed_role %}
-    task_aws_role = "{{ cookiecutter.project_name }}-{% raw %}{{ macros.datafy.env() }}{% endraw %}",
-{ % - endif %}
+{%- if cookiecutter.datafy_managed_role %}
+    task_aws_role="{{ cookiecutter.project_name }}-{% raw %}{{ macros.datafy.env() }}{% endraw %}",
+{%- endif %}
 )
 factory.add_tasks_to_dag(dag=dag)
