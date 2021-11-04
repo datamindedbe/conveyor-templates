@@ -16,21 +16,21 @@ warning:
 shell: env
 	eval "$(docker_dbt_command)"
 
-deps: env warning
+deps: warning
 	dbt deps --profiles-dir /workspace/dbt --project-dir $(docker_project_dir)
 
-manifest: env warning
+manifest: warning
 	dbt compile --profiles-dir /workspace/dbt --project-dir $(docker_project_dir)
 	cp $(docker_project_dir)/target/manifest.json /workspace/dags/manifest.json
 
-debug: env warning
+debug: warning
 	dbt debug --profiles-dir /workspace/dbt --project-dir $(docker_project_dir)
 
-test: env warning
+test: warning
 	dbt test --profiles-dir /workspace/dbt --project-dir $(docker_project_dir)
 
-run: env warning
+run: warning
 	dbt run --profiles-dir /workspace/dbt --project-dir $(docker_project_dir)
 
-docs: env warning
+docs: warning
 	dbt docs serve --profiles-dir /workspace/dbt --project-dir $(docker_project_dir)
