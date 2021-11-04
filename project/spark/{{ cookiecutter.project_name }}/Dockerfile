@@ -1,7 +1,7 @@
 {% if cookiecutter.spark_version == "2.4" -%}
 FROM public.ecr.aws/dataminded/spark-k8s-glue:2.4.3-2.11-hadoop-2.9.2-v3
 {%- elif cookiecutter.spark_version == "3.0" -%}
-FROM public.ecr.aws/dataminded/spark-k8s-glue:v3.2.0-hadoop-3.3.1
+FROM public.ecr.aws/dataminded/spark-k8s-glue:v3.2.0-2.13-hadoop-3.3.1
 {%- endif %}
 
 COPY build/libs/*-all.jar /opt/spark/work-dir/app.jar
