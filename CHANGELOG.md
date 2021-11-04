@@ -1,6 +1,11 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### bugfixes
+
+- Use the spark 3.2.0 scala 2.13 image (@stijndehaes)
+
+
 ## [0.15.0 - 2021-10-28]
 
 ### features
