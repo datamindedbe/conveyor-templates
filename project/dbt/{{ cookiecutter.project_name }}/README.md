@@ -30,7 +30,7 @@ Locally you use a `.env` file to store credentials.
 Start a shell in a container with dbt installed and your local files mounted:
 - `make env` to create a local `.env` file
 - `make shell` to start a new shell
-- `exit` to terminate the container
+- `exit` to terminate the container shell
 
 For some of the most used Dbt commands a makefile has been added to the project that passes the correct flags to dbt. 
 These commands assume they are executed in the shell container.
