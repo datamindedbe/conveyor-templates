@@ -10,9 +10,12 @@
 ## [0.15.1 - 2021-11-05]
 
 ### bugfixes
-
 - Use the spark 3.2.0 scala 2.13 image (@stijndehaes)
 
+### features
+- dbt template to use the official dbt image
+- dbt template to use the DatafyDbtTaskFactory
+- dbt template with update makefile and readme
 ## [0.15.0 - 2021-10-28]
 
 ### features
