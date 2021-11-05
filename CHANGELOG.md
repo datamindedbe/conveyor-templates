@@ -1,10 +1,11 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+## [0.15.1 - 2021-11-05]
+
 ### bugfixes
 
 - Use the spark 3.2.0 scala 2.13 image (@stijndehaes)
-
 
 ## [0.15.0 - 2021-10-28]
 
@@ -165,7 +166,8 @@
 
 First release of the templates
 
-[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.15.0...HEAD
+[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.15.1...HEAD
+[0.15.1 - 2021-11-05]: https://github.com/datamindedbe/datafy-templates/compare/0.15.0...0.15.1
 [0.15.0 - 2021-10-28]: https://github.com/datamindedbe/datafy-templates/compare/0.14.0...0.15.0
 [0.14.0 - 2021-10-13]: https://github.com/datamindedbe/datafy-templates/compare/0.13.0...0.14.0
 [0.13.0 - 2021-09-27]: https://github.com/datamindedbe/datafy-templates/compare/0.12.1...0.13.0
