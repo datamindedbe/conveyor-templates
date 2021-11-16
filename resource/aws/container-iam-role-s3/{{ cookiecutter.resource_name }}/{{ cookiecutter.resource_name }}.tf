@@ -9,7 +9,7 @@ data "aws_iam_policy_document" "{{ cookiecutter.resource_name }}_assume_role" {
     effect  = "Allow"
 
     condition {
-      test     = "StringEquals"
+      test     = "StringLike"
       variable = "${replace(var.aws_iam_openid_connect_provider_url, "https://", "")}:sub"
       values   = ["system:serviceaccount:${var.env_name}:{{ cookiecutter.project_name }}-*"]
     }
