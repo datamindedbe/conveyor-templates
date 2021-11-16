@@ -1,6 +1,10 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### bugfixes
+
+- Correct resources s3 template to use like instead of equals in trust relationship condition (@nclaeys)
+
 ## [0.15.1 - 2021-11-05]
 
 ### bugfixes
