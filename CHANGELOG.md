@@ -1,12 +1,14 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+## [0.15.3 - 2021-11-30]
+
 ### features
 - dbt template to use the official dbt image
 - dbt template to use the DatafyDbtTaskFactory
 - dbt template with update makefile and readme
 
-## [0.15.2 - 2021-19-05]
+## [0.15.2 - 2021-11-19]
 
 ### bugfixes
 
