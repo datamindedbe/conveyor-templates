@@ -19,27 +19,25 @@ root/
 
 ## Concepts
 
-### Pin your python dependencies
-In building your Python application and its dependencies for production, you want to make sure that your builds are predictable and deterministic.
- Therefore, always pin your dependencies. You can read more in the article: [Better package management](https://nvie.com/posts/better-package-management/)
-
 ### dbt project structure
-Consult the following documentation regarding [best practices for project structure](https://discourse.getdbt.com/t/how-we-structure-our-dbt-projects/355)
+Consult the following documentation regarding [best practices for project structure](https://discourse.getdbt.com/t/how-we-structure-our-dbt-projects/355).
+
+### environment variables
+It is common practise to pass configuration by [environment variables](https://docs.getdbt.com/reference/dbt-jinja-functions/env_var).
+Locally you use a `.env` file to store credentials. 
 
 ## Commands
-Setup virtual environment:
-- `pyenv local` to use a correct python version
-- `python -m venv venv` to create a virtual environment
-- `source ./venv/bin/activate` to activate the virtual environment
-- `pip install pip-tools` to install pip tools
+Start a shell in a container with dbt installed and your local files mounted:
+- `make env` to create a local `.env` file
+- `make shell` to start a new shell
+- `exit` to terminate the container shell
 
-Tasks:
-- `pip-compile requirements.in` to regenerate the requirements.txt
-
-For some of the most used Dbt commands a makefile has been added to the project that passes the correct flags to dbt:
+For some of the most used Dbt commands a makefile has been added to the project that passes the correct flags to dbt. 
+These commands assume they are executed in the shell container.
+- `make manifest` executes dbt build and copies the `manifest.json` to your dags folder 
 - `make run` executes dbt run
 - `make test` executes dbt test
-- `make debug` executes dbt debug, is useful to debug your connection to the database
+- `make debug` executes dbt debug
 - `make docs` executes dbt docs
 
 Consult the [dbt documentation](https://docs.getdbt.com/docs/introduction) for additional commands.
