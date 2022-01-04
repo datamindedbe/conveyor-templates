@@ -1,6 +1,10 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### bugfixes
+
+- Update spark images such that they are patched against CVE-2021-4104 vulnerability (@nclaeys)
+
 ## [0.15.3 - 2021-11-30]
 
 ### features
