@@ -14,7 +14,7 @@ USER 0
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt --no-cache-dir
 COPY . .
-RUN pip3 install -e .
+RUN pip3 install .
 {% if cookiecutter.spark_version == "3.0" -%}
 ARG spark_uid=185
 USER ${spark_uid}
