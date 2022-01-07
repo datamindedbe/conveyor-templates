@@ -3,7 +3,8 @@
 
 ### bugfixes
 
-- Update spark images such that they are patched against CVE-2021-4104 vulnerability (@nclaeys)
+- Update spark3 images such that they are patched against CVE-2021-4104 vulnerability (@nclaeys)
+- Update pyspark3 images such that packages are installed using setuptools after breaking change in release 60.0.0 (@nclaeys)  
 
 ## [0.15.3 - 2021-11-30]
 
