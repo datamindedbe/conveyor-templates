@@ -1,11 +1,13 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+## [0.15.4 - 2022-01-07]
+
 ### bugfixes
 
-- Update spark3 images such that they are patched against CVE-2021-4104 vulnerability (@nclaeys)
-- Update pyspark3 images such that packages are installed using setuptools after breaking change in release 60.0.0 (@nclaeys)  
-- Change pyspark template to not install project in editable mode (@nclaeys)
+- Update spark3 image versions such that they are protected against a vulnerability with log4j 1.x (@nclaeys)
+- Update spark3 images such that setuptools installs python packages in the correct directory, after a breaking change in release 60.0.0 (@nclaeys)
+- Change pyspark template to not install python projects in editable mode (@nclaeys)
 
 ## [0.15.3 - 2021-11-30]
 
@@ -184,7 +186,8 @@
 
 First release of the templates
 
-[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.15.1...HEAD
+[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.15.4...HEAD
+[0.15.4 - 2022-01-07]: https://github.com/datamindedbe/datafy-templates/compare/0.15.3...0.15.4
 [0.15.3 - 2021-11-30]: https://github.com/datamindedbe/datafy-templates/compare/0.15.2...0.15.3
 [0.15.2 - 2021-11-19]: https://github.com/datamindedbe/datafy-templates/compare/0.15.1...0.15.2
 [0.15.1 - 2021-11-05]: https://github.com/datamindedbe/datafy-templates/compare/0.15.0...0.15.1
