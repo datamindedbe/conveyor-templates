@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### bugfixes
+- Update the spark settings so the aws glue integration works again (@stijndehaes)
+
 ## [0.15.4 - 2022-01-07]
 
 ### bugfixes
