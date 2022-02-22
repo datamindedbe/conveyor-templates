@@ -66,6 +66,12 @@ class ClosableSparkSession:
         spark_builder.config("spark.sql.sources.partitionOverwriteMode", "dynamic")
         spark_builder.config("fs.s3.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
 
+        # These values are set because of an issue with the current spark hive, glue connection
+        # For more info see the datafy docs:
+        # https://docs.datafy.cloud/how-to-guides/troubleshooting/spark-pyspark-issues/#glue-orgapachehadoophivemetastoreapiinvalidobjectexception
+        spark_builder.config("spark.sql.hive.metastorePartitionPruning", "false")
+        spark_builder.config("spark.sql.hive.convertMetastoreParquet", "false")
+
         # add other config params
         for key, val in self._spark_config.items():
             spark_builder.config(key, val)
