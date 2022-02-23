@@ -3,6 +3,7 @@
 
 ### bugfixes
 - Update the spark settings so the aws glue integration works again (@stijndehaes)
+- Use dots instead of underscores for specifying the Datafy_instance_type. (@nclaeys)
 
 ## [0.15.4 - 2022-01-07]
 

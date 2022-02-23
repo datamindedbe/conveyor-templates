@@ -24,7 +24,7 @@ DatafyContainerOperatorV2(
     task_id="sample",
     cmds=["python"],
     arguments=["-m", "{{ cookiecutter.module_name }}.sample", "{% raw %}--date", "{{ ds }}", "--env", "{{ macros.datafy.env() }}{% endraw %}"],
-    instance_type="mx_micro",
+    instance_type="mx.micro",
 {%- if cookiecutter.datafy_managed_role %}
     aws_role="{{ cookiecutter.project_name }}-{% raw %}{{ macros.datafy.env() }}{% endraw %}",
 {%- endif %}
