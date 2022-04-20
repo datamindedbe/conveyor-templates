@@ -20,7 +20,10 @@ def test_pyspark_template(cookies):
         extra_context={},
     )
     assert_template_succeeds(result)
-    assert_first_line(result.project + "/Dockerfile", "FROM public.ecr.aws/dataminded/spark-k8s-glue:v3.2.0-2.13-hadoop-3.3.1-v3")
+    assert_first_line(
+        result.project + "/Dockerfile",
+        "FROM public.ecr.aws/dataminded/spark-k8s-glue:v3.2.0-2.13-hadoop-3.3.1-v3",
+    )
 
 
 def test_pyspark_template_azure(cookies):
@@ -30,7 +33,10 @@ def test_pyspark_template_azure(cookies):
     )
     assert_template_succeeds(result)
     assert not (result.project + "/resources").isdir()
-    assert_first_line(result.project + "/Dockerfile", "FROM public.ecr.aws/dataminded/spark-k8s-azure:3.2.0-hadoop-3.3.1-v1")
+    assert_first_line(
+        result.project + "/Dockerfile",
+        "FROM public.ecr.aws/dataminded/spark-k8s-azure:3.2.0-hadoop-3.3.1-v1",
+    )
     assert_batch_files(result)
 
 
