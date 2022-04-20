@@ -5,7 +5,9 @@ from distutils.util import strtobool
 
 from dataclasses import dataclass
 
-project_name = "{{ cookiecutter.project_name }}".replace("-", "_")  # dbt does not like projects with -
+project_name = "{{ cookiecutter.project_name }}".replace(
+    "-", "_"
+)  # dbt does not like projects with -
 datafy_managed_role = "{{ cookiecutter.datafy_managed_role }}"
 cloud = "{{ cookiecutter.cloud }}"
 database_type = "{{ cookiecutter.database_type }}"
@@ -18,10 +20,10 @@ class InitArguments:
 
 
 def fix_dbt_project():
-    with open(f'./{project_name}/dbt_project.yml', "rt") as f:
+    with open(f"./{project_name}/dbt_project.yml", "rt") as f:
         data = f.read()
-        data = data.replace('my_new_project', project_name)
-    with open(f'./{project_name}/dbt_project.yml', "wt") as f:
+        data = data.replace("my_new_project", project_name)
+    with open(f"./{project_name}/dbt_project.yml", "wt") as f:
         f.write(data)
 
 
@@ -30,13 +32,16 @@ def initialize_dbt():
 
 
 def initialize_dbt_in_dir(dir: str, db_type: str):
-    dbt_dir = os.path.join(dir, 'dbt')
+    dbt_dir = os.path.join(dir, "dbt")
     os.mkdir(dbt_dir)
     os.chdir(dbt_dir)
     try:
         os.environ["DBT_PROFILES_DIR"] = os.getcwd()
         import dbt.task.init as init_task  # late import so the environment variable is taken into account
-        task = init_task.InitTask(args=InitArguments(project_name, db_type), config=None)
+
+        task = init_task.InitTask(
+            args=InitArguments(project_name, db_type), config=None
+        )
         task.run()
         fix_dbt_project()
     finally:

@@ -11,7 +11,7 @@ def assert_template_succeeds(result):
 def assert_first_line(file, content):
     with open(file) as f:
         firstline = f.readline().rstrip()
-        assert firstline == content
+        assert firstline.__contains__(content)
 
 
 def test_pyspark_template(cookies):
@@ -22,7 +22,7 @@ def test_pyspark_template(cookies):
     assert_template_succeeds(result)
     assert_first_line(
         result.project + "/Dockerfile",
-        "FROM public.ecr.aws/dataminded/spark-k8s-glue:v3.2.0-2.13-hadoop-3.3.1-v3",
+        "FROM public.ecr.aws/dataminded/spark-k8s-glue",
     )
 
 
@@ -35,7 +35,7 @@ def test_pyspark_template_azure(cookies):
     assert not (result.project + "/resources").isdir()
     assert_first_line(
         result.project + "/Dockerfile",
-        "FROM public.ecr.aws/dataminded/spark-k8s-azure:3.2.0-hadoop-3.3.1-v1",
+        "FROM public.ecr.aws/dataminded/spark-k8s-azure",
     )
     assert_batch_files(result)
 

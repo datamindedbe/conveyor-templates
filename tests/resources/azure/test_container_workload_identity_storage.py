@@ -4,7 +4,8 @@ from os import path
 
 def test_container_workload_identity_storage(cookies):
     result = cookies.bake(
-        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../../resource/azure/container-workload-identity-storage",
+        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../../resource/azure/container-workload-identity"
+        f"-storage",
         extra_context={},
     )
     assert 0 == result.exit_code

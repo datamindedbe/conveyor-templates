@@ -57,4 +57,3 @@ if __name__ == "__main__":
     cleanup_resources()
     cleanup_streaming_resources()
     cleanup_batch_resources()
-

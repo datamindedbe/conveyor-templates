@@ -29,7 +29,9 @@ sample_task = DatafySparkSubmitOperatorV2(
     num_executors="1",
     driver_instance_type="mx.small",
     executor_instance_type="mx.small",
+    {%- if cookiecutter.datafy_managed_role %}
     aws_role="{{ cookiecutter.project_name }}-{% raw %}{{ macros.datafy.env() }}{% endraw %}",
+    {%- endif %}
     {% if cookiecutter.spark_version == "2.4" -%}
     spark_main_version=2,
     {%- elif cookiecutter.spark_version == "3.0" -%}
