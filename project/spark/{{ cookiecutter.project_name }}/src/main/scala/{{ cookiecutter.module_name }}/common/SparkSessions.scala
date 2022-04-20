@@ -12,9 +12,9 @@ trait SparkSessions {
    */
   val sparkOptions: Map[String, String] = Map.empty
 
+  {% if cookiecutter.cloud == "aws" -%}
   private val defaultConfiguration: Map[String, String] = Map(
 
-    {% if cookiecutter.cloud == "aws" -%}
     "fs.s3.impl" -> "org.apache.hadoop.fs.s3a.S3AFileSystem",
     "spark.serializer" -> "org.apache.spark.serializer.KryoSerializer",
     "spark.sql.sources.partitionOverwriteMode" -> "dynamic",
@@ -24,7 +24,6 @@ trait SparkSessions {
     //https://docs.datafy.cloud/how-to-guides/troubleshooting/spark-pyspark-issues/#glue-orgapachehadoophivemetastoreapiinvalidobjectexception
     "spark.sql.hive.metastorePartitionPruning" -> "false",
     "spark.sql.hive.convertMetastoreParquet" -> "false"
-    {%- endif %}
   )
 
   val spark: SparkSession = {
@@ -32,12 +31,15 @@ trait SparkSessions {
       .foldLeft(SparkSession.builder()) {
         case (b, (key, value)) => b.config(key, value)
       }
-
-      {% if cookiecutter.cloud == "aws" -%}
       .enableHiveSupport()
-      {%- endif %}
       .getOrCreate()
   }
+
+  {%- elif cookiecutter.cloud == "azure" -%}
+  val spark: SparkSession = {
+    SparkSession.builder().getOrCreate()
+  }
+  {%- endif %}
 }
 
 trait SparkApplication extends SparkSessions with App
