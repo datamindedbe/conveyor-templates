@@ -10,6 +10,7 @@ MANIFEST = "manifest.yml"
 GROUP_ID = "{{ cookiecutter.group_id }}"
 MODULE_NAME = "{{ cookiecutter.module_name }}"
 datafy_managed_role = "{{ cookiecutter.datafy_managed_role }}"
+cloud = "{{ cookiecutter.cloud }}"
 project_type = "{{ cookiecutter.project_type }}"
 
 
@@ -37,7 +38,7 @@ def create_group_id_directories():
 
 
 def cleanup_resources():
-    if not bool(strtobool(datafy_managed_role)):
+    if not bool(strtobool(datafy_managed_role)) or cloud == "azure":
         shutil.rmtree("resources")
 
 

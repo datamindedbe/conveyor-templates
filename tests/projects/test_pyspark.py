@@ -26,7 +26,7 @@ def test_pyspark_template(cookies):
 def test_pyspark_template_azure(cookies):
     result = cookies.bake(
         template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",
-        extra_context={"cloud": "azure"},
+        extra_context={"cloud": "azure", "datafy_managed_role": True},
     )
     assert_template_succeeds(result)
     assert not (result.project + "/resources").isdir()

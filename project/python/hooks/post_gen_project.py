@@ -6,6 +6,7 @@ import shutil
 MANIFEST = "manifest.yml"
 
 datafy_managed_role = "{{ cookiecutter.datafy_managed_role }}"
+cloud = "{{ cookiecutter.cloud }}"
 
 
 def delete_files(files):
@@ -18,5 +19,5 @@ def delete_folder(folder):
 
 
 if __name__ == "__main__":
-    if not bool(strtobool(datafy_managed_role)):
+    if not bool(strtobool(datafy_managed_role)) or cloud == "azure":
         delete_folder("resources")

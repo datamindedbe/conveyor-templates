@@ -7,6 +7,7 @@ from dataclasses import dataclass
 
 project_name = "{{ cookiecutter.project_name }}".replace("-", "_")  # dbt does not like projects with -
 datafy_managed_role = "{{ cookiecutter.datafy_managed_role }}"
+cloud = "{{ cookiecutter.cloud }}"
 database_type = "{{ cookiecutter.database_type }}"
 
 
@@ -43,7 +44,7 @@ def initialize_dbt_in_dir(dir: str, db_type: str):
 
 
 def cleanup_resources():
-    if not bool(strtobool(datafy_managed_role)):
+    if not bool(strtobool(datafy_managed_role)) or cloud == "azure":
         shutil.rmtree("resources")
 
 
