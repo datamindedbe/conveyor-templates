@@ -2,7 +2,11 @@
   "project_name": "pyspark",
   "module_name": "pyspark",
   "spark_version": [ "3.0", "2.4" ],
-  "datafy_managed_role": true,
+  "cloud": [
+    "aws",
+    "azure"
+  ],
+  "datafy_managed_role": "{{ cookiecutter.cloud == 'aws' }}",
   "project_type": [
     "batch",
     "streaming",

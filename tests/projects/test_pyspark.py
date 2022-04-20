@@ -16,6 +16,15 @@ def test_pyspark_template(cookies):
     assert_template_succeeds(result)
 
 
+def test_pyspark_template_azure(cookies):
+    result = cookies.bake(
+        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",
+        extra_context={"cloud": "azure"},
+    )
+    assert_template_succeeds(result)
+    assert not (result.project + "/resources").isdir()
+
+
 def test_pyspark_template_no_role(cookies):
     result = cookies.bake(
         template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",

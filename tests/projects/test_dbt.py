@@ -14,6 +14,17 @@ def test_dbt_template(cookies):
     assert result.project.isdir()
 
 
+def test_dbt_template_azure(cookies):
+    result = cookies.bake(
+        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/dbt",
+        extra_context={"cloud": "azure"},
+    )
+    assert 0 == result.exit_code
+    assert result.exception is None
+    assert result.project.isdir()
+    assert not (result.project + "/resources").isdir()
+
+
 def test_dbt_template_no_role(cookies):
     result = cookies.bake(
         template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/dbt",

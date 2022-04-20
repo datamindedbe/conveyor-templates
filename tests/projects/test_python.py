@@ -26,3 +26,14 @@ def test_python_template_no_role(cookies):
     assert result.exception is None
     assert result.project.isdir()
     assert not (result.project + "/resources").isdir()
+
+
+def test_python_template_azure(cookies):
+    result = cookies.bake(
+        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/python",
+        extra_context={"cloud": "azure"},
+    )
+    assert 0 == result.exit_code
+    assert result.exception is None
+    assert result.project.isdir()
+    assert not (result.project + "/resources").isdir()
