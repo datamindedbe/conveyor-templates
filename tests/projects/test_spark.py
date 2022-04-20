@@ -32,6 +32,7 @@ def test_spark_template_azure(cookies):
     assert result.exception is None
     assert result.project.isdir()
     assert not (result.project + "/resources").isdir()
+    assert_batch_files(result, exist=True)
 
 
 def test_spark_streaming_2_4(cookies):

@@ -40,14 +40,21 @@ class SampleJob(spark: SparkSession) extends LazyLogging {
   def load(data: DataFrame, environment: String) = {
     data.show()
 
-    // Uncomment the following block to write to a compatible catalog
-    //    spark.catalog.setCurrentDatabase("DEFAULT_DB")
-    //    data
-    //      .coalesce(1)
-    //      .write.partitionBy("ds")
-    //      .mode("overwrite")
-    //      .format("parquet")
-    //      .saveAsTable("sample")
+    {% if cookiecutter.cloud == "aws" -%}
+    //Uncomment the following block to write to a compatible catalog
+    //spark.catalog.setCurrentDatabase("DEFAULT_DB")
+    //(
+    //    data.coalesce(1)
+    //    .write.partitionBy("ds")
+    //    .mode("overwrite")
+    //    .format("parquet")
+    //    .saveAsTable("sample")
+    //)
+    {%- elif cookiecutter.cloud == "azure" -%}
+    // Uncomment the following block to write to a storage account
+    // data.write.mode("overwrite")
+    // .parquet(f"abfs://{storageContainer}@{storageAccount}.dfs.core.windows.net/{path}")
+    {%- endif %}
 
   }
 
