@@ -1,6 +1,14 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### features
+
+- Make the templates work for both azure and aws.
+
+### bugfixes
+
+- update python versions such that they work with Apple Clang 13+ (@nclaeys)
+
 ### bugfixes
 
 ## [0.15.5 - 2022-03-16]

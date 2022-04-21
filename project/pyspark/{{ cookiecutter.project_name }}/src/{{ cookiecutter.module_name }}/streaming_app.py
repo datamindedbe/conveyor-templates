@@ -33,6 +33,7 @@ def run(spark: SparkSession, environment: str):
             #.option(
             #"checkpointLocation",
             #"s3://YOURBUCKET/checkpoints/YOUR_APPLICATION/YOUR_QUERY",
+            #"abfs://YOURCONTAINER@YOURSTORAGEACCOUNT.dfs.core.windows.net/checkpoints/YOUR_APPLICATION/YOUR_QUERY"
             #)
             .outputMode("append")
             .format("console")

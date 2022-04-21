@@ -23,6 +23,7 @@ class StreamingApp(spark: SparkSession) extends LazyLogging {
       //.option(
       //"checkpointLocation",
       //"s3://YOURBUCKET/checkpoints/YOUR_APPLICATION/YOUR_QUERY",
+      //"abfs://YOURCONTAINER@YOURSTORAGEACCOUNT.dfs.core.windows.net/checkpoints/YOUR_APPLICATION/YOUR_QUERY"
       //)
       .outputMode("append")
       .format("console")

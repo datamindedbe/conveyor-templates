@@ -5,6 +5,7 @@ from distutils.util import strtobool
 
 spark_version = "{{ cookiecutter.spark_version }}"
 datafy_managed_role = "{{ cookiecutter.datafy_managed_role }}"
+cloud = "{{ cookiecutter.cloud }}"
 project_type = "{{ cookiecutter.project_type }}"
 
 
@@ -31,7 +32,7 @@ def delete_resource(resource):
 
 
 def cleanup_resources():
-    if not datafy_managed_role_enabled():
+    if not datafy_managed_role_enabled() or cloud == "azure":
         shutil.rmtree("resources")
 
 
@@ -56,4 +57,3 @@ if __name__ == "__main__":
     cleanup_resources()
     cleanup_streaming_resources()
     cleanup_batch_resources()
-

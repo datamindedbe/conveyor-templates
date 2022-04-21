@@ -33,7 +33,9 @@ sample_task = DatafySparkSubmitOperatorV2(
     {%- elif cookiecutter.spark_version == "3.0" -%}
     spark_main_version=3,
     {%- endif %}
+    { % - if cookiecutter.datafy_managed_role %}
     aws_role="{{ cookiecutter.project_name }}-{% raw %}{{ macros.datafy.env() }}{% endraw %}",
+    { % - endif %}
     {% if cookiecutter.spark_version == "2.4" -%}
     application="/opt/spark/work-dir/app.jar",
     {%- elif cookiecutter.spark_version == "3.0" -%}

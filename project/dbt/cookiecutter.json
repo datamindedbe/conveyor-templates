@@ -8,5 +8,9 @@
     "snowflake",
     "bigquery"
   ],
-  "datafy_managed_role": true
+  "cloud": [
+    "aws",
+    "azure"
+  ],
+  "datafy_managed_role": "{{ cookiecutter.cloud == 'aws' }}"
 }

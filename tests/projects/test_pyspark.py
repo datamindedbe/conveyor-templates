@@ -8,12 +8,36 @@ def assert_template_succeeds(result):
     assert result.project.isdir()
 
 
+def assert_first_line(file, content):
+    with open(file) as f:
+        firstline = f.readline().rstrip()
+        assert firstline.__contains__(content)
+
+
 def test_pyspark_template(cookies):
     result = cookies.bake(
         template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",
         extra_context={},
     )
     assert_template_succeeds(result)
+    assert_first_line(
+        result.project + "/Dockerfile",
+        "FROM public.ecr.aws/dataminded/spark-k8s-glue",
+    )
+
+
+def test_pyspark_template_azure(cookies):
+    result = cookies.bake(
+        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",
+        extra_context={"cloud": "azure", "datafy_managed_role": True},
+    )
+    assert_template_succeeds(result)
+    assert not (result.project + "/resources").isdir()
+    assert_first_line(
+        result.project + "/Dockerfile",
+        "FROM public.ecr.aws/dataminded/spark-k8s-azure",
+    )
+    assert_batch_files(result)
 
 
 def test_pyspark_template_no_role(cookies):

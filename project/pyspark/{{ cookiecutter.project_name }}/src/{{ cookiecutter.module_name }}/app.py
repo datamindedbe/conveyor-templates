@@ -73,16 +73,22 @@ def load_data(spark: SparkSession, data: DataFrame):
     """
     data.show()
 
+    {% if cookiecutter.cloud == "aws" -%}
     # Uncomment the following block to write to a compatible catalog
     # spark.catalog.setCurrentDatabase("DEFAULT_DB")
     # (
     #     data.coalesce(1)
-    #     .write.partitionBy("df")
+    #     .write.partitionBy("ds")
     #     .mode("overwrite")
     #     .format("parquet")
     #     .saveAsTable("sample")
     # )
+    {%- elif cookiecutter.cloud == "azure" -%}
+    # Uncomment the following block to write to a storage account
+    # data.write.mode("overwrite")
+    # .parquet(f"abfs://{storageContainer}@{storageAccount}.dfs.core.windows.net/{path}")
+    {%- endif %}
 
 
-if __name__ == "__main__":
-    main()
+    if __name__ == "__main__":
+        main()

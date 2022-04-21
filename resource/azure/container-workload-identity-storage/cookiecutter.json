@@ -1,0 +1,6 @@
+{
+    "project_name": "project_name",
+    "resource_path": "terraform_resources",
+    "resource_name": "container_workload_identity_storage",
+    "storage_account": "default"
+}

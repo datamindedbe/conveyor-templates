@@ -56,6 +56,7 @@ class ClosableSparkSession:
         self._spark_session = None
 
     def __enter__(self):
+        {% if cookiecutter.cloud == "aws" -%}
         spark_builder = SparkSession.builder.appName(self._app_name).enableHiveSupport()
 
         # set master if needed
@@ -72,6 +73,14 @@ class ClosableSparkSession:
         spark_builder.config("spark.sql.hive.metastorePartitionPruning", "false")
         spark_builder.config("spark.sql.hive.convertMetastoreParquet", "false")
 
+        {% elif cookiecutter.cloud == "azure" -%}
+        spark_builder = SparkSession.builder.appName(self._app_name)
+
+        # set master if needed
+        if self._master:
+            spark_builder = spark_builder.master(self._master)
+
+        {%- endif %}
         # add other config params
         for key, val in self._spark_config.items():
             spark_builder.config(key, val)

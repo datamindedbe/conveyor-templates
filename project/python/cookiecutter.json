@@ -3,5 +3,9 @@
   "module_name": "python",
   "workflow_start_date": "2020-01-01",
   "workflow_schedule": "@daily",
-  "datafy_managed_role": true
+  "cloud": [
+    "aws",
+    "azure"
+  ],
+  "datafy_managed_role": "{{ cookiecutter.cloud == 'aws' }}"
 }
