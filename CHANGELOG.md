@@ -4,6 +4,7 @@
 ### features
 
 - Make the templates work for both azure and aws.
+- use newest spark version: 3.2.1 in the templates
 
 ### bugfixes
 

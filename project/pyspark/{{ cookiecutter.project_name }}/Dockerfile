@@ -4,9 +4,9 @@ RUN rm -rf /usr/bin/pip && ln -s /usr/bin/pip3.6 /usr/bin/pip && ln -s /usr/bin/
 {%- elif cookiecutter.spark_version == "3.0" -%}
 
 {% if cookiecutter.cloud == "aws" -%}
-FROM public.ecr.aws/dataminded/spark-k8s-glue:v3.2.0-2.13-hadoop-3.3.1-v3
+FROM public.ecr.aws/dataminded/spark-k8s-glue:v3.2.1-2.13-hadoop-3.3.1-v3
 {%- elif cookiecutter.cloud == "azure" -%}
-FROM public.ecr.aws/dataminded/spark-k8s-azure:3.2.0-2.13-hadoop-3.3.1-v1
+FROM public.ecr.aws/dataminded/spark-k8s-azure:3.2.1-2.13-hadoop-3.3.1-v1
 {%- endif %}
 
 {%- endif %}
