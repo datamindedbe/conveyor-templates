@@ -1,6 +1,8 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+## [0.16.0 - 2022-05-05]
+
 ### features
 
 - Make the templates work for both azure and aws.
