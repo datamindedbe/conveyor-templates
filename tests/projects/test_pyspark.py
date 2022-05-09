@@ -33,10 +33,6 @@ def test_pyspark_template_azure(cookies):
     )
     assert_template_succeeds(result)
     assert not (result.project + "/resources").isdir()
-    assert_first_line(
-        result.project + "/Dockerfile",
-        "FROM public.ecr.aws/dataminded/spark-k8s-azure",
-    )
     assert_batch_files(result)
 
 
