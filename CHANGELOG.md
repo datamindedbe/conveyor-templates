@@ -1,9 +1,11 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+## [0.16.1 - 2022-05-10]
+
 ### features
 
-- use new spark image which supports both azure and aws.
+- use new spark image which supports both azure and aws. (@nclaeys)
 
 ## [0.16.0 - 2022-05-05]
 
