@@ -1,6 +1,10 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### bugfixes
+
+- fixed a typo in the cookiecutter.json files such that datafy_managed_role is correctly set.
+
 ## [0.16.1 - 2022-05-10]
 
 ### features
