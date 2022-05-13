@@ -10,7 +10,7 @@
     "aws",
     "azure"
   ],
-  "datafy_managed_role": "{{ cookiecutter.cloud == 'aws' }}",
+  "datafy_managed_role": true,
   "project_type": [
     "batch",
     "streaming",
