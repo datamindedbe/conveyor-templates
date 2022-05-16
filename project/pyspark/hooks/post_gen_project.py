@@ -4,13 +4,13 @@ import shutil
 from distutils.util import strtobool
 
 spark_version = "{{ cookiecutter.spark_version }}"
-datafy_managed_role = "{{ cookiecutter.datafy_managed_role }}"
+conveyor_managed_role = "{{ cookiecutter.conveyor_managed_role }}"
 cloud = "{{ cookiecutter.cloud }}"
 project_type = "{{ cookiecutter.project_type }}"
 
 
-def datafy_managed_role_enabled():
-    return bool(strtobool(datafy_managed_role))
+def conveyor_managed_role_enabled():
+    return bool(strtobool(conveyor_managed_role))
 
 
 def delete_resources_for_disabled_features():
@@ -32,7 +32,7 @@ def delete_resource(resource):
 
 
 def cleanup_resources():
-    if not datafy_managed_role_enabled() or cloud == "azure":
+    if not conveyor_managed_role_enabled() or cloud == "azure":
         shutil.rmtree("resources")
 
 

@@ -5,7 +5,7 @@ import shutil
 
 MANIFEST = "manifest.yml"
 
-datafy_managed_role = "{{ cookiecutter.datafy_managed_role }}"
+conveyor_managed_role = "{{ cookiecutter.conveyor_managed_role }}"
 cloud = "{{ cookiecutter.cloud }}"
 
 
@@ -19,5 +19,5 @@ def delete_folder(folder):
 
 
 if __name__ == "__main__":
-    if not bool(strtobool(datafy_managed_role)) or cloud == "azure":
+    if not bool(strtobool(conveyor_managed_role)) or cloud == "azure":
         delete_folder("resources")

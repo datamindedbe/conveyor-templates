@@ -1,11 +1,11 @@
 from airflow import DAG
-from datafy.operators import DatafySparkSubmitOperatorV2
+from conveyor.operators import ConveyorSparkSubmitOperatorV2
 from datetime import timedelta
 from airflow.utils import dates
 
 
 default_args = {
-    "owner": "Datafy",
+    "owner": "Conveyor",
     "depends_on_past": False,
     "start_date": dates.days_ago(2),
     "email": [],
@@ -23,14 +23,14 @@ dag = DAG(
     max_active_runs=1,
 )
 
-sample_task = DatafySparkSubmitOperatorV2(
+sample_task = ConveyorSparkSubmitOperatorV2(
     dag=dag,
     task_id="sample",
     num_executors="1",
     driver_instance_type="mx.small",
     executor_instance_type="mx.small",
-    {%- if cookiecutter.datafy_managed_role %}
-    aws_role="{{ cookiecutter.project_name }}-{% raw %}{{ macros.datafy.env() }}{% endraw %}",
+    {%- if cookiecutter.conveyor_managed_role %}
+    aws_role="{{ cookiecutter.project_name }}-{% raw %}{{ macros.conveyor.env() }}{% endraw %}",
     {%- endif %}
     {% if cookiecutter.spark_version == "2.4" -%}
     spark_main_version=2,
@@ -42,5 +42,5 @@ sample_task = DatafySparkSubmitOperatorV2(
     {%- elif cookiecutter.spark_version == "3.0" -%}
     application="local:///opt/spark/work-dir/src/{{ cookiecutter.module_name }}/app.py",
     {%- endif %}
-    application_args=["{% raw %}--date", "{{ ds }}", "--env", "{{ macros.datafy.env() }}{% endraw %}"],
+    application_args=["{% raw %}--date", "{{ ds }}", "--env", "{{ macros.conveyor.env() }}{% endraw %}"],
 )
