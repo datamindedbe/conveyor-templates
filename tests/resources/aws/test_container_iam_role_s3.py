@@ -1,5 +1,4 @@
 import os
-from os import path
 
 
 def test_container_iam_role_s3(cookies):
@@ -9,5 +8,5 @@ def test_container_iam_role_s3(cookies):
     )
     assert 0 == result.exit_code
     assert result.exception is None
-    assert path.isdir(result.project.dirname)
-    assert path.isdir(path.join(result.project.dirname, "resources"))
+    assert result.project_path.parent.is_dir()
+    assert result.project_path.parent.joinpath("resources").is_dir()

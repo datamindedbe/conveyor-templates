@@ -7,5 +7,5 @@
     "aws",
     "azure"
   ],
-  "datafy_managed_role": true
+  "conveyor_managed_role": true
 }

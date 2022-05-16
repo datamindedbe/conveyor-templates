@@ -15,7 +15,7 @@ def test_spark_template(cookies):
 def test_spark_template_no_role(cookies):
     result = cookies.bake(
         template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/spark",
-        extra_context={"datafy_managed_role": False},
+        extra_context={"conveyor_managed_role": False},
     )
     assert 0 == result.exit_code, result.exception
     assert result.exception is None
@@ -80,17 +80,17 @@ def test_spark_project_type_batch_and_streaming(cookies):
 def assert_streaming_files(result, exist: bool = True):
     assert (result.project + "/streaming.yaml").isfile() == exist
     assert (
-        result.project + "/src/main/scala/cloud/datafy/spark/StreamingApp.scala"
+        result.project + "/src/main/scala/com/conveyor/spark/StreamingApp.scala"
     ).isfile() == exist
 
 
 def assert_batch_files(result, exist: bool = True):
     assert (result.project + "/dags").isdir() == exist
     assert (
-        result.project + "/src/main/scala/cloud/datafy/spark/SampleJob.scala"
+        result.project + "/src/main/scala/com/conveyor/spark/SampleJob.scala"
     ).isfile() == exist
     assert (
-        result.project + "/src/main/scala/cloud/datafy/spark/transformations"
+        result.project + "/src/main/scala/com/conveyor/spark/transformations"
     ).isdir() == exist
 
 

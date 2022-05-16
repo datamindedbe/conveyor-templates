@@ -1,7 +1,7 @@
 {
   "project_name": "spark",
   "module_name": "spark",
-  "group_id": "cloud.datafy",
+  "group_id": "com.conveyor",
   "spark_version": [
     "3.0",
     "2.4"
@@ -10,7 +10,7 @@
     "aws",
     "azure"
   ],
-  "datafy_managed_role": true,
+  "conveyor_managed_role": true,
   "project_type": [
     "batch",
     "streaming",

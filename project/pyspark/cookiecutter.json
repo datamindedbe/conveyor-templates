@@ -6,7 +6,7 @@
     "aws",
     "azure"
   ],
-  "datafy_managed_role": true,
+  "conveyor_managed_role": true,
   "project_type": [
     "batch",
     "streaming",

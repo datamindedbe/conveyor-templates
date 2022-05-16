@@ -11,7 +11,7 @@ def test_dbt_template(cookies):
     )
     assert 0 == result.exit_code
     assert result.exception is None
-    assert result.project.isdir()
+    assert result.project_path.is_dir()
 
 
 def test_dbt_template_azure(cookies):
@@ -21,19 +21,19 @@ def test_dbt_template_azure(cookies):
     )
     assert 0 == result.exit_code
     assert result.exception is None
-    assert result.project.isdir()
-    assert not (result.project + "/resources").isdir()
+    assert result.project_path.is_dir()
+    assert not result.project_path.joinpath("/resources").is_dir()
 
 
 def test_dbt_template_no_role(cookies):
     result = cookies.bake(
         template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/dbt",
-        extra_context={"datafy_managed_role": False},
+        extra_context={"conveyor_managed_role": False},
     )
     assert 0 == result.exit_code
     assert result.exception is None
-    assert result.project.isdir()
-    assert not (result.project + "/resources").isdir()
+    assert result.project_path.is_dir()
+    assert not result.project_path.joinpath("/resources").is_dir()
 
 
 def test_db_init_all_db_types(tmpdir):

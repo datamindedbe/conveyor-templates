@@ -20,8 +20,8 @@ trait SparkSessions {
     "spark.sql.sources.partitionOverwriteMode" -> "dynamic",
 
     // These values are set because of an issue with the current spark hive, glue connection
-    // For more info see the datafy docs:
-    //https://docs.datafy.cloud/how-to-guides/troubleshooting/spark-pyspark-issues/#glue-orgapachehadoophivemetastoreapiinvalidobjectexception
+    // For more info see the conveyor docs:
+    //https://docs.conveyordata.com/how-to-guides/troubleshooting/spark-pyspark-issues/#glue-orgapachehadoophivemetastoreapiinvalidobjectexception
     "spark.sql.hive.metastorePartitionPruning" -> "false",
     "spark.sql.hive.convertMetastoreParquet" -> "false"
   )

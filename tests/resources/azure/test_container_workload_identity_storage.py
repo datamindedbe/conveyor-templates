@@ -1,5 +1,4 @@
 import os
-from os import path
 
 
 def test_container_workload_identity_storage(cookies):
@@ -10,5 +9,5 @@ def test_container_workload_identity_storage(cookies):
     )
     assert 0 == result.exit_code
     assert result.exception is None
-    assert path.isdir(result.project.dirname)
-    assert path.isdir(path.join(result.project.dirname, "terraform_resources"))
+    assert result.project_path.parent.is_dir()
+    assert result.project_path.parent.joinpath("terraform_resources").is_dir()
