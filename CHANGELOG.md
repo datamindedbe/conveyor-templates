@@ -1,13 +1,15 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+## [1.0.0 - 2022-05-19]
+
 ### features
 
 - Rename datafy to conveyor. (@nclaeys)
 
 ### bugfixes
 
-- fixed a typo in the cookiecutter.json files such that datafy_managed_role is correctly set.
+- fixed a typo in the cookiecutter.json files such that datafy_managed_role is correctly set. (@nclaeys)
 
 ## [0.16.1 - 2022-05-10]
 
