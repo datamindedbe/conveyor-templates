@@ -90,5 +90,5 @@ def load_data(spark: SparkSession, data: DataFrame):
     {%- endif %}
 
 
-    if __name__ == "__main__":
-        main()
+if __name__ == "__main__":
+    main()
