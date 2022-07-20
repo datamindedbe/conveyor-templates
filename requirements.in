@@ -1,3 +1,9 @@
-cookiecutter==1.7.3 # to be compatible with dbt
-dbt==0.21.0
-typing-extensions>=3.10.0.0
+cookiecutter
+dbt-core==1.1.0
+dbt-postgres==1.1.0
+dbt-redshift==1.1.0
+dbt-bigquery==1.1.0
+dbt-snowflake==1.1.0
+pyOpenSSL==21.0.0 # default resolved version failed
+agate==1.6.3 # default resolved version failed
+cffi==1.15.1 # default resolved version failed

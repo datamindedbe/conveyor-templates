@@ -1,0 +1,28 @@
+default:
+  outputs:
+
+    dev:
+      type: postgres
+      host: [ hostname ]
+      port: [ port ]
+
+      user: [ username ]
+      password: [ password ]
+
+      dbname: [ database name ]
+      schema: [ dbt schema ]
+      threads: [ 1 or more ]
+
+    prod:
+      type: postgres
+      host: [ hostname ]
+      port: [ port ]
+
+      user: [ username ]
+      password: [ password ]
+
+      dbname: [ database name ]
+      schema: [ dbt schema ]
+      threads: [ 1 or more ]
+
+  target: dev

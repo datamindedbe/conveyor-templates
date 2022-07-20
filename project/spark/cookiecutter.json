@@ -15,5 +15,10 @@
     "batch",
     "streaming",
     "batch-and-streaming"
+  ],
+  "dev_environment": [
+    "local",
+    "gitpod",
+    "codespaces"
   ]
 }
