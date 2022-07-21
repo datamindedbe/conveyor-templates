@@ -15,7 +15,7 @@ def cleanup_resources():
         shutil.rmtree("resources")
 
 
-def setup_development_environment():
+def cleanup_development_environment():
     match dev_environment:
         case "local":
             os.remove(".gitpod.yml")
@@ -28,6 +28,6 @@ def setup_development_environment():
 
 if __name__ == "__main__":
     cleanup_resources()
-    setup_development_environment()
+    cleanup_development_environment()
 
 

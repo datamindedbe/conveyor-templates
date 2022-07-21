@@ -12,6 +12,7 @@ MODULE_NAME = "{{ cookiecutter.module_name }}"
 conveyor_managed_role = "{{ cookiecutter.conveyor_managed_role }}"
 cloud = "{{ cookiecutter.cloud }}"
 project_type = "{{ cookiecutter.project_type }}"
+dev_environment = "{{ cookiecutter.dev_environment }}"
 
 
 def delete_resource(resource):
@@ -58,8 +59,20 @@ def cleanup_batch_resources():
     delete_resource(os.path.join(source_directory(), "SampleJob.scala"))
 
 
+def cleanup_development_environment():
+    match dev_environment:
+        case "local":
+            os.remove(".gitpod.yml")
+            shutil.rmtree(".devcontainer")
+        case "gitpod":
+            shutil.rmtree(".devcontainer")
+        case "codespaces":
+            os.remove(".gitpod.yml")
+
+
 if __name__ == "__main__":
     create_group_id_directories()
     cleanup_resources()
     cleanup_streaming_resources()
     cleanup_batch_resources()
+    cleanup_development_environment()
