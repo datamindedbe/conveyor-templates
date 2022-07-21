@@ -13,6 +13,7 @@ conveyor_managed_role = "{{ cookiecutter.conveyor_managed_role }}"
 cloud = "{{ cookiecutter.cloud }}"
 database_type = "{{ cookiecutter.database_type }}"
 available_adapters = ["bigquery", "postgres", "redshift", "snowflake"]
+dev_environment = "{{ cookiecutter.dev_environment }}"
 
 
 @dataclass

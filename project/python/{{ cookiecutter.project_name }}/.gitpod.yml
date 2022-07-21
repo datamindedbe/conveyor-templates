@@ -27,6 +27,12 @@ tasks:
       cd && rm -r $tmpdir
     command: exit
 
+# VS Code settings
+vscode:
+  extensions:
+    - ms-python.python
+    - ms-python.vscode-pylance
+
 # Prebuild settings
 github:
   prebuilds:

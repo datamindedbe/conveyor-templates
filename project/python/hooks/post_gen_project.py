@@ -10,25 +10,24 @@ cloud = "{{ cookiecutter.cloud }}"
 dev_environment = "{{ cookiecutter.dev_environment }}"
 
 
-def delete_files(files):
-    for file in files:
-        os.remove(file)
+def cleanup_resources():
+    if not bool(strtobool(conveyor_managed_role)) or cloud == "azure":
+        shutil.rmtree("resources")
 
 
-def delete_folder(folder):
-    shutil.rmtree(folder)
+def setup_development_environment():
+    match dev_environment:
+        case "local":
+            os.remove(".gitpod.yml")
+            shutil.rmtree(".devcontainer")
+        case "gitpod":
+            shutil.rmtree(".devcontainer")
+        case "codespaces":
+            os.remove(".gitpod.yml")
 
 
 if __name__ == "__main__":
-    if not bool(strtobool(conveyor_managed_role)) or cloud == "azure":
-        delete_folder("resources")
-    
-    match dev_environment:
-        case "local":
-            delete_files([".gitpod.yml"])
-            delete_folder(".devcontainer")
-        case "gitpod":
-            delete_folder(".devcontainer")
-        case "codespaces":
-            delete_files([".gitpod.yml"])
+    cleanup_resources()
+    setup_development_environment()
+
 
