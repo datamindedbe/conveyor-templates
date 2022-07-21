@@ -54,6 +54,18 @@ def cleanup_resources():
         shutil.rmtree("resources")
 
 
+def setup_development_environment():
+    match dev_environment:
+        case "local":
+            os.remove(".gitpod.yml")
+            shutil.rmtree(".devcontainer")
+        case "gitpod":
+            shutil.rmtree(".devcontainer")
+        case "codespaces":
+            os.remove(".gitpod.yml")
+
+
 if __name__ == "__main__":
     initialize_dbt()
     cleanup_resources()
+    setup_development_environment()
