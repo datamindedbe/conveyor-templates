@@ -31,6 +31,7 @@ def initialize_dbt():
 
 def initialize_dbt_in_dir(project_dir: str, project: str):
     current_dir = os.getcwd()
+    os.mkdir(project_dir)
     os.chdir(project_dir)
     try:
         task = init_task.InitTask(
