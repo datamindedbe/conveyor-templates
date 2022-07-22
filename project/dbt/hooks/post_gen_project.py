@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import os
 import shutil
-import dbt.task.init as init_task
 from distutils.util import strtobool
 
 from dataclasses import dataclass
@@ -31,10 +30,11 @@ def initialize_dbt():
 
 def initialize_dbt_in_dir(project_dir: str, project: str):
     current_dir = os.getcwd()
-    os.mkdir(project_dir)
     os.chdir(project_dir)
     try:
         os.environ["DBT_PROFILES_DIR"] = os.getcwd()
+        import dbt.task.init as init_task  # late import so the environment variable is taken into account
+
         task = init_task.InitTask(
             args=InitArguments(project_dir=project_dir, project_name=project, skip_profile_setup=True), config=None
         )

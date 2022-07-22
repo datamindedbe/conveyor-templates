@@ -29,6 +29,7 @@ tasks:
   - name: Install dbt tooling (during prebuild)
     init: |
       pip install --no-cache sqlfluff
+    command: exit
       
 
 # VS Code settings
