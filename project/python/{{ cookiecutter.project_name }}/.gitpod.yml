@@ -28,10 +28,10 @@ tasks:
     command: exit
 
 # VS Code settings
-vscode:
-  extensions:
-    - ms-python.python
-    - ms-python.vscode-pylance
+# vscode:
+#   extensions:
+#     - ms-python.python
+#     - ms-python.vscode-pylance
 
 # Prebuild settings
 github:

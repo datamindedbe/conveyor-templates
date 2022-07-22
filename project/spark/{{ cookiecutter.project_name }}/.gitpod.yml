@@ -28,10 +28,10 @@ tasks:
     command: exit
 
 # VS Code settings
-vscode:
-  extensions:
-    - vscjava.vscode-java-pack
-    - scala-lang.scala
+# vscode:
+#   extensions:
+#     - vscjava.vscode-java-pack
+#     - scala-lang.scala
 
 # Prebuild settings
 github:

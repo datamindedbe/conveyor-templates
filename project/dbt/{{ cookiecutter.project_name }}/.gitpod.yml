@@ -32,9 +32,9 @@ tasks:
       
 
 # VS Code settings
-vscode:
-  extensions:
-    - dorzey.vscode-sqlfluff
+# vscode:
+#   extensions:
+#     - dorzey.vscode-sqlfluff
 
 # Prebuild settings
 github:
