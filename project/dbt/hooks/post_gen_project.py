@@ -34,6 +34,7 @@ def initialize_dbt_in_dir(project_dir: str, project: str):
     os.mkdir(project_dir)
     os.chdir(project_dir)
     try:
+        os.environ["DBT_PROFILES_DIR"] = os.getcwd()
         task = init_task.InitTask(
             args=InitArguments(project_dir=project_dir, project_name=project, skip_profile_setup=True), config=None
         )
