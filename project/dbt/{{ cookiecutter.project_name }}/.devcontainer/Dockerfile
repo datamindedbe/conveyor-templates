@@ -47,8 +47,6 @@ ENV PYTHONIOENCODING=utf-8
 ENV LANG=C.UTF-8
 
 # Update python and install
-COPY .python-version .python-version
-RUN pyenv install
 RUN python -m pip install --upgrade pip setuptools wheel --no-cache-dir
 RUN python -m pip install --no-cache "git+https://github.com/dbt-labs/${dbt_redshift_ref}#egg=dbt-redshift"
 RUN python -m pip install --no-cache "git+https://github.com/dbt-labs/${dbt_bigquery_ref}#egg=dbt-bigquery"
