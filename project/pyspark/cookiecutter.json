@@ -15,6 +15,7 @@
   "dev_environment": [
     "local",
     "gitpod",
-    "codespaces"
+    "codespaces",
+    "all"
   ]
 }

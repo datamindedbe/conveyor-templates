@@ -62,6 +62,8 @@ def cleanup_development_environment():
             shutil.rmtree(".devcontainer")
         case "codespaces":
             os.remove(".gitpod.yml")
+        case "all":
+            pass
 
 
 if __name__ == "__main__":

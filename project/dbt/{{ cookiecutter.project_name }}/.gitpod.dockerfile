@@ -36,4 +36,4 @@ RUN python -m pip install --no-cache "git+https://github.com/dbt-labs/${dbt_snow
 RUN python -m pip install --no-cache "git+https://github.com/dbt-labs/${dbt_postgres_ref}#egg=dbt-postgres&subdirectory=plugins/postgres"
 
 # install sqlfluff (optional, but recommended)
-RUN sudo pip install sqlfluff
+RUN python -m pip install --no-cache sqlfluff

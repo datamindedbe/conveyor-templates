@@ -65,9 +65,20 @@ def cleanup_development_environment():
             shutil.rmtree(".devcontainer")
         case "codespaces":
             os.remove(".gitpod.yml")
+        case "all":
+            pass
+
+
+def fix_dbt_project():
+    with open(f'./{project_name}/dbt_project.yml', "rt") as f:
+        data = f.read()
+        data = data.replace(f"profile: '{project_name}'", "profile: 'default'")
+    with open(f'./{project_name}/dbt_project.yml', "wt") as f:
+        f.write(data)
 
 
 if __name__ == "__main__":
     initialize_dbt()
     cleanup_resources()
     cleanup_development_environment()
+    fix_dbt_project()
