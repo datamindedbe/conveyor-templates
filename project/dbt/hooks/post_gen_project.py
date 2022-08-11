@@ -70,10 +70,10 @@ def cleanup_development_environment():
 
 
 def fix_dbt_project():
-    with open(f'./{project_name}/dbt_project.yml', "rt") as f:
+    with open(f'./dbt/{project_name}/dbt_project.yml', "rt") as f:
         data = f.read()
         data = data.replace(f"profile: '{project_name}'", "profile: 'default'")
-    with open(f'./{project_name}/dbt_project.yml', "wt") as f:
+    with open(f'./dbt/{project_name}/dbt_project.yml', "wt") as f:
         f.write(data)
 
 
