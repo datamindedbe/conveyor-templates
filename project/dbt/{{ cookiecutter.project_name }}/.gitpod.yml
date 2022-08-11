@@ -26,11 +26,9 @@ tasks:
       ./aws/install --install-dir /workspace/aws-cli --bin-dir /workspace/bin
       cd && rm -r $tmpdir
     command: exit
-  - name: Install dbt tooling (during prebuild)
-    init: |
-      pip install --no-cache sqlfluff
-    command: exit
-      
+
+image:
+  file: .gitpod.dockerfile
 
 # VS Code settings
 # vscode:
