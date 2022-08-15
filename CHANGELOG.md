@@ -5,6 +5,8 @@
 - Use strict uuid pattern matching in the resources. (@stijndehaes)
 - Upgrade the resource folder assume role policies to use the service account. (@stijndehaes)
 - Upgrade spark images to our latest releases. (@stijndehaes)
+- Upgrade to DBT 1.1.0 (@pascal-knapen)
+- Add gitpod and codespaces configuration (@pascal-knapen)
 
 ## [1.0.0 - 2022-05-19]
 
