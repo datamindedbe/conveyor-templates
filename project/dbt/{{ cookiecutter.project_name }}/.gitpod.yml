@@ -1,0 +1,54 @@
+# List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
+tasks:
+  - name: Gitpod config (browser open, workspace bin path)
+    init: |
+      mkdir -p /workspace/bin
+      cat > /workspace/bin/open.sh <<'EOF'
+      #!/bin/bash
+      exec gp preview --external "$@"
+      EOF
+      chmod +x /workspace/bin/open.sh
+    command: |
+      sudo update-alternatives --install /usr/bin/www-browser www-browser /workspace/bin/open.sh 100
+      exit
+  - name: Install conveyor 
+    init: curl -s https://datafy-cp-artifacts.s3.eu-west-1.amazonaws.com/cli-install/install.sh | bash
+    command: |
+      curl -s https://datafy-cp-artifacts.s3.eu-west-1.amazonaws.com/cli-install/update.sh | bash
+      exit
+  - name: Install AWS CLI (during prebuild)
+    init: |
+      tmpdir="$(mktemp -d)"
+      cd $tmpdir
+      wget "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -O "awscliv2.zip"
+      unzip awscliv2.zip
+      mkdir -p /workspace/aws-cli
+      ./aws/install --install-dir /workspace/aws-cli --bin-dir /workspace/bin
+      cd && rm -r $tmpdir
+    command: exit
+
+image:
+  file: .gitpod.dockerfile
+
+# VS Code settings
+# vscode:
+#   extensions:
+#     - dorzey.vscode-sqlfluff
+
+# Prebuild settings
+github:
+  prebuilds:
+    # enable for the default branch (defaults to true)
+    main: true
+    # enable for all branches in this repo (defaults to false)
+    branches: true
+    # enable for pull requests coming from this repo (defaults to true)
+    pullRequests: true
+    # enable for pull requests coming from forks (defaults to false)
+    pullRequestsFromForks: true
+    # add a check to pull requests (defaults to true)
+    addCheck: true
+    # add a "Review in Gitpod" button as a comment to pull requests (defaults to false)
+    addComment: false
+    # add a "Review in Gitpod" button to the pull request's description (defaults to false)
+    addBadge: false

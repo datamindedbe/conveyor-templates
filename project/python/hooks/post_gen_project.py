@@ -7,17 +7,29 @@ MANIFEST = "manifest.yml"
 
 conveyor_managed_role = "{{ cookiecutter.conveyor_managed_role }}"
 cloud = "{{ cookiecutter.cloud }}"
+dev_environment = "{{ cookiecutter.dev_environment }}"
 
 
-def delete_files(files):
-    for file in files:
-        os.remove(file)
+def cleanup_resources():
+    if not bool(strtobool(conveyor_managed_role)) or cloud == "azure":
+        shutil.rmtree("resources")
 
 
-def delete_folder(folder):
-    shutil.rmtree(folder)
+def cleanup_development_environment():
+    match dev_environment:
+        case "local":
+            os.remove(".gitpod.yml")
+            shutil.rmtree(".devcontainer")
+        case "gitpod":
+            shutil.rmtree(".devcontainer")
+        case "codespaces":
+            os.remove(".gitpod.yml")
+        case "all":
+            pass
 
 
 if __name__ == "__main__":
-    if not bool(strtobool(conveyor_managed_role)) or cloud == "azure":
-        delete_folder("resources")
+    cleanup_resources()
+    cleanup_development_environment()
+
+

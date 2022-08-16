@@ -1,0 +1,26 @@
+default:
+  outputs:
+
+    dev:
+      type: bigquery
+
+      # Service account auth
+      method: service-account
+      keyfile: [ /path/to/bigquery/keyfile.json ]
+
+      project: [ GCP project id ]
+      dataset: [ the name of your dbt dataset ]
+      threads: [ 1 or more ]
+
+    prod:
+      type: bigquery
+
+      # Service account auth
+      method: service-account
+      keyfile: [ /path/to/bigquery/keyfile.json ]
+
+      project: [ GCP project id ]
+      dataset: [ the name of your dbt dataset ]
+      threads: [ 1 or more ]
+
+  target: dev

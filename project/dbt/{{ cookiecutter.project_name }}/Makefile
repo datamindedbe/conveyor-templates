@@ -3,12 +3,12 @@ project_name:={{ cookiecutter.project_name|replace("-", "_") }}
 project_dir:=$(current_dir)/dbt/$(project_name)
 profiles_dir:=$(current_dir)/dbt
 env_file:=$(current_dir)/.env
-dbt_version:=0.21.0
+dbt_version:=v1.1.0
 os_docker_flag:=
 ifeq ($(shell uname -s),Linux)
 	os_docker_flag += --add-host host.docker.internal:host-gateway
 endif
-docker_dbt_command:=docker run --rm $(os_docker_flag) --env-file $(env_file) --entrypoint /bin/bash --privileged -it -e NO_DOCKER=1 -p 8080:8080 -v $(current_dir):/workspace -w /workspace fishtownanalytics/dbt:$(dbt_version)
+docker_dbt_command:=docker run --rm $(os_docker_flag) --env-file $(env_file) --entrypoint /bin/bash --privileged -it -e NO_DOCKER=1 -p 8080:8080 -v $(current_dir):/workspace -w /workspace public.ecr.aws/dataminded/dbt:$(dbt_version)
 
 supported_args=target models select
 args = $(foreach a,$(supported_args),$(if $(value $a),--$a "$($a)"))
