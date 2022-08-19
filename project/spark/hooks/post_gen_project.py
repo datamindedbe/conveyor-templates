@@ -64,10 +64,12 @@ def cleanup_development_environment():
         case "local":
             os.remove(".gitpod.yml")
             shutil.rmtree(".devcontainer")
+            os.remove(".gitpod.dockerfile")
         case "gitpod":
             shutil.rmtree(".devcontainer")
         case "codespaces":
             os.remove(".gitpod.yml")
+            os.remove(".gitpod.dockerfile")
         case "all":
             pass
 
