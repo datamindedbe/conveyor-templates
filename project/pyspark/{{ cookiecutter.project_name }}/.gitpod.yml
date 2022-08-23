@@ -16,16 +16,6 @@ tasks:
     command: |
       curl -s https://datafy-cp-artifacts.s3.eu-west-1.amazonaws.com/cli-install/update.sh | bash
       exit
-  - name: Install AWS CLI (during prebuild)
-    init: |
-      tmpdir="$(mktemp -d)"
-      cd $tmpdir
-      wget "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -O "awscliv2.zip"
-      unzip awscliv2.zip
-      mkdir -p /workspace/aws-cli
-      ./aws/install --install-dir /workspace/aws-cli --bin-dir /workspace/bin
-      cd && rm -r $tmpdir
-    command: exit
   - name: Install dependencies
     init: |
       python -m venv venv
