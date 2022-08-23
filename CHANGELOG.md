@@ -1,5 +1,11 @@
 <a name="unreleased"></a>
-## [Unreleased]
+
+## [1.1.1 - 2022-08-23]
+
+### features
+- Improve gitpod setup to install requirements/dependencies when starting workspace
+
+## [1.1.0 - 2022-08-16]
 
 ### features
 - Use strict uuid pattern matching in the resources. (@stijndehaes)
@@ -227,7 +233,13 @@
 
 First release of the templates
 
-[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/0.15.4...HEAD
+[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/1.1.1...HEAD
+[1.1.1 - 2022-08-23]: https://github.com/datamindedbe/datafy-templates/compare/1.1.0...1.1.1
+[1.1.0 - 2022-08-16]: https://github.com/datamindedbe/datafy-templates/compare/1.0.0...1.1.0
+[1.0.0 - 2022-05-19]: https://github.com/datamindedbe/datafy-templates/compare/0.16.1...1.0.0
+[0.16.1 - 2022-05-10]: https://github.com/datamindedbe/datafy-templates/compare/0.16.0...0.16.1
+[0.16.0 - 2022-05-05]: https://github.com/datamindedbe/datafy-templates/compare/0.15.5...0.16.0
+[0.15.5 - 2022-03-16]: https://github.com/datamindedbe/datafy-templates/compare/0.15.4...0.15.5
 [0.15.4 - 2022-01-07]: https://github.com/datamindedbe/datafy-templates/compare/0.15.3...0.15.4
 [0.15.3 - 2021-11-30]: https://github.com/datamindedbe/datafy-templates/compare/0.15.2...0.15.3
 [0.15.2 - 2021-11-19]: https://github.com/datamindedbe/datafy-templates/compare/0.15.1...0.15.2

@@ -9,6 +9,11 @@ RUN sudo apt-get update \
   && sudo rm -rf \
     /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+RUN wget "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -O "awscliv2.zip" && \
+    unzip awscliv2.zip && \
+    sudo ./aws/install --install-dir /opt/aws-cli --bin-dir /usr/local/bin/ && \
+    sudo chmod a+x /opt/
+
 # Update python and install
 COPY .python-version .python-version
 RUN pyenv install
