@@ -56,7 +56,9 @@ def assert_project_can_be_build(result):
     (
         stdout,
         stderr,
-    ) = process.communicate()  # You can use stoud and sterr to find out what went wrong
+    ) = (
+        process.communicate()
+    )  # You can use stdout and stderr to find out what went wrong
     return_code = process.poll()
     assert return_code == 0, stdout + stderr
 

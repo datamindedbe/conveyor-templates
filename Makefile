@@ -1,8 +1,18 @@
 test: flake8 black
-	pytest tests
+	. venv/bin/activate; pytest tests
 
 flake8:
-	flake8 tests
+	. venv/bin/activate; flake8 tests
 
 black:
-	black tests
+	. venv/bin/activate; black tests
+
+requirements:
+	pip-compile requirements.in
+	pip-compile dev-requirements.in
+
+install:
+	python3 -m venv venv
+	. venv/bin/activate; \
+		pip install -r requirements.txt; \
+		pip install -r dev-requirements.txt
