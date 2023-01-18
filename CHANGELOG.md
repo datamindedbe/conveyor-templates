@@ -3,7 +3,8 @@
 ## Unreleased
 
 ### features
-- Upgrade the python project dependencies
+- Upgrade the python template dependencies
+- Upgrade the pyspark template to spark 3.3.1, also upgrade the dependencies
 
 ## [1.1.1 - 2022-08-23]
 

@@ -3,7 +3,6 @@ import os
 import shutil
 from distutils.util import strtobool
 
-spark_version = "{{ cookiecutter.spark_version }}"
 conveyor_managed_role = "{{ cookiecutter.conveyor_managed_role }}"
 cloud = "{{ cookiecutter.cloud }}"
 project_type = "{{ cookiecutter.project_type }}"
@@ -12,17 +11,6 @@ dev_environment = "{{ cookiecutter.dev_environment }}"
 
 def conveyor_managed_role_enabled():
     return bool(strtobool(conveyor_managed_role))
-
-
-def delete_resources_for_disabled_features():
-    if spark_version == "2.4":
-        os.rename("dev-requirements-2.txt", "dev-requirements.txt")
-        delete_resource("dev-requirements-3.txt")
-    elif spark_version == "3.0":
-        os.rename("dev-requirements-3.txt", "dev-requirements.txt")
-        delete_resource("dev-requirements-2.txt")
-    else:
-        raise Exception("Unknown spark version: " + spark_version)
 
 
 def delete_resource(resource):
@@ -69,7 +57,6 @@ def cleanup_development_environment():
 
 
 if __name__ == "__main__":
-    delete_resources_for_disabled_features()
     cleanup_resources()
     cleanup_streaming_resources()
     cleanup_batch_resources()

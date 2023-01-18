@@ -1,5 +1,1 @@
-{% if cookiecutter.spark_version == "2.4" -%}
-3.6.9
-{%- elif cookiecutter.spark_version == "3.0" -%}
 3.9.11
-{%- endif %}

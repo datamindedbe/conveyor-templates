@@ -1,7 +1,6 @@
 {
   "project_name": "pyspark",
   "module_name": "pyspark",
-  "spark_version": [ "3.0", "2.4" ],
   "cloud": [
     "aws",
     "azure"
