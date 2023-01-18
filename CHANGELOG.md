@@ -1,5 +1,10 @@
 <a name="unreleased"></a>
 
+## Unreleased
+
+### features
+- Upgrade the python project dependencies
+
 ## [1.1.1 - 2022-08-23]
 
 ### features

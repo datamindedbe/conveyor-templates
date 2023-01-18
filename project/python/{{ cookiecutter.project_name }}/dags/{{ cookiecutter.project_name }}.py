@@ -23,7 +23,13 @@ ConveyorContainerOperatorV2(
     dag=dag,
     task_id="sample",
     cmds=["python"],
-    arguments=["-m", "{{ cookiecutter.module_name }}.sample", "{% raw %}--date", "{{ ds }}", "--env", "{{ macros.conveyor.env() }}{% endraw %}"],
+    arguments=[
+        "-m",
+        "{{ cookiecutter.module_name }}.sample",
+        "{% raw %}--date", "{{ ds }}",
+        "--env",
+        "{{ macros.conveyor.env() }}{% endraw %}",
+    ],
     instance_type="mx.micro",
 {%- if cookiecutter.conveyor_managed_role %}
     aws_role="{{ cookiecutter.project_name }}-{% raw %}{{ macros.conveyor.env() }}{% endraw %}",
