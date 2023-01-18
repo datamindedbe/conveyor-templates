@@ -63,57 +63,25 @@ def assert_project_can_be_build(result):
     assert return_code == 0, stdout + stderr
 
 
-def test_pyspark_template_spark_3(cookies):
+def test_pyspark_template_spark(cookies):
     """
     This test makes sure that when a project with spark 3 support is being rendered the docker image can be build
     """
     result = cookies.bake(
         template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",
-        extra_context={"spark_version": "3.0"},
     )
     assert_project_can_be_build(result)
 
 
-def test_pyspark_template_spark_2_4(cookies):
-    """
-    This test makes sure that when a project with spark 2.4 support is being rendered the docker image can be build
-    """
-    result = cookies.bake(
-        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",
-        extra_context={"spark_version": "2.4"},
-    )
-    assert_project_can_be_build(result)
-
-
-def test_pyspark_template_spark_pipenv_2_4(cookies):
+def test_pyspark_template_spark_pipenv(cookies):
     """
     This test makes sure that when a project with pipenv support is being rendered the docker image can be build
     """
     result = cookies.bake(
         template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",
-        extra_context={"python_package_management": "pipenv", "spark_version": "2.4"},
+        extra_context={"python_package_management": "pipenv"},
     )
     assert_project_can_be_build(result)
-
-
-def test_pyspark_template_spark_pipenv_3(cookies):
-    """
-    This test makes sure that when a project with pipenv support is being rendered the docker image can be build
-    """
-    result = cookies.bake(
-        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",
-        extra_context={"python_package_management": "pipenv", "spark_version": "3.0"},
-    )
-    assert_project_can_be_build(result)
-
-
-def test_pyspark_template_streaming_spark_2(cookies):
-    result = cookies.bake(
-        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/pyspark",
-        extra_context={"project_type": "streaming", "spark_version": "2.4"},
-    )
-    assert -1 == result.exit_code, result.exception
-    assert result.exception is not None
 
 
 def assert_streaming_files(result, exist: bool = True):
