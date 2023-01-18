@@ -35,15 +35,6 @@ def test_spark_template_azure(cookies):
     assert_batch_files(result, exist=True)
 
 
-def test_spark_streaming_2_4(cookies):
-    result = cookies.bake(
-        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/spark",
-        extra_context={"project_type": "streaming", "spark_version": "2.4"},
-    )
-    assert -1 == result.exit_code, result.exception
-    assert result.exception is not None
-
-
 def test_spark_project_type_batch(cookies):
     result = cookies.bake(
         template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/spark",
@@ -114,23 +105,12 @@ def assert_tests_run_without_compilation_issues(result):
     assert return_code == 0, stderr
 
 
-def test_spark_template_spark_3(cookies):
+def test_spark_template_spark(cookies):
     """
     This test makes sure that when a project with spark 3 support is being rendered the tests can be run
     """
     result = cookies.bake(
         template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/spark",
-        extra_context={"spark_version": "3.0"},
-    )
-    assert_tests_run_without_compilation_issues(result)
-
-
-def test_spark_template_spark_2(cookies):
-    """
-    This test makes sure that when a project with spark 2 support is being rendered the tests can be run
-    """
-    result = cookies.bake(
-        template=f"{os.path.dirname(os.path.abspath(__file__))}/../../project/spark",
-        extra_context={"spark_version": "2.4"},
+        extra_context={},
     )
     assert_tests_run_without_compilation_issues(result)

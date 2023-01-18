@@ -28,19 +28,11 @@ sample_task = ConveyorSparkSubmitOperatorV2(
     num_executors="1",
     driver_instance_type="mx.small",
     executor_instance_type="mx.small",
-    {% if cookiecutter.spark_version == "2.4" -%}
-    spark_main_version=2,
-    {%- elif cookiecutter.spark_version == "3.0" -%}
     spark_main_version=3,
-    {%- endif %}
     {% if cookiecutter.conveyor_managed_role -%}
     aws_role="{{ cookiecutter.project_name }}-{% raw %}{{ macros.conveyor.env() }}{% endraw %}",
     {%- endif %}
-    {% if cookiecutter.spark_version == "2.4" -%}
-    application="/opt/spark/work-dir/app.jar",
-    {%- elif cookiecutter.spark_version == "3.0" -%}
     application="local:///opt/spark/work-dir/app.jar",
-    {%- endif %}
     java_class="{{ cookiecutter.group_id }}.{{ cookiecutter.module_name }}.SampleJob",
     application_args=[{% raw %}"--date", "{{ ds }}", "--environment", "{{ macros.conveyor.env() }}"{% endraw %}],
 )

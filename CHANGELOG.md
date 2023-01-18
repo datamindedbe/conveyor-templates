@@ -5,10 +5,13 @@
 ### features
 - Upgrade the python template dependencies
 - Upgrade the pyspark template to spark 3.3.1, also upgrade the dependencies
+- Upgrade the spark template to spark 3.3.1, also upgrade the dependencies
+- Upgrade spark template gradle version to 7.6
 - Upgrade DBT support to v1.3.2
 
 ### removals
 - Remove support for pyspark 2.x support from the pyspark template
+- Remove support for spark 2.x support from the spark template
 
 ## [1.1.1 - 2022-08-23]
 

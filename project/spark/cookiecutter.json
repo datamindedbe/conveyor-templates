@@ -2,10 +2,6 @@
   "project_name": "spark",
   "module_name": "spark",
   "group_id": "com.conveyor",
-  "spark_version": [
-    "3.0",
-    "2.4"
-  ],
   "cloud": [
     "aws",
     "azure"
