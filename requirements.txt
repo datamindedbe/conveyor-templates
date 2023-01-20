@@ -5,42 +5,39 @@
 #    pip-compile requirements.in
 #
 agate==1.6.3
-    # via
-    #   -r requirements.in
-    #   dbt-core
-arrow==1.2.2
+    # via dbt-core
+arrow==1.2.3
     # via jinja2-time
 asn1crypto==1.5.1
     # via
     #   oscrypto
     #   snowflake-connector-python
-attrs==21.4.0
+attrs==22.2.0
     # via jsonschema
-babel==2.10.3
+babel==2.11.0
     # via agate
 binaryornot==0.4.4
     # via cookiecutter
-boto3==1.24.32
+boto3==1.26.53
     # via dbt-redshift
-botocore==1.27.32
+botocore==1.29.53
     # via
     #   boto3
     #   s3transfer
-cachetools==5.2.0
+cachetools==5.2.1
     # via google-auth
-certifi==2022.6.15
+certifi==2022.12.7
     # via
     #   requests
     #   snowflake-connector-python
 cffi==1.15.1
     # via
-    #   -r requirements.in
     #   cryptography
     #   dbt-core
     #   snowflake-connector-python
-chardet==5.0.0
+chardet==5.1.0
     # via binaryornot
-charset-normalizer==2.0.12
+charset-normalizer==2.1.1
     # via
     #   requests
     #   snowflake-connector-python
@@ -48,18 +45,18 @@ click==8.1.3
     # via
     #   cookiecutter
     #   dbt-core
-colorama==0.4.4
+colorama==0.4.5
     # via dbt-core
 cookiecutter==2.1.1
     # via -r requirements.in
-cryptography==3.4.8
+cryptography==36.0.2
     # via
     #   dbt-snowflake
     #   pyopenssl
     #   snowflake-connector-python
-dbt-bigquery==1.1.0
+dbt-bigquery==1.3.0
     # via -r requirements.in
-dbt-core==1.1.0
+dbt-core==1.3.2
     # via
     #   -r requirements.in
     #   dbt-bigquery
@@ -68,61 +65,77 @@ dbt-core==1.1.0
     #   dbt-snowflake
 dbt-extractor==0.4.1
     # via dbt-core
-dbt-postgres==1.1.0
+dbt-postgres==1.3.2
     # via
     #   -r requirements.in
     #   dbt-redshift
-dbt-redshift==1.1.0
+dbt-redshift==1.3.0
     # via -r requirements.in
-dbt-snowflake==1.1.0
+dbt-snowflake==1.3.0
     # via -r requirements.in
-future==0.18.2
+filelock==3.9.0
+    # via snowflake-connector-python
+future==0.18.3
     # via parsedatetime
-google-api-core[grpc]==2.8.2
+google-api-core[grpc]==2.11.0
     # via
     #   dbt-bigquery
     #   google-cloud-bigquery
     #   google-cloud-core
-google-auth==2.9.1
+    #   google-cloud-dataproc
+    #   google-cloud-storage
+google-auth==2.16.0
     # via
     #   google-api-core
     #   google-cloud-core
+    #   google-cloud-storage
 google-cloud-bigquery==2.34.4
     # via dbt-bigquery
 google-cloud-core==2.3.2
     # via
     #   dbt-bigquery
     #   google-cloud-bigquery
-google-crc32c==1.3.0
+    #   google-cloud-storage
+google-cloud-dataproc==5.2.0
+    # via dbt-bigquery
+google-cloud-storage==2.7.0
+    # via dbt-bigquery
+google-crc32c==1.5.0
     # via google-resumable-media
-google-resumable-media==2.3.3
-    # via google-cloud-bigquery
-googleapis-common-protos==1.56.4
+google-resumable-media==2.4.1
+    # via
+    #   google-cloud-bigquery
+    #   google-cloud-storage
+googleapis-common-protos==1.58.0
     # via
     #   dbt-bigquery
     #   google-api-core
     #   grpcio-status
-grpcio==1.47.0
+grpcio==1.51.1
     # via
     #   google-api-core
     #   google-cloud-bigquery
     #   grpcio-status
 grpcio-status==1.47.0
-    # via google-api-core
-hologram==0.0.14
+    # via
+    #   -r requirements.in
+    #   google-api-core
+hologram==0.0.15
     # via dbt-core
-idna==3.3
+idna==3.4
     # via
     #   dbt-core
     #   requests
     #   snowflake-connector-python
-importlib-metadata==4.12.0
-    # via jsonschema
+importlib-metadata==6.0.0
+    # via keyring
 isodate==0.6.1
     # via
     #   agate
     #   dbt-core
-jinja2==2.11.3
+jaraco-classes==3.2.3
+    # via keyring
+jinja2==3.1.2
     # via
     #   cookiecutter
     #   dbt-core
@@ -133,25 +146,27 @@ jmespath==1.0.1
     # via
     #   boto3
     #   botocore
-jsonschema==3.1.1
+jsonschema==3.2.0
     # via hologram
-keyring==23.7.0
+keyring==23.13.1
     # via snowflake-connector-python
 leather==0.3.4
     # via agate
 logbook==1.5.3
     # via dbt-core
-markupsafe==2.0.1
+markupsafe==2.1.2
     # via
-    #   dbt-core
     #   jinja2
-mashumaro==2.9
+    #   werkzeug
+mashumaro[msgpack]==3.0.4
     # via dbt-core
 minimal-snowplow-tracker==0.0.2
     # via dbt-core
+more-itertools==9.0.0
+    # via jaraco-classes
 msgpack==1.0.4
     # via mashumaro
-networkx==2.8.5
+networkx==2.8.8
     # via dbt-core
 oscrypto==1.3.0
     # via snowflake-connector-python
@@ -161,17 +176,23 @@ packaging==21.3
     #   google-cloud-bigquery
 parsedatetime==2.4
     # via agate
-proto-plus==1.20.6
-    # via google-cloud-bigquery
-protobuf==3.20.1
+pathspec==0.9.0
+    # via dbt-core
+proto-plus==1.22.2
     # via
+    #   google-cloud-bigquery
+    #   google-cloud-dataproc
+protobuf==3.20.3
+    # via
+    #   -r requirements.in
     #   dbt-bigquery
     #   google-api-core
     #   google-cloud-bigquery
+    #   google-cloud-dataproc
     #   googleapis-common-protos
     #   grpcio-status
     #   proto-plus
-psycopg2-binary==2.9.3
+psycopg2-binary==2.9.5
     # via dbt-postgres
 pyasn1==0.4.8
     # via
@@ -181,9 +202,9 @@ pyasn1-modules==0.2.8
     # via google-auth
 pycparser==2.21
     # via cffi
-pycryptodomex==3.15.0
+pycryptodomex==3.16.0
     # via snowflake-connector-python
-pyjwt==2.4.0
+pyjwt==2.6.0
     # via snowflake-connector-python
 pyopenssl==21.0.0
     # via
@@ -191,7 +212,7 @@ pyopenssl==21.0.0
     #   snowflake-connector-python
 pyparsing==3.0.9
     # via packaging
-pyrsistent==0.18.1
+pyrsistent==0.19.3
     # via jsonschema
 python-dateutil==2.8.2
     # via
@@ -199,30 +220,31 @@ python-dateutil==2.8.2
     #   botocore
     #   google-cloud-bigquery
     #   hologram
-python-slugify==6.1.2
+python-slugify==7.0.0
     # via
     #   agate
     #   cookiecutter
 pytimeparse==1.1.8
     # via agate
-pytz==2022.1
+pytz==2022.7.1
     # via
     #   babel
     #   snowflake-connector-python
 pyyaml==6.0
     # via
     #   cookiecutter
-    #   mashumaro
-requests==2.28.1
+    #   dbt-core
+requests==2.28.2
     # via
     #   cookiecutter
     #   dbt-core
     #   dbt-snowflake
     #   google-api-core
     #   google-cloud-bigquery
+    #   google-cloud-storage
     #   minimal-snowplow-tracker
     #   snowflake-connector-python
-rsa==4.8
+rsa==4.9
     # via google-auth
 s3transfer==0.6.0
     # via boto3
@@ -230,30 +252,31 @@ six==1.16.0
     # via
     #   agate
     #   google-auth
-    #   grpcio
     #   isodate
     #   jsonschema
     #   leather
     #   minimal-snowplow-tracker
     #   pyopenssl
     #   python-dateutil
-snowflake-connector-python[secure-local-storage]==2.7.9
+snowflake-connector-python[secure-local-storage]==2.7.12
     # via dbt-snowflake
-sqlparse==0.4.2
+sqlparse==0.4.3
     # via dbt-core
 text-unidecode==1.3
     # via python-slugify
-typing-extensions==4.3.0
+typing-extensions==4.4.0
     # via
     #   dbt-core
     #   mashumaro
-urllib3==1.26.10
+    #   snowflake-connector-python
+urllib3==1.26.14
     # via
     #   botocore
     #   requests
-werkzeug==2.1.2
+    #   snowflake-connector-python
+werkzeug==2.2.2
     # via dbt-core
-zipp==3.8.1
+zipp==3.11.0
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
