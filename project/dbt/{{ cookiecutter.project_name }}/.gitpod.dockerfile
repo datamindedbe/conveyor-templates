@@ -1,10 +1,10 @@
 FROM gitpod/workspace-python
 
-ARG dbt_core_ref=dbt-core@v1.1.0
-ARG dbt_postgres_ref=dbt-core@v1.1.0
-ARG dbt_redshift_ref=dbt-redshift@v1.1.0
-ARG dbt_bigquery_ref=dbt-bigquery@v1.1.0
-ARG dbt_snowflake_ref=dbt-snowflake@v1.1.0
+ARG dbt_core_ref=dbt-core@v1.3.2
+ARG dbt_postgres_ref=dbt-core@v1.3.2
+ARG dbt_redshift_ref=dbt-redshift@v1.3.0
+ARG dbt_bigquery_ref=dbt-bigquery@v1.3.0
+ARG dbt_snowflake_ref=dbt-snowflake@v1.3.0
 
 RUN sudo apt-get update \
   && sudo apt-get dist-upgrade -y \

@@ -1,5 +1,5 @@
 {
-  "project_name": "dbt",
+  "project_name": "dbt-template",
   "workflow_start_date": "2020-01-01",
   "workflow_schedule": "@daily",
   "database_type": [

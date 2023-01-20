@@ -5,6 +5,7 @@
 ### features
 - Upgrade the python template dependencies
 - Upgrade the pyspark template to spark 3.3.1, also upgrade the dependencies
+- Upgrade DBT support to v1.3.2
 
 ### removals
 - Remove support for pyspark 2.x support from the pyspark template

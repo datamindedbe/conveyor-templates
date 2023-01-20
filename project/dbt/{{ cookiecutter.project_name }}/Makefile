@@ -3,7 +3,7 @@ project_name:={{ cookiecutter.project_name|replace("-", "_") }}
 project_dir:=$(current_dir)/dbt/$(project_name)
 profiles_dir:=$(current_dir)/dbt
 env_file:=$(current_dir)/.env
-dbt_version:=v1.1.0
+dbt_version:=v1.3.2
 os_docker_flag:=
 ifeq ($(shell uname -s),Linux)
 	os_docker_flag += --add-host host.docker.internal:host-gateway

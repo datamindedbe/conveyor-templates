@@ -4,11 +4,11 @@
 #
 #    pip-compile dev-requirements.in
 #
-arrow==1.2.2
+arrow==1.2.3
     # via
     #   -c requirements.txt
     #   jinja2-time
-attrs==21.4.0
+attrs==22.2.0
     # via
     #   -c requirements.txt
     #   pytest
@@ -20,15 +20,15 @@ black==22.12.0
     # via -r dev-requirements.in
 build==0.10.0
     # via pip-tools
-certifi==2022.6.15
+certifi==2022.12.7
     # via
     #   -c requirements.txt
     #   requests
-chardet==5.0.0
+chardet==5.1.0
     # via
     #   -c requirements.txt
     #   binaryornot
-charset-normalizer==2.0.12
+charset-normalizer==2.1.1
     # via
     #   -c requirements.txt
     #   requests
@@ -46,13 +46,13 @@ exceptiongroup==1.1.0
     # via pytest
 flake8==5.0.4
     # via -r dev-requirements.in
-idna==3.3
+idna==3.4
     # via
     #   -c requirements.txt
     #   requests
 iniconfig==1.1.1
     # via pytest
-jinja2==2.11.3
+jinja2==3.1.2
     # via
     #   -c requirements.txt
     #   cookiecutter
@@ -61,7 +61,7 @@ jinja2-time==0.2.0
     # via
     #   -c requirements.txt
     #   cookiecutter
-markupsafe==2.0.1
+markupsafe==2.1.2
     # via
     #   -c requirements.txt
     #   jinja2
@@ -75,7 +75,9 @@ packaging==21.3
     #   build
     #   pytest
 pathspec==0.9.0
-    # via black
+    # via
+    #   -c requirements.txt
+    #   black
 pip-tools==6.12.1
     # via -r dev-requirements.in
 platformdirs==2.4.0
@@ -102,7 +104,7 @@ python-dateutil==2.8.2
     # via
     #   -c requirements.txt
     #   arrow
-python-slugify==6.1.2
+python-slugify==7.0.0
     # via
     #   -c requirements.txt
     #   cookiecutter
@@ -110,7 +112,7 @@ pyyaml==6.0
     # via
     #   -c requirements.txt
     #   cookiecutter
-requests==2.28.1
+requests==2.28.2
     # via
     #   -c requirements.txt
     #   cookiecutter
@@ -128,7 +130,7 @@ tomli==1.2.2
     #   build
     #   pyproject-hooks
     #   pytest
-urllib3==1.26.10
+urllib3==1.26.14
     # via
     #   -c requirements.txt
     #   requests
