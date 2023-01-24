@@ -8,6 +8,8 @@
 - Upgrade the spark template to spark 3.3.1, also upgrade the dependencies
 - Upgrade spark template gradle version to 7.6
 - Upgrade DBT support to v1.3.2
+- Change manifest generation such that it does not require a connection to the database
+- Change the dbt template to make it easier to get started
 
 ### removals
 - Remove support for pyspark 2.x support from the pyspark template
