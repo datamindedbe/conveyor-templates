@@ -1,5 +1,5 @@
 current_dir:=$(shell pwd)
-project_name:=databuildtool2
+project_name:={{ cookiecutter.project_name|replace("-", "_") }}
 rel_project_dir:=dbt/$(project_name)
 rel_profiles_dir:=dbt
 abs_project_dir:=$(current_dir)/$(rel_project_dir)
