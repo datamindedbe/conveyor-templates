@@ -1,6 +1,6 @@
 <a name="unreleased"></a>
 
-## Unreleased
+## [1.2.0 - 2023-02-01]
 
 ### features
 - Upgrade the python template dependencies
@@ -248,7 +248,8 @@
 
 First release of the templates
 
-[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/1.1.1...HEAD
+[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/1.2.0...HEAD
+[1.2.0 - 2023-02-01]: https://github.com/datamindedbe/datafy-templates/compare/1.1.1...1.2.0
 [1.1.1 - 2022-08-23]: https://github.com/datamindedbe/datafy-templates/compare/1.1.0...1.1.1
 [1.1.0 - 2022-08-16]: https://github.com/datamindedbe/datafy-templates/compare/1.0.0...1.1.0
 [1.0.0 - 2022-05-19]: https://github.com/datamindedbe/datafy-templates/compare/0.16.1...1.0.0
