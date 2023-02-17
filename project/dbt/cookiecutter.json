@@ -6,7 +6,8 @@
     "postgres",
     "redshift",
     "snowflake",
-    "bigquery"
+    "bigquery",
+    "duckdb"
   ],
   "cloud": [
     "aws",

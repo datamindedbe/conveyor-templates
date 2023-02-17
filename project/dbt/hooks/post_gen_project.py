@@ -11,7 +11,7 @@ project_name = "{{ cookiecutter.project_name }}".replace(
 conveyor_managed_role = "{{ cookiecutter.conveyor_managed_role }}"
 cloud = "{{ cookiecutter.cloud }}"
 database_type = "{{ cookiecutter.database_type }}"
-available_adapters = ["bigquery", "postgres", "redshift", "snowflake"]
+available_adapters = ["bigquery", "postgres", "redshift", "snowflake", "duckdb"]
 dev_environment = "{{ cookiecutter.dev_environment }}"
 
 
