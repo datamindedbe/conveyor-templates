@@ -1,5 +1,6 @@
 from airflow import DAG
 from conveyor.factories import ConveyorDbtTaskFactory
+from conveyor.operators import ConveyorContainerOperatorV2
 from datetime import datetime, timedelta
 
 
@@ -20,9 +21,17 @@ dag = DAG(
     "{{ cookiecutter.project_name }}", default_args=default_args, schedule_interval="{{ cookiecutter.workflow_schedule }}", max_active_runs=1
 )
 
-factory = ConveyorDbtTaskFactory(
-{%- if cookiecutter.conveyor_managed_role %}
-    task_aws_role="{{ cookiecutter.project_name }}-{% raw %}{{ macros.conveyor.env() }}{% endraw %}",
-{%- endif %}
+#factory = ConveyorDbtTaskFactory(
+#{%- if cookiecutter.conveyor_managed_role %}
+#    task_aws_role="{{ cookiecutter.project_name }}-{% raw %}{{ macros.conveyor.env() }}{% endraw %}",
+#{%- endif %}
+#)
+#factory.add_tasks_to_dag(dag=dag)
+ConveyorContainerOperatorV2(
+    dag=dag,
+    task_id="dbt-duckdb-tutorial",
+    arguments=["build", "--profiles-dir", "/app/dbt", "--project-dir", "/app/dbt/{{ cookiecutter.project_name }}"],
+    {%- if cookiecutter.conveyor_managed_role %}
+       task_aws_role="{{ cookiecutter.project_name }}-{% raw %}{{ macros.conveyor.env() }}{% endraw %}",
+    {%- endif %}
 )
-factory.add_tasks_to_dag(dag=dag)
