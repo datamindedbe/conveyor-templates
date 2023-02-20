@@ -29,6 +29,7 @@ def test_dbt_duckdb_template(cookies):
     assertFileContainsContent(
         result.project + "/dags/duckdb_test.py", "ConveyorContainerOperatorV2("
     )
+    assert result.project_path.joinpath("query_duckdb.python").exists()
 
 
 def test_dbt_duckdb_not_conveyor_managed_template(cookies):
@@ -73,6 +74,7 @@ def test_dbt_postgres_template(cookies):
     assertFileContainsContent(
         result.project + "/dags/postgres_test.py", "factory.add_tasks_to_dag("
     )
+    assert not result.project_path.joinpath("query_duckdb.python").exists()
 
 
 def test_dbt_template_azure(cookies):
