@@ -5,10 +5,10 @@ locals {
 
 resource "aws_iam_role" "default" {
   name               = "${local.project_name}-${var.env_name}"
-  assume_role_policy = data.aws_iam_policy_document.default.json
+  assume_role_policy = data.aws_iam_policy_document.default_assume_role.json
 }
 
-data "aws_iam_policy_document" "default" {
+data "aws_iam_policy_document" "default_assume_role" {
   statement {
     actions = ["sts:AssumeRoleWithWebIdentity"]
     effect  = "Allow"
