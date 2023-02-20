@@ -10,6 +10,6 @@ default:
       use_credential_provider: aws
     local:
       type: duckdb
-      path: /tmp/dbt.duckdb
+      path: /workspace/dbt.duckdb
       threads: 1
   target: local
