@@ -1,6 +1,6 @@
 {
     "project_name": "project_name",
     "resource_path": "resources",
-    "resource_name": "cdbt_iam_role_s3",
+    "resource_name": "dbt_iam_role_s3",
     "bucket_name": "default"
 }

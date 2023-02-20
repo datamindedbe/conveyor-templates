@@ -5,5 +5,6 @@ project:
   - spark
 resource:
   - aws/container-iam-role-s3
+  - aws/dbt-iam-role-s3
   - aws/spark-iam-role-glue
   - azure/container-workload-identity-storage

@@ -7,7 +7,9 @@ default:
       extensions:
         - httpfs
         - parquet
+      {%- if cookiecutter.conveyor_managed_role == "Yes" %}
       use_credential_provider: aws
+      {%- endif %}
     local:
       type: duckdb
       path: /workspace/dbt.duckdb
