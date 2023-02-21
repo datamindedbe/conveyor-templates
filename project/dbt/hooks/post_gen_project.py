@@ -11,7 +11,7 @@ project_name = "{{ cookiecutter.project_name }}".replace(
 conveyor_managed_role = "{{ cookiecutter.conveyor_managed_role }}"
 cloud = "{{ cookiecutter.cloud }}"
 database_type = "{{ cookiecutter.database_type }}"
-available_adapters = ["bigquery", "postgres", "redshift", "snowflake"]
+available_adapters = ["bigquery", "postgres", "redshift", "snowflake", "duckdb"]
 dev_environment = "{{ cookiecutter.dev_environment }}"
 
 
@@ -22,10 +22,17 @@ class InitArguments:
     skip_profile_setup: bool
 
 
+def remove_python_script(database_type):
+    if not database_type == "duckdb":
+        current_dir = os.getcwd()
+        os.remove(os.path.join(current_dir, "query_duckdb.python"))
+
+
 def initialize_dbt():
     dbt_dir = os.path.join(os.getcwd(), "dbt")
     initialize_dbt_in_dir(dbt_dir, project_name)
     create_profile_from_samples(dbt_dir, database_type)
+    remove_python_script(database_type)
 
 
 def initialize_dbt_in_dir(project_dir: str, project: str):
