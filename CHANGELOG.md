@@ -1,10 +1,12 @@
 <a name="unreleased"></a>
 
 ## Unreleased
+
 ### features
 - Support duckdb when creating dbt projects
 - Upgrade the dbt image to use dbt 1.4.0
 - Add a dbt resources template
+- Improve the DBT startup latency, by running `dbt ls` in the docker image
 
 ## [1.2.0 - 2023-02-01]
 
