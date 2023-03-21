@@ -1,5 +1,8 @@
 <a name="unreleased"></a>
 
+### features
+- Upgraded dbt image to the latest version 1.4.5
+
 ## [1.2.1 - 2023-03-08]
 
 ### features

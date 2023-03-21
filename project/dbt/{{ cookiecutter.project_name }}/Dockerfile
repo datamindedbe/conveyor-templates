@@ -1,4 +1,4 @@
-FROM public.ecr.aws/dataminded/dbt:v1.4.0-1
+FROM public.ecr.aws/dataminded/dbt:v1.4.5
 
 WORKDIR /app
 COPY . .
