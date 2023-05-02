@@ -2,6 +2,7 @@
 import os
 import shutil
 from distutils.util import strtobool
+from dbt.cli.main import dbtRunner
 
 from dataclasses import dataclass
 
@@ -39,13 +40,9 @@ def initialize_dbt_in_dir(project_dir: str, project: str):
     current_dir = os.getcwd()
     os.chdir(project_dir)
     try:
-        os.environ["DBT_PROFILES_DIR"] = os.getcwd()
-        import dbt.task.init as init_task  # late import so the environment variable is taken into account
-
-        task = init_task.InitTask(
-            args=InitArguments(project_dir=project_dir, project_name=project, skip_profile_setup=True), config=None
-        )
-        task.run()
+        res = dbtRunner().invoke(["init", "--skip-profile-setup", f"--project-dir={project_dir}", f"--profiles-dir={project_dir}", project])
+        if not res.success:
+            raise Exception(res.exception)
     finally:
         os.chdir(current_dir)
 
