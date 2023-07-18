@@ -23,5 +23,5 @@ variable "project_name" {
 
 variable "namespaces" {
   description = "The kubernetes namespaces/environments in which you want to run your job"
-  type = list(string)
+  type        = list(string)
 }
