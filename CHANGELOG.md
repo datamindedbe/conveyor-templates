@@ -1,5 +1,10 @@
 <a name="unreleased"></a>
 
+## [1.3.1 - 2023-07-18]
+
+### features
+- Fix small typo in spark-iam-glue-role
+
 ## [1.3.0 - 2023-05-02]
 
 ### features
@@ -261,7 +266,8 @@
 
 First release of the templates
 
-[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/1.3.0...HEAD
+[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/1.3.1...HEAD
+[1.3.1 - 2023-07-18]: https://github.com/datamindedbe/datafy-templates/compare/1.3.0...1.3.1
 [1.3.0 - 2023-05-02]: https://github.com/datamindedbe/datafy-templates/compare/1.2.1...1.3.0
 [1.2.1 - 2023-03-08]: https://github.com/datamindedbe/datafy-templates/compare/1.2.0...1.2.1
 [1.2.0 - 2023-02-01]: https://github.com/datamindedbe/datafy-templates/compare/1.1.1...1.2.0
