@@ -20,7 +20,7 @@ resource "azurerm_role_assignment" "blob_storage_read_access" {
 }
 
 resource "azuread_application_federated_identity_credential" "azureapp" {
-  for_each = toset(var.namespaces)
+  for_each              = toset(var.namespaces)
   application_object_id = azuread_application.azureapp.object_id
   display_name          = "kubernetes-federated-identity-${var.project_name}-${each.key}"
   audiences             = ["api://AzureADTokenExchange"]
