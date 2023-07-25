@@ -32,7 +32,7 @@ sample_task = ConveyorSparkSubmitOperatorV2(
     {% if cookiecutter.conveyor_managed_role -%}
     aws_role="{{ cookiecutter.project_name }}-{% raw %}{{ macros.conveyor.env() }}{% endraw %}",
     {%- endif %}
-    application="local:///opt/spark/work-dir/app.jar",
+    application="local:///opt/spark/user-files/app.jar",
     java_class="{{ cookiecutter.group_id }}.{{ cookiecutter.module_name }}.SampleJob",
     application_args=[{% raw %}"--date", "{{ ds }}", "--environment", "{{ macros.conveyor.env() }}"{% endraw %}],
 )

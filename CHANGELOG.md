@@ -1,4 +1,8 @@
 <a name="unreleased"></a>
+## unreleased
+
+### features
+- Upgrade to spark 3.4.1
 
 ## [1.3.1 - 2023-07-18]
 
