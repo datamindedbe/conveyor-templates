@@ -1,6 +1,7 @@
 <a name="unreleased"></a>
 ## unreleased
 
+## [1.3.2 - 2023-08-07]
 ### features
 - Upgrade to spark 3.4.1
 
@@ -270,7 +271,8 @@
 
 First release of the templates
 
-[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/1.3.1...HEAD
+[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/1.3.2...HEAD
+[1.3.2 - 2023-08-07]: https://github.com/datamindedbe/datafy-templates/compare/1.3.1...1.3.2
 [1.3.1 - 2023-07-18]: https://github.com/datamindedbe/datafy-templates/compare/1.3.0...1.3.1
 [1.3.0 - 2023-05-02]: https://github.com/datamindedbe/datafy-templates/compare/1.2.1...1.3.0
 [1.2.1 - 2023-03-08]: https://github.com/datamindedbe/datafy-templates/compare/1.2.0...1.2.1
