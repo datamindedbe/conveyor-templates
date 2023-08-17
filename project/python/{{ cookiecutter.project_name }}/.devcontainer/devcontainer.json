@@ -47,8 +47,8 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "curl -s https://datafy-cp-artifacts.s3.eu-west-1.amazonaws.com/cli-install/install.sh | bash",
-	"postStartCommand": "curl -s https://datafy-cp-artifacts.s3.eu-west-1.amazonaws.com/cli-install/update.sh | bash",
+	"postCreateCommand": "curl -s https://static.conveyordata.com/cli-install/install.sh | bash",
+	"postStartCommand": "curl -s https://static.conveyordata.com/cli-install/update.sh | bash",
 
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode",
