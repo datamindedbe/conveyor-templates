@@ -5,6 +5,7 @@
 - Upgrade dbt to version 1.6.0
 - Replace gitpod install scripts to our static scripts site
 - Upgrade cryptography and certifi to latest version without security issues
+- Regenerate dependencies to fix a mix of security issues
 
 ## [1.3.2 - 2023-08-07]
 ### features
