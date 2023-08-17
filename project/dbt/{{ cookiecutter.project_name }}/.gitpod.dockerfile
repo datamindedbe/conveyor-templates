@@ -1,10 +1,10 @@
 FROM gitpod/workspace-python
 
-ARG dbt_core_ref=dbt-core@v1.3.2
-ARG dbt_postgres_ref=dbt-core@v1.3.2
-ARG dbt_redshift_ref=dbt-redshift@v1.3.0
-ARG dbt_bigquery_ref=dbt-bigquery@v1.3.0
-ARG dbt_snowflake_ref=dbt-snowflake@v1.3.0
+ARG dbt_core_ref=dbt-core@v1.6.0
+ARG dbt_postgres_ref=dbt-core@v1.6.0
+ARG dbt_redshift_ref=dbt-redshift@v1.6.0
+ARG dbt_bigquery_ref=dbt-bigquery@v1.6.0
+ARG dbt_snowflake_ref=dbt-snowflake@v1.6.0
 
 RUN sudo apt-get update \
   && sudo apt-get dist-upgrade -y \
@@ -32,6 +32,7 @@ ENV LANG=C.UTF-8
 
 # Update python and install
 COPY .python-version .python-version
+RUN cd /home/gitpod/.pyenv && git fetch && git checkout v2.3.24 #Update pyenv
 RUN pyenv install
 RUN python -m pip install --upgrade pip setuptools wheel --no-cache-dir
 RUN python -m pip install --no-cache "git+https://github.com/dbt-labs/${dbt_redshift_ref}#egg=dbt-redshift"

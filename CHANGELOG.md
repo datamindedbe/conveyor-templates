@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## unreleased
 
+### features
+- Upgrade dbt to version 1.6.0
+
 ## [1.3.2 - 2023-08-07]
 ### features
 - Upgrade to spark 3.4.1
