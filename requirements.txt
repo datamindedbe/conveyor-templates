@@ -36,7 +36,7 @@ botocore==1.29.165
     #   s3transfer
 cachetools==5.2.1
     # via google-auth
-certifi==2022.12.7
+certifi==2023.7.22
     # via
     #   requests
     #   snowflake-connector-python
@@ -60,8 +60,9 @@ colorama==0.4.5
     # via dbt-core
 cookiecutter==2.3.0
     # via -r requirements.in
-cryptography==36.0.2
+cryptography==40.0.2
     # via
+    #   -r requirements.in
     #   pyopenssl
     #   snowflake-connector-python
 dbt-bigquery==1.6.0
