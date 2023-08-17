@@ -12,9 +12,9 @@ tasks:
       sudo update-alternatives --install /usr/bin/www-browser www-browser /workspace/bin/open.sh 100
       exit
   - name: Install conveyor 
-    init: curl -s https://datafy-cp-artifacts.s3.eu-west-1.amazonaws.com/cli-install/install.sh | bash
+    init: curl -s https://static.conveyordata.com/cli-install/install.sh | bash
     command: |
-      curl -s https://datafy-cp-artifacts.s3.eu-west-1.amazonaws.com/cli-install/update.sh | bash
+      curl -s https://static.conveyordata.com/cli-install/update.sh | bash
       exit
   - name: Install dependencies
     init: |
