@@ -1,6 +1,7 @@
 <a name="unreleased"></a>
 ## unreleased
 
+## [1.4.0 - 2023-08-21]
 ### features
 - Upgrade dbt to version 1.6.0
 - Replace gitpod install scripts to our static scripts site
@@ -277,7 +278,8 @@
 
 First release of the templates
 
-[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/1.3.2...HEAD
+[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/1.4.0...HEAD
+[1.4.0 - 2023-08-21]: https://github.com/datamindedbe/datafy-templates/compare/1.3.2...1.4.0
 [1.3.2 - 2023-08-07]: https://github.com/datamindedbe/datafy-templates/compare/1.3.1...1.3.2
 [1.3.1 - 2023-07-18]: https://github.com/datamindedbe/datafy-templates/compare/1.3.0...1.3.1
 [1.3.0 - 2023-05-02]: https://github.com/datamindedbe/datafy-templates/compare/1.2.1...1.3.0
