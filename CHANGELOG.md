@@ -1,7 +1,9 @@
 <a name="unreleased"></a>
 ## unreleased
+
 ### features
 - Remove the env_worker_role tf variable as it is not supported anymore
+- Remove unnecessary Spark configuration as it is fixed in Spark
 
 ## [1.4.0 - 2023-08-21]
 ### features

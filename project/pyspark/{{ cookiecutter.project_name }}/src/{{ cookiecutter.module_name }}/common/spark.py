@@ -65,13 +65,6 @@ class ClosableSparkSession:
 
         # set some default configuration
         spark_builder.config("spark.sql.sources.partitionOverwriteMode", "dynamic")
-        spark_builder.config("fs.s3.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
-
-        # These values are set because of an issue with the current spark hive, glue connection
-        # For more info see the conveyor docs:
-        # https://docs.conveyordata.com/how-to-guides/troubleshooting/spark-pyspark-issues/#glue-orgapachehadoophivemetastoreapiinvalidobjectexception
-        spark_builder.config("spark.sql.hive.metastorePartitionPruning", "false")
-        spark_builder.config("spark.sql.hive.convertMetastoreParquet", "false")
 
         {% elif cookiecutter.cloud == "azure" -%}
         spark_builder = SparkSession.builder.appName(self._app_name)

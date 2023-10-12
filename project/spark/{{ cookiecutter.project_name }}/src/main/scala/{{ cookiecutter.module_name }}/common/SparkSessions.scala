@@ -15,15 +15,8 @@ trait SparkSessions {
   {% if cookiecutter.cloud == "aws" -%}
   private val defaultConfiguration: Map[String, String] = Map(
 
-    "fs.s3.impl" -> "org.apache.hadoop.fs.s3a.S3AFileSystem",
     "spark.serializer" -> "org.apache.spark.serializer.KryoSerializer",
     "spark.sql.sources.partitionOverwriteMode" -> "dynamic",
-
-    // These values are set because of an issue with the current spark hive, glue connection
-    // For more info see the conveyor docs:
-    //https://docs.conveyordata.com/how-to-guides/troubleshooting/spark-pyspark-issues/#glue-orgapachehadoophivemetastoreapiinvalidobjectexception
-    "spark.sql.hive.metastorePartitionPruning" -> "false",
-    "spark.sql.hive.convertMetastoreParquet" -> "false"
   )
 
   val spark: SparkSession = {
