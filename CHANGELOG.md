@@ -1,6 +1,8 @@
 <a name="unreleased"></a>
 ## unreleased
 
+## [1.4.1 - 2023-11-06]
+
 ### features
 - Remove the env_worker_role tf variable as it is not supported anymore
 - Remove unnecessary Spark configuration as it is fixed in Spark
@@ -282,7 +284,8 @@
 
 First release of the templates
 
-[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/1.4.0...HEAD
+[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/1.4.1...HEAD
+[1.4.1 - 2023-08-21]: https://github.com/datamindedbe/datafy-templates/compare/1.4.0...1.4.1
 [1.4.0 - 2023-08-21]: https://github.com/datamindedbe/datafy-templates/compare/1.3.2...1.4.0
 [1.3.2 - 2023-08-07]: https://github.com/datamindedbe/datafy-templates/compare/1.3.1...1.3.2
 [1.3.1 - 2023-07-18]: https://github.com/datamindedbe/datafy-templates/compare/1.3.0...1.3.1
