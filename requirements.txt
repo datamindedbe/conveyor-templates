@@ -18,7 +18,9 @@ asn1crypto==1.5.1
     #   scramp
     #   snowflake-connector-python
 attrs==23.1.0
-    # via jsonschema
+    # via
+    #   jsonschema
+    #   referencing
 babel==2.12.1
     # via agate
 beautifulsoup4==4.12.2
@@ -64,31 +66,32 @@ cryptography==41.0.3
     # via
     #   pyopenssl
     #   snowflake-connector-python
-dbt-bigquery==1.6.0
+dbt-bigquery==1.7.2
     # via -r requirements.in
-dbt-core==1.6.0
+dbt-core==1.7.3
     # via
     #   -r requirements.in
     #   dbt-bigquery
     #   dbt-postgres
     #   dbt-redshift
     #   dbt-snowflake
-dbt-extractor==0.4.1
+dbt-extractor==0.5.1
     # via dbt-core
-dbt-postgres==1.6.0
+dbt-postgres==1.7.3
     # via
     #   -r requirements.in
     #   dbt-redshift
-dbt-redshift==1.6.0
+dbt-redshift==1.7.0
     # via -r requirements.in
-dbt-semantic-interfaces==0.2.0
+dbt-semantic-interfaces==0.4.1
     # via dbt-core
-dbt-snowflake==1.6.0
+dbt-snowflake==1.7.0
     # via -r requirements.in
 filelock==3.12.2
     # via snowflake-connector-python
 google-api-core[grpc]==2.11.1
     # via
+    #   dbt-bigquery
     #   google-cloud-bigquery
     #   google-cloud-core
     #   google-cloud-dataproc
@@ -130,8 +133,6 @@ grpcio==1.57.0
     #   grpcio-status
 grpcio-status==1.57.0
     # via google-api-core
-hologram==0.0.16
-    # via dbt-core
 idna==3.4
     # via
     #   dbt-core
@@ -156,10 +157,12 @@ jmespath==1.0.1
     # via
     #   boto3
     #   botocore
-jsonschema==3.2.0
+jsonschema==4.20.0
     # via
+    #   dbt-core
     #   dbt-semantic-interfaces
-    #   hologram
+jsonschema-specifications==2023.11.2
+    # via jsonschema
 keyring==24.2.0
     # via snowflake-connector-python
 leather==0.3.4
@@ -172,7 +175,7 @@ markdown-it-py==3.0.0
     # via rich
 markupsafe==2.1.3
     # via jinja2
-mashumaro[msgpack]==3.8.1
+mashumaro[msgpack]==3.11
     # via dbt-core
 mdurl==0.1.2
     # via markdown-it-py
@@ -234,15 +237,12 @@ pyjwt==2.8.0
     # via snowflake-connector-python
 pyopenssl==23.2.0
     # via snowflake-connector-python
-pyrsistent==0.19.3
-    # via jsonschema
 python-dateutil==2.8.2
     # via
     #   arrow
     #   botocore
     #   dbt-semantic-interfaces
     #   google-cloud-bigquery
-    #   hologram
 python-slugify==8.0.1
     # via
     #   agate
@@ -259,8 +259,12 @@ pyyaml==6.0.1
     #   cookiecutter
     #   dbt-core
     #   dbt-semantic-interfaces
-redshift-connector==2.0.913
+redshift-connector==2.0.915
     # via dbt-redshift
+referencing==0.31.1
+    # via
+    #   jsonschema
+    #   jsonschema-specifications
 requests==2.31.0
     # via
     #   cookiecutter
@@ -273,6 +277,10 @@ requests==2.31.0
     #   snowflake-connector-python
 rich==13.5.2
     # via cookiecutter
+rpds-py==0.13.2
+    # via
+    #   jsonschema
+    #   referencing
 rsa==4.9
     # via google-auth
 s3transfer==0.6.2
@@ -283,7 +291,6 @@ six==1.16.0
     # via
     #   google-auth
     #   isodate
-    #   jsonschema
     #   leather
     #   minimal-snowplow-tracker
     #   python-dateutil
