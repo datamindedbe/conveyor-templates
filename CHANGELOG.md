@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## unreleased
 
+### features
+- Upgrade to dbt 1.7.3
+
 ## [1.5.0 - 2023-11-20]
 
 ### features
