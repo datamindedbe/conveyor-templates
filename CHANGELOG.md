@@ -1,6 +1,8 @@
 <a name="unreleased"></a>
 ## unreleased
 
+## [1.5.1 - 2024-10-01]
+
 ### features
 - Upgrade to dbt 1.7.3
 
@@ -292,8 +294,9 @@
 
 First release of the templates
 
-[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/1.5.0...HEAD
-[1.4.1 - 2023-08-21]: https://github.com/datamindedbe/datafy-templates/compare/1.4.1...1.5.0
+[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/1.5.1...HEAD
+[1.5.1 - 2024-10-01]: https://github.com/datamindedbe/datafy-templates/compare/1.5.0...1.5.1
+[1.5.0 - 2023-11-20]: https://github.com/datamindedbe/datafy-templates/compare/1.4.1...1.5.0
 [1.4.1 - 2023-08-21]: https://github.com/datamindedbe/datafy-templates/compare/1.4.0...1.4.1
 [1.4.0 - 2023-08-21]: https://github.com/datamindedbe/datafy-templates/compare/1.3.2...1.4.0
 [1.3.2 - 2023-08-07]: https://github.com/datamindedbe/datafy-templates/compare/1.3.1...1.3.2
