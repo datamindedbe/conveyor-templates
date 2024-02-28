@@ -87,6 +87,7 @@ def fix_dbt_project():
     with open(f'./dbt_project.yml', "rt") as f:
         data = f.read()
         data = data.replace(f"profile: 'temp'", "profile: 'default'")
+        data = data.replace("temp", f"{project_name}")
     with open(f'./dbt_project.yml', "wt") as f:
         f.write(data)
 
