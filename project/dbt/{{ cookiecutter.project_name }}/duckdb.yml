@@ -12,6 +12,6 @@ default:
       {%- endif %}
     local:
       type: duckdb
-      path: /workspace/dbt.duckdb
+      path: 'dbt.duckdb'
       threads: 1
   target: local

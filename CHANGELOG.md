@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## unreleased
 
+### features
+- Change the dbt project structure to comply with the dbt best practices
+
 ## [1.5.1 - 2024-10-01]
 
 ### features

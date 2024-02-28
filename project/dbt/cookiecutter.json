@@ -3,11 +3,11 @@
   "workflow_start_date": "2020-01-01",
   "workflow_schedule": "@daily",
   "database_type": [
+    "duckdb",
     "postgres",
     "redshift",
     "snowflake",
-    "bigquery",
-    "duckdb"
+    "bigquery"
   ],
   "cloud": [
     "aws",
