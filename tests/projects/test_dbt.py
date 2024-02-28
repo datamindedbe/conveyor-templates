@@ -106,4 +106,4 @@ def test_db_init_all_db_types(tmpdir):
         data = json.load(json_file)
         for db_type in data["database_type"]:
             tmpdir.mkdir(db_type)
-            initialize_dbt_in_dir(os.path.join(tmpdir.strpath, db_type), db_type)
+            initialize_dbt_in_dir(os.path.join(tmpdir.strpath, db_type))

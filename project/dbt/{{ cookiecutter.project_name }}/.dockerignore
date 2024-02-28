@@ -18,6 +18,10 @@ coverage.xml
 dags
 Dockerfile
 tests
+target/
+logs/
+resources/
+dags/
 
 # Environments
 .env

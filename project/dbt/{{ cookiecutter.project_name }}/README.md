@@ -5,16 +5,17 @@
 - [dbt](https://docs.getdbt.com/dbt-cli/installation/)
 - [pyenv](https://github.com/pyenv/pyenv) (recommended)
 
-
 ## Project Structure
 
 ```bash
 root/
  |-- dags/
  |   |-- project.py
- |-- dbt/
- |   |-- project/
- |   Dockerfile
+ |-- models/
+ |-- dbt_project.yml
+ |-- profiles.yml
+ |-- README.md
+ |-- Dockerfile 
 ```
 
 ## Concepts
@@ -27,17 +28,15 @@ It is common practise to pass configuration by [environment variables](https://d
 Locally you use a `.env` file to store credentials. 
 
 ## Commands
-Start a shell in a container with dbt installed and your local files mounted:
+If you have dbt installed locally, you can use the dbt commands from the root of the project.
+
+If you do not have dbt installed locally, you can start a dbt docker container with your local files mounted:
 - `make env` to create a local `.env` file
 - `make shell` to start a new shell
 - `exit` to terminate the container shell
 
-For some of the most used Dbt commands a makefile has been added to the project that passes the correct flags to dbt. 
-These commands assume they are executed in the shell container.
-- `make manifest` executes dbt build and copies the `manifest.json` to your dags folder 
-- `make run` executes dbt run
-- `make test` executes dbt test
-- `make debug` executes dbt debug
-- `make docs` executes dbt docs
+In order to use the `conveyorDbtTaskFactory` in Airflow, you need to have a `manifest.json` file in your dags folder.
+You can generate the manifest as follows:
+- `make manifest` executes dbt build and copies the `manifest.json` to your dags folder
 
 Consult the [dbt documentation](https://docs.getdbt.com/docs/introduction) for additional commands.

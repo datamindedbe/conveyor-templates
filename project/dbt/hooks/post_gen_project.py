@@ -30,21 +30,20 @@ def remove_python_script(database_type):
 
 
 def initialize_dbt():
-    dbt_dir = os.path.join(os.getcwd(), "dbt")
-    initialize_dbt_in_dir(dbt_dir, project_name)
+    dbt_dir = os.getcwd()
+    initialize_dbt_in_dir(dbt_dir)
     create_profile_from_samples(dbt_dir, database_type)
     remove_python_script(database_type)
 
 
-def initialize_dbt_in_dir(project_dir: str, project: str):
-    current_dir = os.getcwd()
-    os.chdir(project_dir)
+def initialize_dbt_in_dir(dir: str):
+    os.chdir(dir)
     try:
-        res = dbtRunner().invoke(["init", "--skip-profile-setup", f"--project-dir={project_dir}", f"--profiles-dir={project_dir}", project])
+        res = dbtRunner().invoke(["init", "--skip-profile-setup", f"--project-dir={dir}", f"--profiles-dir={dir}", 'temp'])
         if not res.success:
             raise Exception(res.exception)
     finally:
-        os.chdir(current_dir)
+        os.chdir(dir)
 
 
 def create_profile_from_samples(target_dir: str, adapter: str):
@@ -76,10 +75,19 @@ def cleanup_development_environment():
 
 
 def fix_dbt_project():
-    with open(f'./dbt/{project_name}/dbt_project.yml', "rt") as f:
+    root_dir = os.getcwd()
+    dbt_dir = os.path.join(root_dir,'temp')
+    files = os.listdir(dbt_dir)
+    for file in files:
+        if file == 'README.md' or file == '.gitignore':
+            continue
+        file_name = os.path.join(dbt_dir, file)
+        shutil.move(file_name, root_dir)
+    shutil.rmtree(dbt_dir)
+    with open(f'./dbt_project.yml', "rt") as f:
         data = f.read()
-        data = data.replace(f"profile: '{project_name}'", "profile: 'default'")
-    with open(f'./dbt/{project_name}/dbt_project.yml', "wt") as f:
+        data = data.replace(f"profile: 'temp'", "profile: 'default'")
+    with open(f'./dbt_project.yml', "wt") as f:
         f.write(data)
 
 
