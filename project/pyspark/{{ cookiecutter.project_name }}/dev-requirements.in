@@ -1,5 +1,5 @@
 -c requirements.txt
-pyspark==3.5.0
+pyspark==3.5.1
 pandas==1.5.2
 pytest>=6.0
 pytest-cov

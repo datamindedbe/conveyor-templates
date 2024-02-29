@@ -3,6 +3,7 @@
 
 ### features
 - Change the dbt project structure to comply with the dbt best practices
+- Upgrade to spark 3.5.1
 
 ## [1.5.1 - 2024-10-01]
 
