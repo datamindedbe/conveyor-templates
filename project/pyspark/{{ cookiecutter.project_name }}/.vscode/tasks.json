@@ -1,0 +1,8 @@
+{
+  "label": "Install python dependencies in ide",
+  "type": "shell",
+  "command": "pip install -r requirements.txt && pip install -e .",
+  "runOptions": {
+    "runOn": "folderOpen"
+  }
+}

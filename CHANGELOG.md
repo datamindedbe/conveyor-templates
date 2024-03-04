@@ -4,6 +4,7 @@
 ### features
 - Change the dbt project structure to comply with the dbt best practices
 - Upgrade to spark 3.5.1
+- add vscode task for python and pyspark projects to simplify usage in ides
 
 ## [1.5.1 - 2024-10-01]
 
