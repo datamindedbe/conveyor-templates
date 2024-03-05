@@ -1,12 +1,14 @@
 <a name="unreleased"></a>
-## unreleased
+## Unreleased
+
+## [1.6.0 - 2024-03-05]
 
 ### features
 - Change the dbt project structure to comply with the dbt best practices
 - Upgrade to spark 3.5.1
 - add vscode task for python and pyspark projects to simplify usage in ides
 
-## [1.5.1 - 2024-10-01]
+## [1.5.1 - 2024-01-10]
 
 ### features
 - Upgrade to dbt 1.7.3
@@ -299,8 +301,9 @@
 
 First release of the templates
 
-[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/1.5.1...HEAD
-[1.5.1 - 2024-10-01]: https://github.com/datamindedbe/datafy-templates/compare/1.5.0...1.5.1
+[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/1.6.0...HEAD
+[1.6.0 - 2024-03-05]: https://github.com/datamindedbe/datafy-templates/compare/1.5.1...1.6.0
+[1.5.1 - 2024-01-10]: https://github.com/datamindedbe/datafy-templates/compare/1.5.0...1.5.1
 [1.5.0 - 2023-11-20]: https://github.com/datamindedbe/datafy-templates/compare/1.4.1...1.5.0
 [1.4.1 - 2023-08-21]: https://github.com/datamindedbe/datafy-templates/compare/1.4.0...1.4.1
 [1.4.0 - 2023-08-21]: https://github.com/datamindedbe/datafy-templates/compare/1.3.2...1.4.0
