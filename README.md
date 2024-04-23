@@ -1,9 +1,9 @@
 # Conveyor templates
 
-These are the template used by [Conveyor](https://conveyordata.com/) to create new projects. If you are interested in
-Conveyor you can go to our [website](https://conveyordata.com/).
+These are the template used by [Conveyor](https://conveyordata.com/) to create new projects. 
+If you are interested in Conveyor, you can visit our [website](https://conveyordata.com/).
 
-They are split into two categories:
+The templates are split into two categories:
 
 - projects: these are templates used to create new projects with Conveyor
 - resources: these templates can be used to add resources to existing project in Conveyor
@@ -22,4 +22,3 @@ two operators we are supporting.
 ## Development
 
 If you want to contribute you should have a look at [the development documentation](./DEVELOPMENT.md).
-

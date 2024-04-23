@@ -8,8 +8,8 @@ black:
 	. venv/bin/activate; black tests
 
 requirements:
-	pip-compile requirements.in
-	pip-compile dev-requirements.in
+	pip-compile requirements.in --upgrade
+	pip-compile dev-requirements.in --upgrade
 
 install:
 	python3 -m venv venv

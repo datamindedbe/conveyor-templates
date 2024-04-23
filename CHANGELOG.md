@@ -1,11 +1,16 @@
 <a name="unreleased"></a>
 ## Unreleased
 
+## [1.6.1 - 2024-4-23]
+
+### features
+- Upgrade to dbt 1.7.13
+
 ## [1.6.0 - 2024-03-05]
 
 ### features
 - Change the dbt project structure to comply with the dbt best practices
-- Upgrade to spark 3.5.1
+- Upgrade to Spark 3.5.1
 - add vscode task for python and pyspark projects to simplify usage in ides
 
 ## [1.5.1 - 2024-01-10]
@@ -16,7 +21,7 @@
 ## [1.5.0 - 2023-11-20]
 
 ### features
-- Upgrade to spark 3.5.0
+- Upgrade to Spark 3.5.0
 
 ## [1.4.1 - 2023-11-06]
 
