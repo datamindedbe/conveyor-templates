@@ -12,7 +12,7 @@ binaryornot==0.4.4
     # via
     #   -c requirements.txt
     #   cookiecutter
-black==22.12.0
+black==24.4.0
     # via -r dev-requirements.in
 build==1.2.1
     # via pip-tools
@@ -38,7 +38,7 @@ cookiecutter==2.3.1
     # via
     #   -c requirements.txt
     #   pytest-cookies
-flake8==5.0.4
+flake8==7.0.0
     # via -r dev-requirements.in
 idna==3.7
     # via
@@ -69,13 +69,14 @@ mypy-extensions==1.0.0
 packaging==24.0
     # via
     #   -c requirements.txt
+    #   black
     #   build
     #   pytest
 pathspec==0.11.2
     # via
     #   -c requirements.txt
     #   black
-pip-tools==6.12.1
+pip-tools==7.4.1
     # via -r dev-requirements.in
 platformdirs==4.2.0
     # via
@@ -83,17 +84,19 @@ platformdirs==4.2.0
     #   black
 pluggy==1.5.0
     # via pytest
-pycodestyle==2.9.1
+pycodestyle==2.11.1
     # via flake8
-pyflakes==2.5.0
+pyflakes==3.2.0
     # via flake8
 pygments==2.17.2
     # via
     #   -c requirements.txt
     #   rich
 pyproject-hooks==1.0.0
-    # via build
-pytest==7.4.0
+    # via
+    #   build
+    #   pip-tools
+pytest==8.1.1
     # via
     #   -r dev-requirements.in
     #   pytest-cookies
