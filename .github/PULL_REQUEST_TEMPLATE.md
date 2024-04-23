@@ -4,7 +4,7 @@ Thanks for sending a pull request!
 Don't forget to add your changes to the changelog.md when starting a PR.
 -->
 
-- [ ] I have updated te CHANGELOG.md
+- [ ] I have updated the CHANGELOG.md
 
 ## What changes were proposed in this pull request?
 <!--

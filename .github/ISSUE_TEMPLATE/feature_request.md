@@ -17,13 +17,14 @@ assignees: ''
 <!--- Thank you for keeping this note for the community --->
 
 **Which template does this features request change**
-for example project/pyspark
+For example project/pyspark
 
 **Tell us about your request**
 What do you want us to add and why
 
 **Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+A clear and concise description of what the problem is.
+For example: I'm always frustrated when [...]
 
 **Additional context**
 Add any other context or screenshots about the feature request here.
