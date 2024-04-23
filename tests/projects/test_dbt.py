@@ -4,9 +4,9 @@ import os
 from project.dbt.hooks.post_gen_project import initialize_dbt_in_dir
 
 
-def assertFileContainsContent(file, content):
-    fileContent = open(file).read()
-    assert fileContent.__contains__(content)
+def assert_file_contains_content(file, content):
+    file_content = open(file).read()
+    assert content in file_content
 
 
 def test_dbt_template(cookies):
@@ -26,8 +26,8 @@ def test_dbt_duckdb_template(cookies):
     )
     assert 0 == result.exit_code
     assert result.exception is None
-    assertFileContainsContent(
-        result.project + "/dags/duckdb_test.py", "ConveyorContainerOperatorV2("
+    assert_file_contains_content(
+        result.project_path / "dags/duckdb_test.py", "ConveyorContainerOperatorV2("
     )
     assert result.project_path.joinpath("query_duckdb.python").exists()
 
@@ -43,9 +43,9 @@ def test_dbt_duckdb_not_conveyor_managed_template(cookies):
     )
     assert 0 == result.exit_code
     assert result.exception is None
-    file = result.project + "/dags/duckdb_test.py"
-    file_content = file.read()
-    assert not file_content.__contains__("aws_role")
+    with open(result.project_path / "dags/duckdb_test.py") as file:
+        file_content = file.read()
+    assert "aws_role" not in file_content
 
 
 def test_dbt_duckdb_conveyor_managed_template(cookies):
@@ -59,9 +59,9 @@ def test_dbt_duckdb_conveyor_managed_template(cookies):
     )
     assert 0 == result.exit_code
     assert result.exception is None
-    file = result.project + "/dags/duckdb_test.py"
-    file_content = file.read()
-    assert file_content.__contains__("aws_role")
+    with open(result.project_path / "dags/duckdb_test.py") as file:
+        file_content = file.read()
+    assert "aws_role" in file_content
 
 
 def test_dbt_postgres_template(cookies):
@@ -71,8 +71,8 @@ def test_dbt_postgres_template(cookies):
     )
     assert 0 == result.exit_code
     assert result.exception is None
-    assertFileContainsContent(
-        result.project + "/dags/postgres_test.py", "factory.add_tasks_to_dag("
+    assert_file_contains_content(
+        result.project_path / "dags/postgres_test.py", "factory.add_tasks_to_dag("
     )
     assert not result.project_path.joinpath("query_duckdb.python").exists()
 

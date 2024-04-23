@@ -9,7 +9,7 @@ def test_spark_template(cookies):
     )
     assert 0 == result.exit_code, result.exception
     assert result.exception is None
-    assert result.project.isdir()
+    assert result.project_path.is_dir()
 
 
 def test_spark_template_no_role(cookies):
@@ -19,8 +19,8 @@ def test_spark_template_no_role(cookies):
     )
     assert 0 == result.exit_code, result.exception
     assert result.exception is None
-    assert result.project.isdir()
-    assert not (result.project + "/resources").isdir()
+    assert result.project_path.is_dir()
+    assert not (result.project_path / "resources").is_dir()
 
 
 def test_spark_template_azure(cookies):
@@ -30,8 +30,8 @@ def test_spark_template_azure(cookies):
     )
     assert 0 == result.exit_code, result.exception
     assert result.exception is None
-    assert result.project.isdir()
-    assert not (result.project + "/resources").isdir()
+    assert result.project_path.is_dir()
+    assert not (result.project_path / "resources").is_dir()
     assert_batch_files(result, exist=True)
 
 
@@ -69,20 +69,20 @@ def test_spark_project_type_batch_and_streaming(cookies):
 
 
 def assert_streaming_files(result, exist: bool = True):
-    assert (result.project + "/streaming.yaml").isfile() == exist
+    assert (result.project_path / "streaming.yaml").is_file() == exist
     assert (
-        result.project + "/src/main/scala/com/conveyor/spark/StreamingApp.scala"
-    ).isfile() == exist
+        result.project_path / "src/main/scala/com/conveyor/spark/StreamingApp.scala"
+    ).is_file() == exist
 
 
 def assert_batch_files(result, exist: bool = True):
-    assert (result.project + "/dags").isdir() == exist
+    assert (result.project_path / "dags").is_dir() == exist
     assert (
-        result.project + "/src/main/scala/com/conveyor/spark/SampleJob.scala"
-    ).isfile() == exist
+        result.project_path / "src/main/scala/com/conveyor/spark/SampleJob.scala"
+    ).is_file() == exist
     assert (
-        result.project + "/src/main/scala/com/conveyor/spark/transformations"
-    ).isdir() == exist
+        result.project_path / "src/main/scala/com/conveyor/spark/transformations"
+    ).is_dir() == exist
 
 
 def assert_tests_run_without_compilation_issues(result):
@@ -90,14 +90,16 @@ def assert_tests_run_without_compilation_issues(result):
     assert result.exception is None
     process = subprocess.Popen(
         ["./gradlew", "test"],
-        cwd=result.project,
+        cwd=result.project_path,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
     )
     (
         stdout,
         stderr,
-    ) = process.communicate()  # You can use stoud and sterr to find out what went wrong
+    ) = (
+        process.communicate()
+    )  # You can use stdout and stderr to find out what went wrong
     return_code = process.poll()
     if return_code != 0:
         print(stdout)
