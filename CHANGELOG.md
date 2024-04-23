@@ -5,6 +5,7 @@
 
 ### features
 - Upgrade to dbt 1.7.13
+- Remove `tests` from the .dockerignore file for dbt templates
 
 ## [1.6.0 - 2024-03-05]
 

@@ -17,7 +17,6 @@ coverage.xml
 .datafy
 dags
 Dockerfile
-tests
 target/
 logs/
 resources/
