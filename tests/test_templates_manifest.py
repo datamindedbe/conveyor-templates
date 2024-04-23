@@ -1,8 +1,13 @@
 import os
 
-from os import path
-
+import pytest
 import yaml
+
+
+@pytest.fixture(autouse=True)
+def change_test_dir(request, monkeypatch):
+    # Change working dir to repository root
+    monkeypatch.chdir(os.path.dirname(os.path.dirname(__file__)))
 
 
 def read_manifest():
@@ -26,7 +31,7 @@ def test_projects_in_manifest_sorted_alphabetically():
 def test_all_resources_in_manifest():
     resources = []
     for cloud in os.listdir("resource"):
-        for r in os.listdir(path.join("resource", cloud)):
+        for r in os.listdir(os.path.join("resource", cloud)):
             resources.append(f"{cloud}/{r}")
     manifest = read_manifest()
     assert set(resources) == set(manifest["resource"])

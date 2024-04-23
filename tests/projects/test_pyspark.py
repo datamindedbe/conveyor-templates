@@ -5,13 +5,13 @@ import subprocess
 def assert_template_succeeds(result):
     assert 0 == result.exit_code, result.exception
     assert result.exception is None
-    assert result.project.isdir()
+    assert result.project_path.is_dir()
 
 
 def assert_first_line(file, content):
     with open(file) as f:
-        firstline = f.readline().rstrip()
-        assert firstline.__contains__(content)
+        first_line = f.readline().rstrip()
+        assert content in first_line
 
 
 def test_pyspark_template(cookies):
@@ -21,7 +21,7 @@ def test_pyspark_template(cookies):
     )
     assert_template_succeeds(result)
     assert_first_line(
-        result.project + "/Dockerfile",
+        result.project_path / "Dockerfile",
         "FROM public.ecr.aws/dataminded/spark-k8s-glue",
     )
 
@@ -32,7 +32,7 @@ def test_pyspark_template_azure(cookies):
         extra_context={"cloud": "azure", "conveyor_managed_role": True},
     )
     assert_template_succeeds(result)
-    assert not (result.project + "/resources").isdir()
+    assert not (result.project_path / "resources").is_dir()
     assert_batch_files(result)
 
 
@@ -42,14 +42,14 @@ def test_pyspark_template_no_role(cookies):
         extra_context={"conveyor_managed_role": False},
     )
     assert_template_succeeds(result)
-    assert not (result.project + "/resources").isdir()
+    assert not (result.project_path / "resources").is_dir()
 
 
 def assert_project_can_be_build(result):
     assert_template_succeeds(result)
     process = subprocess.Popen(
         ["docker", "build", "."],
-        cwd=result.project,
+        cwd=result.project_path,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
     )
@@ -85,14 +85,14 @@ def test_pyspark_template_spark_pipenv(cookies):
 
 
 def assert_streaming_files(result, exist: bool = True):
-    assert (result.project + "/streaming.yaml").isfile() == exist
-    assert (result.project + "/src/pyspark/streaming_app.py").isfile() == exist
+    assert (result.project_path / "streaming.yaml").is_file() == exist
+    assert (result.project_path / "src/pyspark/streaming_app.py").is_file() == exist
 
 
 def assert_batch_files(result, exist: bool = True):
-    assert (result.project + "/dags").isdir() == exist
-    assert (result.project + "/src/pyspark/transformations").isdir() == exist
-    assert (result.project + "/src/pyspark/app.py").isfile() == exist
+    assert (result.project_path / "dags").is_dir() == exist
+    assert (result.project_path / "src/pyspark/transformations").is_dir() == exist
+    assert (result.project_path / "src/pyspark/app.py").is_file() == exist
 
 
 def test_pyspark_template_only_batch(cookies):

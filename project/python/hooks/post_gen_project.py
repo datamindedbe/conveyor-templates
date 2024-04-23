@@ -33,5 +33,3 @@ def cleanup_development_environment():
 if __name__ == "__main__":
     cleanup_resources()
     cleanup_development_environment()
-
-

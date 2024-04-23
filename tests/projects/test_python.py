@@ -8,13 +8,13 @@ def test_python_template(cookies):
     )
     assert 0 == result.exit_code
     assert result.exception is None
-    assert result.project.isdir()
-    assert not (result.project + "/Pipfile").exists()
-    assert not (result.project + "/Pipfile.lock").exists()
-    assert (result.project + "/requirements.in").exists()
-    assert (result.project + "/requirements.txt").exists()
-    assert (result.project + "/dev-requirements.in").exists()
-    assert (result.project + "/dev-requirements.txt").exists()
+    assert result.project_path.is_dir()
+    assert not (result.project_path / "Pipfile").exists()
+    assert not (result.project_path / "Pipfile.lock").exists()
+    assert (result.project_path / "requirements.in").exists()
+    assert (result.project_path / "requirements.txt").exists()
+    assert (result.project_path / "dev-requirements.in").exists()
+    assert (result.project_path / "dev-requirements.txt").exists()
 
 
 def test_python_template_no_role(cookies):
@@ -24,8 +24,8 @@ def test_python_template_no_role(cookies):
     )
     assert 0 == result.exit_code
     assert result.exception is None
-    assert result.project.isdir()
-    assert not (result.project + "/resources").isdir()
+    assert result.project_path.is_dir()
+    assert not (result.project_path / "resources").is_dir()
 
 
 def test_python_template_azure(cookies):
@@ -35,5 +35,5 @@ def test_python_template_azure(cookies):
     )
     assert 0 == result.exit_code
     assert result.exception is None
-    assert result.project.isdir()
-    assert not (result.project + "/resources").isdir()
+    assert result.project_path.is_dir()
+    assert not (result.project_path / "resources").is_dir()
