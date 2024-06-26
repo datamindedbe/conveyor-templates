@@ -3,6 +3,7 @@
 
 ### features
 - Upgrade dbt to 1.8.3
+- Upgrade python project dependencies for requests and urllib3
 
 ## [1.6.1 - 2024-4-23]
 

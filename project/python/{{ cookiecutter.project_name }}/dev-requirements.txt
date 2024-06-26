@@ -9,7 +9,9 @@ black==24.4.0
 click==8.1.7
     # via black
 coverage[toml]==7.4.4
-    # via pytest-cov
+    # via
+    #   coverage
+    #   pytest-cov
 flake8==7.0.0
     # via -r dev-requirements.in
 iniconfig==2.0.0
