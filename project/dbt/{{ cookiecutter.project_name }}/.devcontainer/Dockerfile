@@ -20,11 +20,11 @@ RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/
 # [Optional] Uncomment this line to install global node packages.
 # RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g <your-package-here>" 2>&1
 
-ARG dbt_core_ref=dbt-core@v1.6.0
-ARG dbt_postgres_ref=dbt-core@v1.6.0
-ARG dbt_redshift_ref=dbt-redshift@v1.6.0
-ARG dbt_bigquery_ref=dbt-bigquery@v1.6.0
-ARG dbt_snowflake_ref=dbt-snowflake@v1.6.0
+ARG dbt_core_ref=dbt-core@v1.8.3
+ARG dbt_postgres_ref=dbt-core@v1.8.2
+ARG dbt_redshift_ref=dbt-redshift@v1.8.1
+ARG dbt_bigquery_ref=dbt-bigquery@v1.8.2
+ARG dbt_snowflake_ref=dbt-snowflake@v1.8.3
 
 RUN apt-get update \
   && apt-get dist-upgrade -y \

@@ -1,6 +1,6 @@
 cookiecutter==2.3.1
-dbt-core==1.7.13
-dbt-postgres==1.7.13
-dbt-redshift==1.7.7
-dbt-bigquery==1.7.7
-dbt-snowflake==1.7.3
+dbt-core==1.8.3
+dbt-postgres==1.8.2
+dbt-redshift==1.8.1
+dbt-bigquery==1.8.2
+dbt-snowflake==1.8.3
