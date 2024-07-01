@@ -1,11 +1,13 @@
 <a name="unreleased"></a>
 ## Unreleased
 
+## [1.6.2 - 2024-07-01]
+
 ### features
 - Upgrade dbt to 1.8.3
 - Upgrade python project dependencies for requests and urllib3
 
-## [1.6.1 - 2024-4-23]
+## [1.6.1 - 2024-04-23]
 
 ### features
 - Upgrade to dbt 1.7.13
@@ -311,7 +313,9 @@
 
 First release of the templates
 
-[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/1.6.0...HEAD
+[Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/1.6.2...HEAD
+[1.6.2 - 2024-07-01]: https://github.com/datamindedbe/datafy-templates/compare/1.6.1...1.6.2
+[1.6.1 - 2024-04-23]: https://github.com/datamindedbe/datafy-templates/compare/1.6.0...1.6.1
 [1.6.0 - 2024-03-05]: https://github.com/datamindedbe/datafy-templates/compare/1.5.1...1.6.0
 [1.5.1 - 2024-01-10]: https://github.com/datamindedbe/datafy-templates/compare/1.5.0...1.5.1
 [1.5.0 - 2023-11-20]: https://github.com/datamindedbe/datafy-templates/compare/1.4.1...1.5.0
