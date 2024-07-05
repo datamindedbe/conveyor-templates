@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## Unreleased
 
+### features
+- Add a template for creating Conveyor packages
+
 ## [1.6.2 - 2024-07-01]
 
 ### features
