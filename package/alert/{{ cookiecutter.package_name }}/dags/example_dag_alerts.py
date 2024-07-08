@@ -19,7 +19,7 @@ default_args = {
 }
 
 with DAG(
-        "example-dag-alert-complex-callback",
+        "{{ cookiecutter.package_name }}",
         default_args={
             **default_args,
             "on_failure_callback": complex_alert.complex_failure_alert,
@@ -34,7 +34,7 @@ with DAG(
     )
 
 with DAG(
-        "example-dag-alert-simple-callback",
+        "{{ cookiecutter.package_name }}",
         default_args={
             **default_args,
             "on_failure_callback": simple_alert.simple_slack_alert,
