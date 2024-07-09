@@ -52,13 +52,6 @@ Start using this template as follows:
 - create a trial version of your package: `conveyor package trail --version 0.0.1`
 - test your package code in a Conveyor project:
   - create a sample project in your package directory: `conveyor project create --name testproject`. For more details look [here](https://docs.conveyordata.com/how-to-guides/conveyor-packages/best-practices)
-  - add the package dependency in your `.conveyor/project.yaml` with content: 
-  ```yaml
-    dependencies:
-      packages:
-        - name: <packagename>
-          versions: [0.0.1]
-  ```
   - build and deploy your project to an environment: `conveyor project build && conveyor project deploy --env <some-environment>`. 
     If you are developing Airflow tasks in your package, you can also use `conveyor run` to test them.
   - trigger the `example-dag-alert-simple-callback` or the `example-dag-alert-complex-callback` dag in Airflow
