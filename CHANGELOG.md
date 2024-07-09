@@ -1,6 +1,8 @@
 <a name="unreleased"></a>
 ## Unreleased
 
+## [1.7.0 - 2024-07-09]
+
 ### features
 - Add a template for creating Conveyor packages
 
@@ -317,6 +319,7 @@
 First release of the templates
 
 [Unreleased]: https://github.com/datamindedbe/datafy-templates/compare/1.6.2...HEAD
+[1.7.0 - 2024-07-09]: https://github.com/datamindedbe/datafy-templates/compare/1.6.2...1.7.0
 [1.6.2 - 2024-07-01]: https://github.com/datamindedbe/datafy-templates/compare/1.6.1...1.6.2
 [1.6.1 - 2024-04-23]: https://github.com/datamindedbe/datafy-templates/compare/1.6.0...1.6.1
 [1.6.0 - 2024-03-05]: https://github.com/datamindedbe/datafy-templates/compare/1.5.1...1.6.0
