@@ -19,6 +19,11 @@ believe in.
 Resources provide templates on how to give IAM access for the jobs you are running on Conveyor. For now we focused on the
 two operators we are supporting.
 
+## Packages
+
+The packages templates help you to get started with using packages on Conveyor.
+The template contains sample code to send alerts from Airflow.
+
 ## Development
 
 If you want to contribute you should have a look at [the development documentation](./DEVELOPMENT.md).
