@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## Unreleased
 
+### features
+- Upgrade dependencies to non-vulnerable cryptography and certifi
+
 ## [1.7.0 - 2024-07-09]
 
 ### features
