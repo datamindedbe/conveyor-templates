@@ -9,6 +9,7 @@ MODEL (
 SELECT
   item_id,
   COUNT(DISTINCT id) AS num_orders,
+  SUM(price) AS total_price,
 FROM
   sqlmesh_example.incremental_model
 GROUP BY item_id

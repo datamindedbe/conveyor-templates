@@ -1,28 +1,23 @@
 gateways:
-  postgres:
+  duckdb:
     connection:
       # For more information on configuring the connection to your execution engine, visit:
       # https://sqlmesh.readthedocs.io/en/stable/reference/configuration/#connections
-      # https://sqlmesh.readthedocs.io/en/stable/integrations/engines/postgres/#connection-options
-      type: postgres
-      host: 
-      user: 
-      password: 
-      port: 
-      database: 
-      # concurrent_tasks: 4
+      # https://sqlmesh.readthedocs.io/en/stable/integrations/engines/duckdb/#connection-options
+      type: duckdb
+      database: db.db
+      # concurrent_tasks: 1
       # register_comments: True
-      # pre_ping: True
+      # pre_ping: False
       # pretty_sql: False
-      # keepalives_idle: 
-      # connect_timeout: 10
-      # role: 
-      # sslmode: 
-      # application_name: 
+      # catalogs: 
+      # extensions: 
+      # connector_config: 
+      # token: 
 
 
-default_gateway: postgres
+default_gateway: duckdb
 
 model_defaults:
-  dialect: postgres
-  start: 2025-04-01
+  dialect: duckdb
+  start: 2025-03-31

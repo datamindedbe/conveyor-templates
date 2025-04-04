@@ -12,8 +12,12 @@ SELECT
   id,
   item_id,
   event_date,
+  price,
 FROM
   sqlmesh_example.seed_model
+INNER JOIN
+  sqlmesh_example.seed2_model
+USING (id)
 WHERE
   event_date BETWEEN @start_date AND @end_date
   
