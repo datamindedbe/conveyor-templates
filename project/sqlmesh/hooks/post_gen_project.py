@@ -38,7 +38,7 @@ def cleanup_development_environment():
 
 
 if __name__ == "__main__":
-    initialize_sqlmesh()
+    # initialize_sqlmesh()
     cleanup_resources()
     cleanup_development_environment()
     # TODO: what is expected post-generation behavior?
