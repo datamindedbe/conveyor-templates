@@ -20,4 +20,3 @@ def test_sqlmesh_template_no_role(cookies):
     assert result.exception is None
     assert result.project_path.is_dir()
     assert not result.project_path.joinpath("/resources").is_dir()
-
