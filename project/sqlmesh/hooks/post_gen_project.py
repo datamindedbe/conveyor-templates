@@ -5,7 +5,6 @@ from distutils.util import strtobool
 
 conveyor_managed_role = "{{ cookiecutter.conveyor_managed_role }}"
 cloud = "{{ cookiecutter.cloud }}"
-project_type = "{{ cookiecutter.project_type }}"
 dev_environment = "{{ cookiecutter.dev_environment }}"
 
 def cleanup_resources():
