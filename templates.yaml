@@ -3,6 +3,7 @@ project:
   - pyspark
   - python
   - spark
+  - sqlmesh
 resource:
   - aws/container-iam-role-s3
   - aws/dbt-iam-role-s3
