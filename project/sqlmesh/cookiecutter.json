@@ -1,0 +1,24 @@
+{
+  "project_name": "SQLMesh-template",
+  "workflow_start_date": "2025-04-02",
+  "workflow_schedule": "@daily",
+  "database_type": [
+    "postgres",
+    "oracle",
+    "duckdb",
+    "redshift",
+    "snowflake",
+    "bigquery"
+  ],
+  "cloud": [
+    "aws",
+    "azure"
+  ],
+  "conveyor_managed_role": true,
+  "dev_environment": [
+    "local",
+    "gitpod",
+    "codespaces",
+    "all"
+  ]
+}
