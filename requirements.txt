@@ -14,35 +14,45 @@ agate==1.9.1
     #   dbt-snowflake
 annotated-types==0.7.0
     # via pydantic
+anyio==4.11.0
+    # via
+    #   google-genai
+    #   httpx
 arrow==1.3.0
     # via cookiecutter
 asn1crypto==1.5.1
     # via
     #   scramp
     #   snowflake-connector-python
-attrs==24.2.0
+attrs==25.3.0
     # via
     #   jsonschema
     #   referencing
-babel==2.16.0
+babel==2.17.0
     # via agate
 backports-tarfile==1.2.0
     # via jaraco-context
-beautifulsoup4==4.12.3
+beautifulsoup4==4.13.5
     # via redshift-connector
 binaryornot==0.4.4
     # via cookiecutter
-boto3==1.35.20
-    # via redshift-connector
-botocore==1.35.20
+boto3==1.40.37
+    # via
+    #   redshift-connector
+    #   snowflake-connector-python
+botocore==1.40.37
     # via
     #   boto3
     #   redshift-connector
     #   s3transfer
-cachetools==5.5.0
+    #   snowflake-connector-python
+cachetools==5.5.2
     # via google-auth
-certifi==2024.8.30
+certifi==2025.1.31
     # via
+    #   dbt-snowflake
+    #   httpcore
+    #   httpx
     #   requests
     #   snowflake-connector-python
 cffi==1.17.1
@@ -51,37 +61,39 @@ cffi==1.17.1
     #   snowflake-connector-python
 chardet==5.2.0
     # via binaryornot
-charset-normalizer==3.3.2
+charset-normalizer==3.4.3
     # via
     #   requests
     #   snowflake-connector-python
-click==8.1.7
+click==8.3.0
     # via
     #   cookiecutter
     #   dbt-core
     #   dbt-semantic-interfaces
 colorama==0.4.6
     # via dbt-common
-cookiecutter==2.3.1
+cookiecutter==2.6.0
     # via -r requirements.in
-cryptography==43.0.1
+cryptography==46.0.0
     # via
     #   pyopenssl
     #   snowflake-connector-python
-daff==1.3.46
+daff==1.4.2
     # via dbt-core
-db-dtypes==1.3.0
-    # via google-cloud-bigquery
-dbt-adapters==1.6.1
+db-dtypes==1.4.3
+    # via
+    #   google-cloud-bigquery
+    #   pandas-gbq
+dbt-adapters==1.16.7
     # via
     #   dbt-bigquery
     #   dbt-core
     #   dbt-postgres
     #   dbt-redshift
     #   dbt-snowflake
-dbt-bigquery==1.8.2
+dbt-bigquery==1.10.2
     # via -r requirements.in
-dbt-common==1.8.0
+dbt-common==1.31.0
     # via
     #   dbt-adapters
     #   dbt-bigquery
@@ -89,81 +101,126 @@ dbt-common==1.8.0
     #   dbt-postgres
     #   dbt-redshift
     #   dbt-snowflake
-dbt-core==1.8.3
+dbt-core==1.10.11
     # via
     #   -r requirements.in
     #   dbt-bigquery
     #   dbt-postgres
     #   dbt-redshift
     #   dbt-snowflake
-dbt-extractor==0.5.1
+dbt-extractor==0.6.0
     # via dbt-core
-dbt-postgres==1.8.2
+dbt-postgres==1.9.1
     # via
     #   -r requirements.in
     #   dbt-redshift
-dbt-redshift==1.8.1
+dbt-protos==1.0.375
+    # via
+    #   dbt-adapters
+    #   dbt-common
+    #   dbt-core
+dbt-redshift==1.9.5
     # via -r requirements.in
-dbt-semantic-interfaces==0.5.1
+dbt-semantic-interfaces==0.9.0
     # via dbt-core
-dbt-snowflake==1.8.3
+dbt-snowflake==1.10.1
     # via -r requirements.in
-deepdiff==7.0.1
+deepdiff==8.6.1
     # via dbt-common
-filelock==3.16.0
+docstring-parser==0.17.0
+    # via google-cloud-aiplatform
+fastjsonschema==2.21.2
+    # via nbformat
+filelock==3.19.1
     # via snowflake-connector-python
-google-api-core[grpc]==2.19.2
+google-api-core[grpc]==2.25.1
     # via
     #   dbt-bigquery
+    #   google-cloud-aiplatform
     #   google-cloud-bigquery
     #   google-cloud-core
     #   google-cloud-dataproc
+    #   google-cloud-resource-manager
     #   google-cloud-storage
-google-auth==2.34.0
+    #   pandas-gbq
+google-auth==2.40.3
     # via
+    #   dbt-bigquery
     #   google-api-core
+    #   google-auth-oauthlib
+    #   google-cloud-aiplatform
     #   google-cloud-bigquery
     #   google-cloud-core
     #   google-cloud-dataproc
+    #   google-cloud-resource-manager
     #   google-cloud-storage
-google-cloud-bigquery[pandas]==3.25.0
+    #   google-genai
+    #   pandas-gbq
+    #   pydata-google-auth
+google-auth-oauthlib==1.2.2
+    # via
+    #   pandas-gbq
+    #   pydata-google-auth
+google-cloud-aiplatform==1.115.0
     # via dbt-bigquery
-google-cloud-core==2.4.1
+google-cloud-bigquery[pandas]==3.38.0
+    # via
+    #   dbt-bigquery
+    #   google-cloud-aiplatform
+    #   pandas-gbq
+google-cloud-core==2.4.3
     # via
     #   google-cloud-bigquery
     #   google-cloud-storage
-google-cloud-dataproc==5.12.0
+google-cloud-dataproc==5.21.0
     # via dbt-bigquery
-google-cloud-storage==2.18.2
-    # via dbt-bigquery
-google-crc32c==1.6.0
+google-cloud-resource-manager==1.14.2
+    # via google-cloud-aiplatform
+google-cloud-storage==2.19.0
+    # via
+    #   dbt-bigquery
+    #   google-cloud-aiplatform
+google-crc32c==1.7.1
     # via
     #   google-cloud-storage
     #   google-resumable-media
+google-genai==1.38.0
+    # via google-cloud-aiplatform
 google-resumable-media==2.7.2
     # via
     #   google-cloud-bigquery
     #   google-cloud-storage
-googleapis-common-protos[grpc]==1.65.0
+googleapis-common-protos[grpc]==1.70.0
     # via
     #   google-api-core
     #   grpc-google-iam-v1
     #   grpcio-status
-grpc-google-iam-v1==0.13.1
-    # via google-cloud-dataproc
-grpcio==1.66.1
+grpc-google-iam-v1==0.14.2
+    # via
+    #   google-cloud-dataproc
+    #   google-cloud-resource-manager
+grpcio==1.75.0
     # via
     #   google-api-core
+    #   google-cloud-bigquery
     #   googleapis-common-protos
     #   grpc-google-iam-v1
     #   grpcio-status
-grpcio-status==1.62.3
+grpcio-status==1.75.0
     # via google-api-core
+h11==0.16.0
+    # via httpcore
+httpcore==1.0.9
+    # via httpx
+httpx==0.28.1
+    # via google-genai
 idna==3.10
     # via
+    #   anyio
+    #   httpx
     #   requests
     #   snowflake-connector-python
-importlib-metadata==6.11.0
+importlib-metadata==8.7.0
     # via
     #   dbt-semantic-interfaces
     #   keyring
@@ -175,9 +232,9 @@ jaraco-classes==3.4.0
     # via keyring
 jaraco-context==6.0.1
     # via keyring
-jaraco-functools==4.0.2
+jaraco-functools==4.3.0
     # via keyring
-jinja2==3.1.4
+jinja2==3.1.6
     # via
     #   cookiecutter
     #   dbt-common
@@ -187,106 +244,130 @@ jmespath==1.0.1
     # via
     #   boto3
     #   botocore
-jsonschema==4.23.0
+jsonschema==4.25.1
     # via
     #   dbt-common
+    #   dbt-core
     #   dbt-semantic-interfaces
-jsonschema-specifications==2023.12.1
+    #   nbformat
+jsonschema-specifications==2025.9.1
     # via jsonschema
-keyring==25.3.0
+jupyter-core==5.8.1
+    # via nbformat
+keyring==25.6.0
     # via snowflake-connector-python
 leather==0.4.0
     # via agate
-logbook==1.5.3
-    # via dbt-core
-lxml==5.3.0
+lxml==5.4.0
     # via redshift-connector
-markdown-it-py==3.0.0
+markdown-it-py==4.0.0
     # via rich
-markupsafe==2.1.5
+markupsafe==3.0.2
     # via jinja2
-mashumaro[msgpack]==3.13.1
+mashumaro[msgpack]==3.14
     # via
     #   dbt-adapters
     #   dbt-common
     #   dbt-core
 mdurl==0.1.2
     # via markdown-it-py
-minimal-snowplow-tracker==0.0.2
-    # via dbt-core
-more-itertools==10.5.0
+more-itertools==10.8.0
     # via
     #   dbt-semantic-interfaces
     #   jaraco-classes
     #   jaraco-functools
-msgpack==1.1.0
+msgpack==1.1.1
     # via mashumaro
-networkx==3.3
+nbformat==5.10.4
+    # via dbt-bigquery
+networkx==3.5
     # via dbt-core
-numpy==2.1.1
+numpy==2.3.3
     # via
     #   db-dtypes
     #   pandas
-    #   pyarrow
-ordered-set==4.1.0
+    #   pandas-gbq
+    #   shapely
+oauthlib==3.3.1
+    # via requests-oauthlib
+orderly-set==5.5.0
     # via deepdiff
-packaging==24.1
+packaging==25.0
     # via
     #   db-dtypes
     #   dbt-core
+    #   google-cloud-aiplatform
     #   google-cloud-bigquery
+    #   pandas-gbq
     #   redshift-connector
     #   snowflake-connector-python
-pandas==2.2.2
+pandas==2.3.2
     # via
     #   db-dtypes
     #   google-cloud-bigquery
+    #   pandas-gbq
+pandas-gbq==0.29.2
+    # via google-cloud-bigquery
 parsedatetime==2.6
     # via agate
 pathspec==0.12.1
     # via
     #   dbt-common
     #   dbt-core
-platformdirs==4.3.3
-    # via snowflake-connector-python
-proto-plus==1.24.0
+platformdirs==4.4.0
+    # via
+    #   jupyter-core
+    #   snowflake-connector-python
+proto-plus==1.26.1
     # via
     #   google-api-core
+    #   google-cloud-aiplatform
     #   google-cloud-dataproc
-protobuf==4.25.4
+    #   google-cloud-resource-manager
+protobuf==6.32.1
     # via
     #   dbt-adapters
     #   dbt-common
     #   dbt-core
+    #   dbt-protos
     #   google-api-core
+    #   google-cloud-aiplatform
     #   google-cloud-dataproc
+    #   google-cloud-resource-manager
     #   googleapis-common-protos
     #   grpc-google-iam-v1
     #   grpcio-status
     #   proto-plus
-psycopg2-binary==2.9.9
+psycopg2-binary==2.9.10
     # via dbt-postgres
-pyarrow==17.0.0
+pyarrow==21.0.0
     # via
     #   db-dtypes
     #   google-cloud-bigquery
+    #   pandas-gbq
 pyasn1==0.6.1
     # via
     #   pyasn1-modules
     #   rsa
-pyasn1-modules==0.4.1
+pyasn1-modules==0.4.2
     # via google-auth
-pycparser==2.22
+pycparser==2.23
     # via cffi
-pydantic==2.9.1
-    # via dbt-semantic-interfaces
-pydantic-core==2.23.3
+pydantic==2.11.9
+    # via
+    #   dbt-core
+    #   dbt-semantic-interfaces
+    #   google-cloud-aiplatform
+    #   google-genai
+pydantic-core==2.33.2
     # via pydantic
-pygments==2.18.0
+pydata-google-auth==1.9.1
+    # via pandas-gbq
+pygments==2.19.2
     # via rich
-pyjwt==2.9.0
+pyjwt==2.10.1
     # via snowflake-connector-python
-pyopenssl==24.2.1
+pyopenssl==25.3.0
     # via snowflake-connector-python
 python-dateutil==2.9.0.post0
     # via
@@ -302,7 +383,7 @@ python-slugify==8.0.4
     #   cookiecutter
 pytimeparse==1.1.8
     # via agate
-pytz==2024.2
+pytz==2025.2
     # via
     #   dbt-adapters
     #   dbt-core
@@ -314,73 +395,102 @@ pyyaml==6.0.2
     #   cookiecutter
     #   dbt-core
     #   dbt-semantic-interfaces
-redshift-connector==2.0.917
+redshift-connector==2.1.8
     # via dbt-redshift
-referencing==0.35.1
+referencing==0.36.2
     # via
     #   jsonschema
     #   jsonschema-specifications
-requests==2.32.3
+requests==2.32.5
     # via
     #   cookiecutter
     #   dbt-common
     #   dbt-core
+    #   dbt-redshift
     #   google-api-core
     #   google-cloud-bigquery
     #   google-cloud-storage
-    #   minimal-snowplow-tracker
+    #   google-genai
     #   redshift-connector
+    #   requests-oauthlib
     #   snowflake-connector-python
-rich==13.8.1
+    #   snowplow-tracker
+requests-oauthlib==2.0.0
+    # via google-auth-oauthlib
+rich==14.1.0
     # via cookiecutter
-rpds-py==0.20.0
+rpds-py==0.27.1
     # via
     #   jsonschema
     #   referencing
-rsa==4.9
+rsa==4.9.1
     # via google-auth
-s3transfer==0.10.2
+s3transfer==0.14.0
     # via boto3
-scramp==1.4.5
+scramp==1.4.6
     # via redshift-connector
-six==1.16.0
+shapely==2.1.1
+    # via google-cloud-aiplatform
+six==1.17.0
     # via
     #   isodate
-    #   minimal-snowplow-tracker
     #   python-dateutil
-snowflake-connector-python[secure-local-storage]==3.12.2
+sniffio==1.3.1
+    # via anyio
+snowflake-connector-python[secure-local-storage]==3.17.4
     # via dbt-snowflake
+snowplow-tracker==1.1.0
+    # via dbt-core
 sortedcontainers==2.4.0
     # via snowflake-connector-python
-soupsieve==2.6
+soupsieve==2.8
     # via beautifulsoup4
-sqlparse==0.5.1
+sqlparse==0.5.3
     # via
     #   dbt-core
     #   dbt-redshift
+tenacity==9.1.2
+    # via google-genai
 text-unidecode==1.3
     # via python-slugify
-tomlkit==0.13.2
+tomlkit==0.13.3
     # via snowflake-connector-python
-types-python-dateutil==2.9.0.20240906
-    # via arrow
-typing-extensions==4.12.2
+traitlets==5.14.3
     # via
+    #   jupyter-core
+    #   nbformat
+types-python-dateutil==2.9.0.20250822
+    # via arrow
+typing-extensions==4.15.0
+    # via
+    #   anyio
+    #   beautifulsoup4
     #   dbt-adapters
     #   dbt-common
     #   dbt-core
     #   dbt-semantic-interfaces
+    #   google-cloud-aiplatform
+    #   google-genai
+    #   grpcio
     #   mashumaro
     #   pydantic
     #   pydantic-core
+    #   pyopenssl
+    #   referencing
     #   snowflake-connector-python
-tzdata==2024.1
+    #   snowplow-tracker
+    #   typing-inspection
+typing-inspection==0.4.1
+    # via pydantic
+tzdata==2025.2
     # via pandas
-urllib3==2.2.3
+urllib3==2.5.0
     # via
     #   botocore
     #   requests
-zipp==3.20.2
+websockets==15.0.1
+    # via google-genai
+zipp==3.23.0
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:

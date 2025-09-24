@@ -12,11 +12,11 @@ binaryornot==0.4.4
     # via
     #   -c requirements.txt
     #   cookiecutter
-black==24.8.0
+black==25.9.0
     # via -r dev-requirements.in
-build==1.2.2
+build==1.3.0
     # via pip-tools
-certifi==2024.8.30
+certifi==2025.1.31
     # via
     #   -c requirements.txt
     #   requests
@@ -24,37 +24,37 @@ chardet==5.2.0
     # via
     #   -c requirements.txt
     #   binaryornot
-charset-normalizer==3.3.2
+charset-normalizer==3.4.3
     # via
     #   -c requirements.txt
     #   requests
-click==8.1.7
+click==8.3.0
     # via
     #   -c requirements.txt
     #   black
     #   cookiecutter
     #   pip-tools
-cookiecutter==2.3.1
+cookiecutter==2.6.0
     # via
     #   -c requirements.txt
     #   pytest-cookies
-flake8==7.1.1
+flake8==7.3.0
     # via -r dev-requirements.in
 idna==3.10
     # via
     #   -c requirements.txt
     #   requests
-iniconfig==2.0.0
+iniconfig==2.1.0
     # via pytest
-jinja2==3.1.4
+jinja2==3.1.6
     # via
     #   -c requirements.txt
     #   cookiecutter
-markdown-it-py==3.0.0
+markdown-it-py==4.0.0
     # via
     #   -c requirements.txt
     #   rich
-markupsafe==2.1.5
+markupsafe==3.0.2
     # via
     #   -c requirements.txt
     #   jinja2
@@ -64,9 +64,9 @@ mdurl==0.1.2
     # via
     #   -c requirements.txt
     #   markdown-it-py
-mypy-extensions==1.0.0
+mypy-extensions==1.1.0
     # via black
-packaging==24.1
+packaging==25.0
     # via
     #   -c requirements.txt
     #   black
@@ -76,27 +76,28 @@ pathspec==0.12.1
     # via
     #   -c requirements.txt
     #   black
-pip-tools==7.4.1
+pip-tools==7.5.0
     # via -r dev-requirements.in
-platformdirs==4.3.3
+platformdirs==4.4.0
     # via
     #   -c requirements.txt
     #   black
-pluggy==1.5.0
+pluggy==1.6.0
     # via pytest
-pycodestyle==2.12.1
+pycodestyle==2.14.0
     # via flake8
-pyflakes==3.2.0
+pyflakes==3.4.0
     # via flake8
-pygments==2.18.0
+pygments==2.19.2
     # via
     #   -c requirements.txt
+    #   pytest
     #   rich
-pyproject-hooks==1.1.0
+pyproject-hooks==1.2.0
     # via
     #   build
     #   pip-tools
-pytest==8.3.3
+pytest==8.4.2
     # via
     #   -r dev-requirements.in
     #   pytest-cookies
@@ -110,19 +111,21 @@ python-slugify==8.0.4
     # via
     #   -c requirements.txt
     #   cookiecutter
+pytokens==0.1.10
+    # via black
 pyyaml==6.0.2
     # via
     #   -c requirements.txt
     #   cookiecutter
-requests==2.32.3
+requests==2.32.5
     # via
     #   -c requirements.txt
     #   cookiecutter
-rich==13.8.1
+rich==14.1.0
     # via
     #   -c requirements.txt
     #   cookiecutter
-six==1.16.0
+six==1.17.0
     # via
     #   -c requirements.txt
     #   python-dateutil
@@ -130,15 +133,15 @@ text-unidecode==1.3
     # via
     #   -c requirements.txt
     #   python-slugify
-types-python-dateutil==2.9.0.20240906
+types-python-dateutil==2.9.0.20250822
     # via
     #   -c requirements.txt
     #   arrow
-urllib3==2.2.3
+urllib3==2.5.0
     # via
     #   -c requirements.txt
     #   requests
-wheel==0.44.0
+wheel==0.45.1
     # via pip-tools
 
 # The following packages are considered to be unsafe in a requirements file:
