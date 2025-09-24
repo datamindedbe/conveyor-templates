@@ -1,6 +1,6 @@
 <a name="unreleased"></a>
 
-## [1.7.1 - 2025-09-24]
+## [1.7.2 - 2025-09-24]
 
 ### features
 - Upgrade most dependencies to current versions
