@@ -1,7 +1,4 @@
--c requirements.txt
-
 pytest>=7.4.0
 pytest-cookies>=0.7.0
 flake8
 black
-pip-tools
