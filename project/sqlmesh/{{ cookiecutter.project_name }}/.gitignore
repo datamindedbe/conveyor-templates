@@ -1,0 +1,21 @@
+# Virtual envs
+venv/
+.env
+.venv
+env/
+
+# VS Code
+.vscode/
+
+# logs
+*.log
+logs/
+
+# Python cache
+__pycache__
+
+# Cache
+.cache/
+
+# Local database
+*.db
